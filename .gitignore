@@ -1,0 +1,5 @@
+
+# Zwischenstufen der Videoproduktion (#160) — jederzeit neu erzeugbar:
+# sprecher.py laedt die Sprachdateien neu, video.py die Kontaktboegen.
+werbung/sprecher/
+werbung/szene*-kontaktbogen.png
