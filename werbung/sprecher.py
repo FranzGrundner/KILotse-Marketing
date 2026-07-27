@@ -45,8 +45,14 @@ SAETZE = [
     ("03-nutzen",
      "Statt acht Stunden — vielleicht zwei. Du klickst nur noch auf Senden."),
     ("04-abschluss",
-     "Diese Woche noch drei gratis Gespräche. Alles Weitere auf ki-lotse.tech."),
+     "Diese Woche noch drei gratis Gespräche. Alles Weitere auf ki-lotse punkt tech."),
 ]
+
+# Warum "punkt tech" ausgeschrieben: als "ki-lotse.tech" verschliff die Stimme
+# das Satzende so, dass Franz am Ende "Text" hoerte — die Domain war das letzte
+# Wort und ging gerade dort unter, wo sie sitzen muss. Domains gehoeren fuers
+# Ohr geschrieben, nicht fuers Auge; auf dem Bildschirm steht sie ohnehin gross
+# im Abspann.
 
 # Etwas langsamer als Standard: der Text ist dicht, und die Zielgruppe hoert
 # ihn nebenbei auf Facebook.
