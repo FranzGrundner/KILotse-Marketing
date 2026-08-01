@@ -197,6 +197,76 @@ Credit**. Wie das geht, steht unten unter „Der Gratisweg".
 
 ---
 
+## Clip „Der Beweis" (Betriebsart Poolservice, Motiv 8)
+
+Zweck: Aufmerksamkeit für die **Direktansprache** an Pool-Service-Betriebe.
+
+**Er ersetzt `werbung/poolservice/` nicht.** Der dortige Clip ist der
+Beweis-Clip — echte Screenshots der laufenden Demo, fünf Szenen, DE und EN. Was
+ihm fehlt, sind die ersten drei Sekunden: er beginnt mit zwei Textkacheln. Der
+hier beginnt mit einem Bild. Reihenfolge in der Ansprache: **erst dieser, dann
+der andere**, wenn Interesse da ist.
+
+Länge 15 s (3 × 5 s), 4:5. Ablage `roh/03-pool/`.
+
+Wie beim Café gilt: **Shot 2 kommt aus dem Startframe von Shot 1.** Der Vorwurf
+und der Beweis müssen sichtbar derselbe Pool sein, sonst beweist das Bild nichts.
+Kein Soul ID (der Techniker ist nicht Franz), keine sichtbaren Gesichter.
+
+### Shot 1 — der Vorwurf (das Mutterbild)
+
+```
+A private villa swimming pool in tropical Thailand at midday, seen from the
+pool deck. Perfectly clean turquoise water, still surface, two empty sun
+loungers, palm shadows on the tiles, a low white villa wall behind, nobody in
+the frame. Hard bright midday sun, high contrast, saturated blue. Camera low at
+deck height, looking across the water. Cinematic, shallow depth of field,
+no on-screen text, no logos, no watermark.
+```
+Video: **sehr langsame Fahrt über das Wasser**, Licht glitzert, ein Palmenschatten
+wandert. Sonst nichts. Die Leere ist der Vorwurf.
+
+### Shot 2 — der Beweis (aus dem Startframe von Shot 1)
+
+```
+Same pool, same villa, same time of day, same camera position. Now a pool
+service technician in a plain dark blue polo shirt and a cap kneels at the near
+edge of the pool, seen from behind and slightly to the side, his face not
+visible. He holds a phone up in both hands, photographing the clean water in
+front of him. A telescopic pool net and a small test kit lie on the tiles beside
+him. Cinematic, shallow depth of field, no on-screen text, no logos, no watermark.
+```
+Video: er hebt das Telefon, tippt einmal ab; die Kamera bleibt stehen. Dass die
+Kamera hier **nicht** fährt, ist Absicht — Shot 1 bewegt sich, Shot 2 hält still.
+Das macht den Beweis zum ruhenden Pol.
+
+### Shot 3 — erledigt
+
+```
+A white pickup truck with pool cleaning equipment in the back drives slowly
+away from the camera down a narrow Thai residential soi at dusk, villa walls and
+palms on both sides, warm street lights coming on, wet asphalt, deep blue evening
+sky. The camera stays on the road as the truck gets smaller. One continuous
+shot, no cut. Cinematic, no on-screen text, no logos, no watermark.
+```
+
+### Text (lokal eingebrannt, nicht generiert)
+
+| Shot | DE | EN |
+|---|---|---|
+| 1 | »Ihr wart letzte Woche nicht da.« | "You weren't here last week." |
+| 2 | Doch. Foto, Datum, Name. | Yes we were. Photo, date, name. |
+| 3 | Diskussion beendet. | Argument over. |
+
+„Foto, Datum, Name" ist **keine erfundene Oberfläche**: seit `wartung` v1.1.0
+hängen genau diese drei Angaben am erledigten Einsatz. Wer mehr behauptet, als
+der Beweis-Clip danach zeigen kann, verliert im zweiten Schritt.
+
+**Kein Kundenname.** Strodos gehört ins Gespräch, nicht in eine Datei, die
+weitergeleitet wird — dieselbe Regel wie in `werbung/poolservice/skript.md`.
+
+---
+
 ## Montage — was nach dem Generieren passiert
 
 `montage.py` macht aus den Rohclips den fertigen Post. Die Bildspur bleibt für

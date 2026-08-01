@@ -90,6 +90,21 @@ CLIPS = {
              "en": "And the evening is yours."},
         ],
     },
+    "03-pool": {
+        "ordner": "03-pool",
+        "max_shot": 5.0,
+        "shots": [
+            {"datei": "01-vorwurf",
+             "de": "»Ihr wart letzte Woche nicht da.«",
+             "en": "“You weren't here last week.”"},
+            {"datei": "02-beweis",
+             "de": "Doch. Foto, Datum, Name.",
+             "en": "Yes we were. Photo, date, name."},
+            {"datei": "03-weg",
+             "de": "Diskussion beendet.",
+             "en": "Argument over."},
+        ],
+    },
 }
 
 # Im Schlussbild steht, WAS verkauft wird — nicht noch einmal der Claim: der
