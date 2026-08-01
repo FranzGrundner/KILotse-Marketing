@@ -21,7 +21,7 @@ Spart schon mal 5 Minuten pro Anfrage.
 
 ---
 
-Wer **5 fertige Prompts** für Immobilien/Leads will (DE + EN), schreibt mir **„Prompt“ per LINE** (`franz.kilotse`) — schicke ich gratis.
+Wer **5 fertige Prompts** für Immobilien/Leads will (DE + EN), kommentiert **„Prompt“** oder schreibt mir per LINE (Link: https://linktr.ee/franz.ki.lotse) — schicke ich gratis.
 
 Und falls du tiefer einsteigen willst: Ich habe noch **2–3 Slots für ein gratis 30-Min-Gespräch** diese Woche. https://linktr.ee/franz.ki.lotse
 

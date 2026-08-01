@@ -21,7 +21,7 @@ Saves 5 minutes per inquiry already.
 
 ---
 
-Want **5 ready-made prompts** for property/leads (DE + EN)? **LINE me "Prompt"** (`franz.kilotse`) — I'll send them free.
+Want **5 ready-made prompts** for property/leads (DE + EN)? Comment **"Prompt"** or message me on LINE (link: https://linktr.ee/franz.ki.lotse) — I'll send them free.
 
 And if you want to go deeper: **2–3 slots left for a free 30-min call** this week. https://linktr.ee/franz.ki.lotse
 

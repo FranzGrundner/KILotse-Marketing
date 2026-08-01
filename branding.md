@@ -15,25 +15,25 @@
 
 | Tool | Username / Slug | Beispiel |
 |---|---|---|
-| Linktree | `franz-ki-lotse` | `https://linktr.ee/franz.ki.lotse` |
+| Linktree | `franz.ki.lotse` | `https://linktr.ee/franz.ki.lotse` |
 | Calendly | `franz-ki-lotse` | `https://calendly.com/franz-ki-lotse/30min` |
-## Gewählte Variante — **1** (aktiv)
+## Gewählte Variante — **1** (aktiv, Stand 24.07.2026)
 
 | Feld | Wert |
 |---|---|
-| **Anzeigename** | `Franz · KI-Lotse` |
-| **LINE-ID** | `franz.kilotse` |
+| **Anzeigename** | `Franz · KI-Lotse` (in LINE frei änderbar) |
+| **LINE-ID (real, gesperrt)** | `lorddipar` — Konto hatte bereits eine ID, **nicht mehr änderbar** |
 | **Statusnachricht** | `Pattaya · KI & Automatisierung nebenbei · Gratis 30-Min-Gespräch — einfach schreiben` |
-| **Freund-Link** | `https://line.me/ti/p/~franz.kilotse` |
+| **Freund-Link** | `https://line.me/ti/p/~lorddipar` |
 
 ```
 Linktree:     https://linktr.ee/franz.ki.lotse
 Calendly:     https://calendly.com/franz-ki-lotse/30min  ✅
-LINE-ID:      franz.kilotse
-LINE-Link:    https://line.me/ti/p/~franz.kilotse
+LINE-ID:      lorddipar   (gesperrt — NICHT im Kundentext zeigen)
+LINE-Link:    https://line.me/ti/p/~lorddipar
 ```
 
-**Hinweis:** LINE-ID in der App festlegen — wenn `franz.kilotse` belegt ist, siehe Alternativen oben.
+> **Wichtig — LINE-Handling:** Die ID `lorddipar` ist off-brand und wird in Posts/Dokumenten **nicht gezeigt**. Kundenkontakt läuft über den **LINE-Button im Linktree** + **QR-Code** (offline). Beim Hinzufügen sehen Kunden den Anzeigenamen „Franz · KI-Lotse", nicht die ID. Die 3 ID-Varianten unten sind **historisch** (Wunsch war `franz.kilotse`, ließ sich nicht mehr setzen). Optionaler Upgrade-Pfad für einen sauberen `@`-Handle: **LINE Official Account** (Anleitung: [booking/line-official-account.md](booking/line-official-account.md)).
 
 ## Kurzvorstellung (Copy-Paste)
 
@@ -65,7 +65,7 @@ LINE erlaubt nur **einen** Anzeigenamen und **eine** LINE-ID pro Account.
 
 **Warum:** Freunde erkennen „Franz“, Kunden sehen sofort „KI-Lotse“. Nicht zu lang.
 
-**Freund-Link:** `https://line.me/ti/p/~franz.kilotse`
+**Freund-Link:** `https://line.me/ti/p/~lorddipar`
 
 ---
 
@@ -93,7 +93,7 @@ LINE erlaubt nur **einen** Anzeigenamen und **eine** LINE-ID pro Account.
 
 **Warum:** Vollständiges Branding im Namen; Status auf Englisch für EN-Kunden. Etwas länger — auf kleinem Display prüfen.
 
-**Freund-Link:** `https://line.me/ti/p/~franz.kilotse`
+**Freund-Link:** `https://line.me/ti/p/~lorddipar`
 
 ---
 

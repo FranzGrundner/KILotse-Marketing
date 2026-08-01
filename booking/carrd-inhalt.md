@@ -19,7 +19,7 @@ Less copy-paste. More time.
 AI guide on the side — personal help with AI and automation. No agency.
 
 **Button 1:** Gratis 30-Min-Gespräch / Free 30-min call → `https://calendly.com/franz-ki-lotse/30min`  
-**Button 2:** LINE → `https://line.me/ti/p/~franz.kilotse`
+**Button 2:** LINE → `https://line.me/ti/p/~lorddipar`
 
 ---
 

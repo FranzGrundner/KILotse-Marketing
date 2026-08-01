@@ -15,6 +15,7 @@ Internes Marketing-Material. Getrennt vom [MyPro](../MyPro/).
 | [werbung/](werbung/) | Demo-Case-Study, Loom-Skript |
 | [posts/](posts/) | Fertige Gruppenposts (DE/EN) |
 | [kanaele.md](kanaele.md) | Kanäle-Tracker für Pattaya |
+| [plan-posting-schleife.md](plan-posting-schleife.md) | Datengetriebene Posting-Schleife (Plan, Konzept folgt) |
 
 ## Schnellstart
 

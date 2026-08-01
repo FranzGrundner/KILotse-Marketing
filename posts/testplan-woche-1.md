@@ -9,7 +9,7 @@
 - [ ] [branding.md](../branding.md) — LINE-ID und Links eingetragen
 - [ ] [booking/setup-anleitung.md](../booking/setup-anleitung.md) abgeschlossen
 - [ ] Linktree + LINE-Link auf dem Handy getestet
-- [ ] `https://linktr.ee/franz.ki.lotse` in Posts ersetzt (LINE: `franz.kilotse` bereits eingetragen)
+- [x] Alle Posts verlinken auf `https://linktr.ee/franz.ki.lotse`; LINE-Kontakt über Linktree-Button + QR (ID `lorddipar` gesperrt, nicht im Post zeigen)
 - [ ] Optional: Screenshot in `werbung/`
 
 ---

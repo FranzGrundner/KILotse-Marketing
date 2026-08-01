@@ -51,7 +51,7 @@ und warum (je 1 Satz).
 
 ## Verteilung
 
-- In Gruppenposts: „Schreib mir **Prompt** per LINE (`franz.kilotse`) — schicke ich dir die 5 Vorlagen gratis“
+- In Gruppenposts: „Kommentier **Prompt** oder schreib mir per LINE (https://linktr.ee/franz.ki.lotse) — schicke ich dir die 5 Vorlagen gratis“
 - Oder: Link zu PDF auf Google Drive (nur mit Link teilen)
 - **Nicht** öffentlich den kompletten Inhalt im Post (sonst kein Grund für PN)
 

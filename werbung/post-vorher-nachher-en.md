@@ -16,7 +16,7 @@ I'm **Franz, AI guide in Pattaya**, and help expats automate exactly that with *
 
 This week I have **3 spots left for a free 30-min call** — we'll look at where you're losing time, no obligation.
 
-→ LINE (`franz.kilotse`) or link: [LINKTREE/CALENDLY]
+→ LINE or link: https://linktr.ee/franz.ki.lotse
 
 No agency, no hard sell — just an honest assessment.
 

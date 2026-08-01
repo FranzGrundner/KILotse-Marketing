@@ -14,7 +14,7 @@ If you're running a business here and **tired of constant copy-paste**, I'm offe
 
 No agency, no hard sell.
 
-Interested? **LINE** (ID: `franz.kilotse`) or book: https://linktr.ee/franz.ki.lotse
+Interested? Just comment, send me a DM, or book a call directly — LINE & calendar are here: https://linktr.ee/franz.ki.lotse
 
 Cheers from Pattaya ☀️
 

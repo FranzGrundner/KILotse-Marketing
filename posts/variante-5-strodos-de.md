@@ -28,8 +28,8 @@ Ich bin **Franz, KI-Lotse hier in Pattaya** — ich helfe nebenbei dabei, solche
 für kleine Unternehmen zu bauen. Manchmal reicht auch eine kleine Automatisierung
 die täglich 30 Minuten spart.
 
-Falls du Interesse an einem kostenlosen Erstgespräch hast — einfach auf **LINE** schreiben:
-ID `franz.kilotse` · Oder Termin: https://linktr.ee/franz.ki.lotse
+Falls du Interesse an einem kostenlosen Erstgespräch hast — einfach kommentieren oder
+mir per **LINE** schreiben · Termin & Links: https://linktr.ee/franz.ki.lotse
 
 ---
 

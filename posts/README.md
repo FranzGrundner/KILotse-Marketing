@@ -1,6 +1,6 @@
 # Gruppenposts — Übersicht
 
-Drei Varianten × zwei Sprachen. Vor Veröffentlichung `https://linktr.ee/franz.ki.lotse` ersetzen. LINE-ID: `franz.kilotse` (siehe [branding.md](../branding.md)).
+Drei Varianten × zwei Sprachen. Alle Posts verlinken bereits auf `https://linktr.ee/franz.ki.lotse`. LINE-Kontakt läuft über den Linktree-Button + QR — die ID `lorddipar` wird im Kundentext **nicht** gezeigt (siehe [branding.md](../branding.md)).
 
 | # | Stil | DE | EN | Beste Kanäle |
 |---|---|---|---|---|

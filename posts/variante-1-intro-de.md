@@ -14,10 +14,17 @@ Falls hier jemand im Business feststeckt und **keinen Bock mehr auf ständiges C
 
 Keine Agentur, kein Verkaufsdruck.
 
-Bei Interesse: **LINE** (ID: `franz.kilotse`) oder Termin: https://linktr.ee/franz.ki.lotse
+Bei Interesse: einfach hier kommentieren, mir per PN schreiben oder direkt einen Termin buchen — LINE & Kalender findest du auf meiner Seite: https://ki-lotse.tech
 
 Danke & schönen Tag aus Pattaya ☀️
 
 ---
 
 **Rotationshinweis:** Variante 1 alle 2–3 Wochen, nicht öfter in derselben Gruppe.
+
+**Warum ki-lotse.tech statt Linktree (geändert 29.07.2026):** Facebook zieht die
+Vorschaukarte immer vom verlinkten Ziel. Beim Linktree erscheint dessen generische
+Karte, bei der eigenen Seite das Bild „Ich zeige dir den Weg." mit Portrait —
+in einer Gruppe voller Textbeiträge der Unterschied zwischen Überscrollen und
+Hinsehen. Verloren geht nichts: LINE (mit QR), Calendly, E-Mail und das
+Kontaktformular stehen alle auf der Startseite.

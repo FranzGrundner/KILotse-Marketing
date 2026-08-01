@@ -28,7 +28,7 @@ I'm **Franz, AI guide here in Pattaya** — I help expats and local businesses g
 with AI and automation. If your business has a spot where time disappears every day,
 I'm happy to take a free look with you.
 
-📲 **LINE:** `franz.kilotse` · Book a call: https://linktr.ee/franz.ki.lotse
+📲 **LINE & booking:** https://linktr.ee/franz.ki.lotse
 
 ---
 

@@ -28,7 +28,7 @@ Ich bin **Franz, KI-Lotse hier in Pattaya** — ich helfe nebenbei beim Einstieg
 und bei Automatisierung. Falls dein Business auch an einem Punkt hängt wo täglich Zeit
 verloren geht, schau ich mir das gerne mal kostenlos mit dir an.
 
-📲 **LINE:** `franz.kilotse` · Termin: https://linktr.ee/franz.ki.lotse
+📲 **LINE & Termin:** https://linktr.ee/franz.ki.lotse
 
 ---
 

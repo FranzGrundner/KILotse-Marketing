@@ -16,7 +16,7 @@ Ich bin **Franz, KI-Lotse in Pattaya**, und helfe nebenbei Expats, genau das mit
 
 Diese Woche habe ich noch **3 Plätze für ein gratis 30-Min-Gespräch** — wir schauen unverbindlich, wo bei dir Zeit verloren geht.
 
-→ LINE (`franz.kilotse`) oder Link: [LINKTREE/CALENDLY]
+→ LINE oder Link: https://linktr.ee/franz.ki.lotse
 
 Keine Agentur, kein Verkaufsdruck — nur ehrliche Einschätzung.
 

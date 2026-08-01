@@ -21,7 +21,7 @@ Ich bin Franz, **KI-Lotse in Pattaya**, und helfe nebenbei dabei, genau solche A
 
 Diese Woche: **3 gratis 30-Min-Gespräche** — wir finden *deinen* größten Zeitfresser.
 
-PN, LINE (`franz.kilotse`) oder https://linktr.ee/franz.ki.lotse
+PN, Kommentar oder LINE — alles hier: https://linktr.ee/franz.ki.lotse
 
 ---
 

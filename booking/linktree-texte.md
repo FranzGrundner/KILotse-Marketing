@@ -20,7 +20,7 @@ AI guide on the side · Free 30-min call
 | # | Titel | URL | Notiz |
 |---|---|---|---|
 | 1 | 📅 Gratis KI-Check (30 Min) | `https://calendly.com/franz-ki-lotse/30min` | Haupt-CTA |
-| 2 | 💬 LINE | `https://line.me/ti/p/~franz.kilotse` | **Hauptkanal** |
+| 2 | 💬 LINE | `https://line.me/ti/p/~lorddipar` | **Hauptkanal** |
 | 3 | 📱 WhatsApp (optional) | `https://wa.me/66[...]` | Nur falls gewünscht |
 | 4 | 📄 Was ich anbiete (optional) | Link zu Carrd oder One-Pager-PDF | |
 
@@ -30,7 +30,7 @@ AI guide on the side · Free 30-min call
 
 ## Linktree-Username
 
-Empfohlen: **`franz-ki-lotse`** → `https://linktr.ee/franz-ki-lotse`
+Empfohlen: **`franz.ki.lotse`** → `https://linktr.ee/franz.ki.lotse`
 
 ---
 

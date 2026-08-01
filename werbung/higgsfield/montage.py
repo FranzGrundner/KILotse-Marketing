@@ -55,18 +55,39 @@ LAUTHEIT = -16.0                      # LUFS; Facebook normalisiert selbst,
 STIMME = "de-DE-FlorianMultilingualNeural"
 TEMPO = "-4%"
 
-# Der Clip aus prompts.md. Reihenfolge = Reihenfolge im fertigen Post.
-SHOTS = [
-    {"datei": "01-buero",
-     "de": "Alle sind draußen. Du nicht.",
-     "en": "Everyone's outside. You're not."},
-    {"datei": "02-arm",
-     "de": "Das muss nicht so sein.",
-     "en": "It doesn't have to be."},
-    {"datei": "03-hinaus",
-     "de": "Ich zeige dir den Weg.",
-     "en": "Let me show you the way."},
-]
+# Die Clips aus prompts.md. Reihenfolge der Shots = Reihenfolge im fertigen Post.
+# `ordner` ist der Unterordner in roh/ und sprecher/<sprache>/ — der Eyecatcher
+# liegt aus historischen Gruenden flach darin und bleibt deshalb auf "".
+CLIPS = {
+    "01-eyecatcher": {
+        "ordner": "",
+        "shots": [
+            {"datei": "01-buero",
+             "de": "Alle sind draußen. Du nicht.",
+             "en": "Everyone's outside. You're not."},
+            {"datei": "02-arm",
+             "de": "Das muss nicht so sein.",
+             "en": "It doesn't have to be."},
+            {"datei": "03-hinaus",
+             "de": "Ich zeige dir den Weg.",
+             "en": "Let me show you the way."},
+        ],
+    },
+    "02-cafe": {
+        "ordner": "02-cafe",
+        "shots": [
+            {"datei": "01-grau",
+             "de": "Nicht das Café ist müde.",
+             "en": "It's not the café that's tired."},
+            {"datei": "02-bunt",
+             "de": "Gleicher Raum. Keine Zettel mehr.",
+             "en": "Same room. No more paperwork."},
+            {"datei": "03-hinaus",
+             "de": "Und der Abend gehört dir.",
+             "en": "And the evening is yours."},
+        ],
+    },
+}
 
 # Im Schlussbild steht, WAS verkauft wird — nicht noch einmal der Claim: der
 # steht als Textkarte im Bild davor, und ohne die Kategorie weiss ein
@@ -203,11 +224,11 @@ async def _sprich(text, ziel):
     await edge_tts.Communicate(text, STIMME, rate=TEMPO).save(ziel)
 
 
-def stimmen(sprache, neu=False):
-    ordner = os.path.join(SPRECHER, sprache)
+def stimmen(sprache, clip, neu=False):
+    ordner = os.path.join(SPRECHER, sprache, clip["ordner"])
     os.makedirs(ordner, exist_ok=True)
     dateien = []
-    for shot in SHOTS:
+    for shot in clip["shots"]:
         ziel = os.path.join(ordner, f"{shot['datei']}.mp3")
         if neu or not os.path.isfile(ziel):
             asyncio.run(_sprich(shot[sprache], ziel))
@@ -225,10 +246,10 @@ MUSIK_LUFS_UNTER_SPRACHE = -15.0      # Bett, das traegt statt mitzuspielen
 MUSIK_LUFS_ALLEIN = -18.0
 
 
-def tonspur(starts, gesamt, arbeit, sprache, mit_stimme):
+def tonspur(starts, gesamt, arbeit, sprache, clip, mit_stimme):
     eingaben, teile, marken = [], [], []
     if mit_stimme:
-        for i, pfad in enumerate(stimmen(sprache)):
+        for i, pfad in enumerate(stimmen(sprache, clip)):
             eingaben += ["-i", pfad]
             ms = int(starts[i] * 1000)
             hebung = SPRACHE_LUFS - lautheit(pfad)
@@ -281,17 +302,18 @@ def lautheit_angleichen(quelle, ziel):
 
 
 # ── Platzhalter ─────────────────────────────────────────────────────────────
-def dummys():
+def dummys(clip):
     """Rohclips vortaeuschen, damit die Kette ohne Abo pruefbar ist (§0.5).
 
     Bewusst in verschiedenen Seitenverhaeltnissen: 16:9, 9:16 und 1:1. Genau
     daran zeigt sich, ob Skalierung und Beschnitt taugen — ein Test mit lauter
     4:5-Dateien wuerde nichts beweisen.
     """
-    os.makedirs(ROH, exist_ok=True)
+    roh = os.path.join(ROH, clip["ordner"])
+    os.makedirs(roh, exist_ok=True)
     masse = [("1920x1080", 5.0), ("1080x1920", 4.5), ("1080x1080", 5.5)]
-    for shot, (groesse, laenge) in zip(SHOTS, masse):
-        ziel = os.path.join(ROH, f"{shot['datei']}.mp4")
+    for shot, (groesse, laenge) in zip(clip["shots"], masse):
+        ziel = os.path.join(roh, f"{shot['datei']}.mp4")
         ffmpeg("-f", "lavfi", "-i",
                f"testsrc2=size={groesse}:rate={FPS}:duration={laenge}",
                "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "23", ziel)
@@ -299,11 +321,13 @@ def dummys():
 
 
 # ── Zusammenbau ─────────────────────────────────────────────────────────────
-def bauen(sprache, mit_stimme=True):
-    fehlend = [s["datei"] for s in SHOTS
-               if not os.path.isfile(os.path.join(ROH, f"{s['datei']}.mp4"))]
+def bauen(sprache, clip_id, clip, mit_stimme=True):
+    roh = os.path.join(ROH, clip["ordner"])
+    shots = clip["shots"]
+    fehlend = [s["datei"] for s in shots
+               if not os.path.isfile(os.path.join(roh, f"{s['datei']}.mp4"))]
     if fehlend:
-        print(f"Fehlende Rohclips in {ROH}: {', '.join(fehlend)}\n"
+        print(f"Fehlende Rohclips in {roh}: {', '.join(fehlend)}\n"
               f"Higgsfield-Clips dort ablegen oder --dummy für einen Probelauf.",
               file=sys.stderr)
         return None
@@ -312,8 +336,8 @@ def bauen(sprache, mit_stimme=True):
     arbeit = tempfile.mkdtemp(prefix="montage-")
     try:
         teile, starts, uhr = [], [], 0.0
-        for i, shot in enumerate(SHOTS):
-            quelle = os.path.join(ROH, f"{shot['datei']}.mp4")
+        for i, shot in enumerate(shots):
+            quelle = os.path.join(roh, f"{shot['datei']}.mp4")
             laenge = min(dauer(quelle), MAX_SHOT_S)
             png = os.path.join(arbeit, f"text{i}.png")
             textebene(shot[sprache], png)
@@ -341,15 +365,16 @@ def bauen(sprache, mit_stimme=True):
         # Sprache, die laenger ist als ihr Bild, laeuft in den naechsten Shot —
         # lieber melden als still verschieben.
         if mit_stimme:
-            for shot, start, pfad in zip(SHOTS, starts, stimmen(sprache)):
+            for i, (shot, start, pfad) in enumerate(
+                    zip(shots, starts, stimmen(sprache, clip))):
                 ende = start + dauer(pfad)
-                grenze = starts[SHOTS.index(shot) + 1] if shot is not SHOTS[-1] else gesamt
+                grenze = starts[i + 1] if i + 1 < len(shots) else gesamt
                 if ende > grenze + 0.2:
                     print(f"   Hinweis: „{shot[sprache]}“ ist {ende - grenze:.1f} s "
                           f"länger als sein Bild.")
 
-        ton = tonspur(starts, gesamt, arbeit, sprache, mit_stimme)
-        endziel = os.path.join(FERTIG, f"01-eyecatcher-{sprache}-4x5.mp4")
+        ton = tonspur(starts, gesamt, arbeit, sprache, clip, mit_stimme)
+        endziel = os.path.join(FERTIG, f"{clip_id}-{sprache}-4x5.mp4")
         if ton:
             ffmpeg("-i", stumm, "-i", ton, "-c:v", "copy", "-c:a", "copy",
                    "-shortest", endziel)
@@ -364,6 +389,8 @@ def bauen(sprache, mit_stimme=True):
 
 def main(argv=None):
     p = argparse.ArgumentParser(description="Higgsfield-Rohclips zum Post montieren")
+    p.add_argument("--clip", default="01-eyecatcher", choices=sorted(CLIPS),
+                   help="welcher Clip aus prompts.md")
     p.add_argument("--sprache", default="de", choices=["de", "en"])
     p.add_argument("--beide", action="store_true")
     p.add_argument("--ohne-stimme", action="store_true")
@@ -371,12 +398,14 @@ def main(argv=None):
                    help="Platzhalter-Rohclips erzeugen (Probelauf ohne Abo)")
     args = p.parse_args(argv)
 
+    clip = CLIPS[args.clip]
     if args.dummy:
-        dummys()
+        dummys(clip)
 
     for sprache in (["de", "en"] if args.beide else [args.sprache]):
         print(f"{sprache}:")
-        if bauen(sprache, mit_stimme=not args.ohne_stimme) is None:
+        if bauen(sprache, args.clip, clip,
+                 mit_stimme=not args.ohne_stimme) is None:
             return 2
     return 0
 

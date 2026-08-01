@@ -36,9 +36,9 @@ Calendly/TidyCal: ___________________________________
 
 ## 2. LINE vorbereiten (Hauptkanal)
 
-1. LINE App → **Einstellungen** → **Profil** → **LINE-ID** festlegen (z. B. `franz.kilotse`)
+1. LINE-ID: bereits gesetzt = `lorddipar` (Konto hatte schon eine ID → **nicht mehr änderbar**). Kein Handlungsbedarf; Kontakt läuft über QR + Linktree.
 2. **Mein QR-Code** → Link kopieren oder Screenshot für Linktree speichern
-3. Freund-Link Format: `https://line.me/ti/p/~franz.kilotse` (deine ID einsetzen)
+3. Freund-Link Format: `https://line.me/ti/p/~lorddipar` (deine ID einsetzen)
 4. Optional **LINE Official Account** später — für Phase 1 reicht persönliche LINE-ID
 5. Away-Message / Status (optional):
    > Franz · KI-Lotse · Pattaya — Antwort meist innerhalb 24h. Gratis Gespräch: https://calendly.com/franz-ki-lotse/30min
@@ -46,8 +46,8 @@ Calendly/TidyCal: ___________________________________
 **LINE-ID / Link eintragen:**
 
 ```
-LINE-ID:   franz.kilotse
-LINE-Link: https://line.me/ti/p/~franz.kilotse
+LINE-ID:   lorddipar   (gesperrt — nicht im Kundentext zeigen)
+LINE-Link: https://line.me/ti/p/~lorddipar
 ```
 
 ---
@@ -55,12 +55,12 @@ LINE-Link: https://line.me/ti/p/~franz.kilotse
 ## 3. Linktree einrichten
 
 1. https://linktr.ee — Account anlegen.
-2. Username: **`franz-ki-lotse`**
+2. Username: **`franz.ki.lotse`**
 3. Anzeigename: **Franz · KI-Lotse**
 4. Inhalte aus [linktree-texte.md](linktree-texte.md) einfügen.
 5. Links hinzufügen:
    - **Gratis KI-Check (30 Min)** → Calendly-Link (oben, prominent)
-   - **LINE** → `https://line.me/ti/p/~franz.kilotse`
+   - **LINE** → `https://line.me/ti/p/~lorddipar`
    - **WhatsApp** (optional) → `https://wa.me/66XXXXXXXXX`
 6. Profilbild: Foto oder LINE-QR — kein Firmenlogo.
 

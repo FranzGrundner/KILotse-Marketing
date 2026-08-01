@@ -22,7 +22,7 @@ Unverbindlich. Kein Verkaufsgespräch — wir schauen gemeinsam, **wo bei dir Ze
 
 Du bekommst danach keinen Verkaufsdruck, sondern (wenn es passt) einen **konkreten schriftlichen Plan**: Use Cases, Modulvorschlag, Zeitschätzung — erstellt mit meinem eigenen KI-Tool, das ich für genau diesen Zweck gebaut habe.
 
-**Buchen:** https://calendly.com/franz-ki-lotse/30min · **Fragen:** LINE `franz.kilotse`
+**Buchen:** https://calendly.com/franz-ki-lotse/30min · **Fragen:** per LINE (Link: https://linktr.ee/franz.ki.lotse)
 
 ---
 
@@ -98,7 +98,7 @@ No obligation. Not a sales pitch — we look at **where you're losing time** and
 
 If there's a fit, you'll get a **concrete written plan** afterwards: use cases, module suggestions, time estimate — generated with my own AI planning tool, built specifically for this.
 
-**Book:** https://calendly.com/franz-ki-lotse/30min · **Questions:** LINE `franz.kilotse`
+**Book:** https://calendly.com/franz-ki-lotse/30min · **Questions:** via LINE (link: https://linktr.ee/franz.ki.lotse)
 
 ---
 

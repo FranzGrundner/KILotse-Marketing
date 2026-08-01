@@ -102,20 +102,122 @@ Abspann wie gehabt: Kompass-Logo weiß, Avatar rund, `ki-lotse.tech`.
 
 ---
 
+## Clip „Das graue Café wird bunt" (Motiv 7, produktunabhängig)
+
+Zweck: Franz' eigenes Bild aus `project_positionierung_lotse` — der Betrieb
+ändert sich nicht, nur seine Last. Wie der Eyecatcher **ohne Produktbeweis und
+ohne alternde Aussage**: kein Screenshot, kein Preis, kein Bausteinname.
+
+Länge 15 s (3 × 5 s), 4:5. Ablage `roh/02-cafe/`.
+
+### Die Regel, an der dieser Clip hängt
+
+**Alle drei Shots kommen aus EINEM Standbild.** Der ganze Clip behauptet, es sei
+dasselbe Café — sobald das Modell für die bunte Fassung einen eigenen Raum
+erfindet, ist die Aussage weg und der Zuschauer merkt es sofort. Also: das graue
+Bild erzeugen, bis es sitzt, und die bunte Fassung **aus diesem Bild** ableiten
+(Startframe/Bild-zu-Bild), nicht neu prompten. Genau der Fehler, der beim
+Eyecatcher am „aufgeräumten Büro" schon einmal einen Versuch gekostet hat.
+
+**Erster Handgriff: den Soul-ID-Charakter abwählen** (× an der Charakter-Kachel).
+Franz ist in diesem Clip nicht der Wirt.
+
+### Shot 1 — grau (das Mutterbild, hier wird gesucht)
+
+```
+Interior of a small streetside coffee shop in a Thai coastal town, morning.
+A man in his fifties in a dark green apron over a plain grey t-shirt stands
+behind a wooden counter, looking down at a thick stack of handwritten receipts
+and an open spiral notebook. Espresso machine, chalkboard, ceiling fan. Six
+empty tables with mismatched chairs, chairs still stacked on two of them. Large
+window to the street on the left, flat overcast daylight, no sun, no one else in
+the room. Camera at customer height, five metres back, centred on the counter.
+```
+**MARKE hier ohne die Lichtzeile** — „warm late-afternoon tropical light" würde
+gegen den eigenen Prompt arbeiten. Stattdessen anhängen:
+```
+cinematic, natural light, shallow depth of field, realistic skin texture,
+desaturated cold grey-green tones, no on-screen text
+```
+Video daraus: **langsam heranfahren** (slow push in). Bewegen darf sich fast
+nichts — der Ventilator, ein umgeblätterter Zettel. Mehr nicht.
+
+### Shot 2 — bunt (aus dem Startframe von Shot 1)
+
+```
+Same room, same camera position, same man in the same dark green apron and grey
+t-shirt behind the same counter. Now late afternoon: warm low sun through the
+street window, teal and amber colour, every table taken, guests seen from behind
+or from the side with faces turned away or cropped, cups and steam on the
+tables, string lights on. The counter is clear — no papers, no notebook. The man
+stands upright, hands free, talking to someone out of frame.
+```
++ MARKE + NEGATIV.
+
+**Dieselbe Kamerafahrt wie Shot 1, gleiches Tempo.** Die Wiederholung ist der
+Clou: erst dadurch liest der Zuschauer den harten Schnitt als Vergleich statt
+als neue Szene. Jetzt bewegt sich alles — Gäste, Dampf, Licht. Der
+Bewegungsunterschied trägt die Aussage genauso wie die Farbe.
+
+Gäste bewusst nur von hinten oder angeschnitten: Gesichter in der Menge fallen
+auseinander, und ein leerer Blick im Hintergrund kippt das ganze Bild.
+
+### Shot 3 — hinaus (eine Fahrt, kein Schnitt)
+
+```
+The same coffee shop at dusk, now seen from the street: the camera pulls slowly
+backwards out through the open door and across the road, the warm lit interior
+glowing through the large window, full tables inside, parked scooters and wet
+asphalt in the foreground, deep blue evening sky above. One continuous backward
+move, no cut.
+```
+Aus dem **bunten** Startframe. Findet das Modell nicht nach draußen: eigenes
+Außen-Startbild erzeugen — der Bruch fällt hier nicht auf, weil vom Innenraum
+nur der Fensterausschnitt zu sehen ist.
+
+Bewusst anders als der Eyecatcher, der nach vorn an die Beach Bar führt. Zwei
+Clips mit demselben Schlussbild wären in der Rotation austauschbar.
+
+### Text (lokal eingebrannt, nicht generiert)
+
+| Shot | DE | EN |
+|---|---|---|
+| 1 | Nicht das Café ist müde. | It's not the café that's tired. |
+| 2 | Gleicher Raum. Keine Zettel mehr. | Same room. No more paperwork. |
+| 3 | Und der Abend gehört dir. | And the evening is yours. |
+
+Der Clip nennt die Lösung nicht — das tut der Abspann („KI & Automatisierung für
+kleine Betriebe"). Ein Image-Clip, der zusätzlich erklärt, wird zu keinem von
+beidem.
+
+### Credit-Rechnung
+
+| Posten | Menge | Credits |
+|---|---|---|
+| Bildsuche (grau, dann bunt daraus) | beliebig | 0 (free gens) |
+| Videos, 1–2 Versuche je Shot | 3–6 | 30–60 |
+
+---
+
 ## Montage — was nach dem Generieren passiert
 
 `montage.py` macht aus den Rohclips den fertigen Post. Die Bildspur bleibt für
 beide Sprachen dieselbe, nur Text und Stimme wechseln.
 
 ```
-python -X utf8 montage.py --dummy      Platzhalter erzeugen und Kette prüfen
-python -X utf8 montage.py --beide      DE und EN bauen (aus roh/)
+python -X utf8 montage.py --clip 02-cafe --dummy   Platzhalter, Kette prüfen
+python -X utf8 montage.py --clip 02-cafe --beide   DE und EN bauen
+python -X utf8 montage.py --beide                  Eyecatcher (Vorgabe)
 python -X utf8 montage.py --ohne-stimme
 ```
 
-Ablage: Rohclips als `roh/01-buero.mp4`, `roh/02-arm.mp4`, `roh/03-hinaus.mp4`
-(die Namen stehen in `montage.py` unter `SHOTS`). Ergebnis liegt in
-`fertig/01-eyecatcher-<sprache>-4x5.mp4`.
+Jeder Clip steht in `montage.py` unter `CLIPS`: Shot-Dateinamen und die beiden
+Textzeilen. Ablage der Rohclips im Unterordner des Clips —
+`roh/02-cafe/01-grau.mp4`, `02-bunt.mp4`, `03-hinaus.mp4`. Ergebnis liegt in
+`fertig/<clip>-<sprache>-4x5.mp4`. Der Eyecatcher liegt aus historischen Gründen
+flach in `roh/` und behält das (`ordner: ""`).
+
+**Ein neuer Clip ist ein Eintrag in `CLIPS`, kein neues Skript.**
 
 Was die Kette erledigt:
 

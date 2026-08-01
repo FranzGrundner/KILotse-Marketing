@@ -29,7 +29,7 @@ this on the side. Sometimes it's a full system, sometimes a small automation tha
 
 If you're curious what's possible for your business — free 30-min call, no pitch:
 
-📲 **LINE:** `franz.kilotse` · Book: https://linktr.ee/franz.ki.lotse
+📲 **LINE & booking:** https://linktr.ee/franz.ki.lotse
 
 ---
 
