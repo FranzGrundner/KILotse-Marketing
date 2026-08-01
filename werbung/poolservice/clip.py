@@ -59,7 +59,7 @@ SAETZE = [
     ("01-streit",
      "Der Kunde sagt, ihr wart nicht da. Deine Leute sagen: doch."),
     ("02-nachweis",
-     "Datum, Servicekraft, Checkliste — steht alles am Einsatz."),
+     "Datum, Servicekraft, Foto — steht alles am Einsatz."),
     ("03-rhythmus",
      "Jeder Vertrag hat seinen Rhythmus, die Einsätze entstehen von selbst."),
     ("04-rechnung",
@@ -221,23 +221,30 @@ def szene_nachweis(blatt, d, t, laenge, s):
     Bewusst eng beschnitten: eine ganze Bildschirmseite waere im Hochformat
     unlesbar. Zwei Ausschnitte nebeneinanderzumontieren waere eine erfundene
     Ansicht — sie stehen deshalb als getrennte Karten untereinander.
+
+    Die zweite Karte ist seit `wartung` v1.1.0 (Demo-Seed bringt Foto und
+    Unterschrift mit) der Kern des Clips: der Prospekt verkauft genau diesen
+    Satz, und hier steht er als echter Screenshot dahinter. Vorher waren dort
+    nur leere Upload-Felder und die Karte zeigte die Checkliste.
     """
     y = kopf(d, s, "Am Einsatz steht, was war.",
              "Kein Erinnern, kein Streiten.", t)
 
+    # Ausschnitt 1: Datum, Servicekraft, Notiz und die abgehakte Checkliste.
     a1 = auftritt(t, 0.5)
-    h = karte(blatt, d, "nachweis", (0.015, 0.10, 0.42, 0.42), (s(72), y),
-              s(860), deckung=a1, hebung=s(30))
+    h = karte(blatt, d, "nachweis", (0.015, 0.179, 0.42, 0.443), (s(72), y),
+              s(690), deckung=a1, hebung=s(30))
 
+    # Ausschnitt 2: das Foto und die quittierte Unterschrift.
     a2 = auftritt(t, 1.5)
-    karte(blatt, d, "nachweis", (0.015, 0.735, 0.30, 0.905),
-          (s(150), y + h + s(40)), s(700), deckung=a2, hebung=s(30),
+    karte(blatt, d, "nachweis", (0.015, 0.452, 0.634, 0.786),
+          (s(72), y + h + s(36)), s(830), deckung=a2, hebung=s(30),
           rand=AKZENT_HELL)
 
     a3 = auftritt(t, laenge - 1.4, 0.5)
     if a3 > 0.01:
-        haken(d, (s(96), s(1158)), s(20), AKZENT, s(7), a3)
-        text_bei(d, (s(134), s(1136)), "Der Nachweis hängt am Einsatz.",
+        haken(d, (s(96), s(1178)), s(20), AKZENT, s(7), a3)
+        text_bei(d, (s(134), s(1156)), "Foto und Unterschrift hängen dran.",
                  schrift(s(40), fett=True), AKZENT, deckung=a3)
     marke(d, s, auftritt(t, 0.4))
 

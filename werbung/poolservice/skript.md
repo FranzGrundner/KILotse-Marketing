@@ -19,7 +19,7 @@
 | # | Bild | Text im Bild | Sprache |
 |---|---|---|---|
 | 1 | zwei Zitatkacheln, kein Screenshot | »Ihr wart letzte Woche nicht da.« / »Doch. Waren wir.« → *Beweisen kann es keiner.* | „Der Kunde sagt, ihr wart nicht da. Deine Leute sagen: doch." |
-| 2 | `nachweis.png`, zwei Ausschnitte derselben Einsatz-Seite | **Am Einsatz steht, was war.** / Datum · Servicekraft · abgehakte Checkliste | „Am Einsatz stehen Datum, Servicekraft und Checkliste. Diskussion vorbei." |
+| 2 | `nachweis.png`, zwei Ausschnitte derselben Einsatz-Seite | **Am Einsatz steht, was war.** / Datum · Servicekraft · **das Foto und die Unterschrift** | „Datum, Servicekraft, Foto — steht alles am Einsatz." |
 | 3 | `vertraege.png` (Spalte Rhythmus) | **Verträge laufen im Rhythmus.** / Die Einsätze entstehen daraus von selbst. | „Jeder Vertrag hat seinen Rhythmus — die Einsätze entstehen von selbst." |
 | 4 | `rechnungen.png` (Belegliste) | **Am Monatsende wird daraus die Rechnung.** / Offen, bezahlt, überfällig — auf einen Blick. | „Am Monatsende wird daraus die Rechnung." |
 | 5 | Markenfläche, Logo + Avatar | poolservice.demo.ki-lotse.tech | „Ansehen kannst du es sofort — ki-lotse punkt tech." |
@@ -31,10 +31,12 @@
 - **Nichts, was altert** (§8.4): keine Preise, keine Paketzusammensetzung, kein „seit X Wochen".
   Der Clip stimmt auch in drei Monaten noch.
 - **Keine erfundene Oberfläche.** Gezeigt wird nur, was die Demo wirklich zeigt.
-  Deshalb kommt *Foto und Unterschrift* im Clip **nicht** vor: die Demo hat an den
-  erledigten Einsätzen kein Beispielfoto hinterlegt, dort stehen leere Upload-Felder.
-  Der stärkste Prospektsatz („Hier ist das Foto") ist damit vorerst nicht belegbar —
-  sobald der Demo-Seed ein Foto mitbringt, gehört er in Szene 2.
+  Seit `wartung` v1.1.0 (01.08.2026) hängen am erledigten Poolservice-Einsatz ein
+  Beispielfoto **und** eine Unterschrift — vorher standen dort leere Upload-Felder,
+  und der stärkste Prospektsatz („Hier ist das Foto") war deshalb aus dem Clip
+  herausgehalten. Jetzt ist er Szene 2 und steht mit einem echten Screenshot dahinter.
+  Die Bilder im Seed sind selbst erzeugt (kein Stockfoto, keine Person, keine echte
+  Unterschrift) — Herkunft in `Bausteine\wartung\docs\demo-bilder.md`.
 - **Kein Kundenname.** Strodos wird nicht genannt; das Referenzargument gehört ins
   Gespräch, nicht in eine Datei, die weitergeleitet wird.
 
