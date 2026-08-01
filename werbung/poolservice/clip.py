@@ -304,10 +304,16 @@ def szene_abspann(blatt, d, t, laenge, s):
     bild_einsetzen(blatt, os.path.join(ASSETS_DIR, "avatar-franz-rund-512.png"),
                    (s(700), s(430)), s(250), auftritt(t, 0.55))
 
-    text_bei(d, (s(BREITE) // 2, s(680)), "Pool · Garten · Reinigung",
-             schrift(s(44), leicht=True), hell(auftritt(t, 0.8) * 0.9), anker="mm")
-    text_bei(d, (s(BREITE) // 2, s(790)), "Schau es dir an:",
-             schrift(s(40), leicht=True), hell(auftritt(t, 1.0) * 0.9), anker="mm")
+    # Zuerst die Kategorie, dann die Branche: ohne die erste Zeile weiss ein
+    # Zuschauer, der den Clip weitergeleitet bekommt, nicht, was hier verkauft
+    # wird. Formulierung wortgleich zum <title> von ki-lotse.tech und zum
+    # Eyecatcher-Abspann.
+    text_bei(d, (s(BREITE) // 2, s(660)), "KI & Automatisierung für kleine Betriebe",
+             schrift(s(42)), hell(auftritt(t, 0.8)), anker="mm")
+    text_bei(d, (s(BREITE) // 2, s(736)), "Pool · Garten · Reinigung",
+             schrift(s(38), leicht=True), hell(auftritt(t, 0.9) * 0.85), anker="mm")
+    text_bei(d, (s(BREITE) // 2, s(830)), "Schau es dir an:",
+             schrift(s(36), leicht=True), hell(auftritt(t, 1.0) * 0.9), anker="mm")
     # Eine Zeile: umgebrochen stand der Punkt am Zeilenanfang und die Adresse
     # las sich wie zwei verschiedene.
     text_bei(d, (s(BREITE) // 2, s(900)), "poolservice.demo.ki-lotse.tech",
