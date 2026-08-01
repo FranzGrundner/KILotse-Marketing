@@ -75,6 +75,9 @@ CLIPS = {
     },
     "02-cafe": {
         "ordner": "02-cafe",
+        # Kling liefert 7 s; drei davon plus Abspann waeren 21 s und damit
+        # ueber der 8–20-s-Regel aus §6 des Plans. 5 s je Shot ergibt 18 s.
+        "max_shot": 5.0,
         "shots": [
             {"datei": "01-grau",
              "de": "Nicht das Café ist müde.",
@@ -190,16 +193,21 @@ def abspannbild(sprache, ziel):
 
 
 # ── Bildspur ────────────────────────────────────────────────────────────────
-def segment(quelle, text_png, laenge, ziel):
+def segment(quelle, text_png, start, laenge, ziel):
     """Ein Rohclip: auf 4:5 bringen, Textebene darueber, Laenge festzurren.
 
     `increase` + `crop` statt `decrease` + Balken: schwarze Balken kosten im
     Feed die halbe Aufmerksamkeit. Was Higgsfield in 16:9 liefert, wird auf die
     Bildmitte beschnitten — die Prompts sind darauf ausgelegt.
+
+    Gekuerzt wird **vorne**, nicht hinten: bei einer Kamerafahrt liegt die
+    Pointe am Ende (die Einstellung, auf die zugefahren wird). Wer hinten
+    abschneidet, wirft genau das Bild weg, wegen dem der Shot existiert.
     """
     kette = (
         f"[0:v]scale={BREITE}:{HOEHE}:force_original_aspect_ratio=increase,"
-        f"crop={BREITE}:{HOEHE},setsar=1,fps={FPS},trim=0:{laenge:.2f},"
+        f"crop={BREITE}:{HOEHE},setsar=1,fps={FPS},"
+        f"trim={start:.2f}:{start + laenge:.2f},"
         f"setpts=PTS-STARTPTS[v];"
         f"[1:v]format=rgba,fade=t=in:st=0:d={BLENDE}:alpha=1,"
         f"fade=t=out:st={max(0.1, laenge - BLENDE):.2f}:d={BLENDE}:alpha=1[ov];"
@@ -338,11 +346,12 @@ def bauen(sprache, clip_id, clip, mit_stimme=True):
         teile, starts, uhr = [], [], 0.0
         for i, shot in enumerate(shots):
             quelle = os.path.join(roh, f"{shot['datei']}.mp4")
-            laenge = min(dauer(quelle), MAX_SHOT_S)
+            roh_laenge = dauer(quelle)
+            laenge = min(roh_laenge, clip.get("max_shot", MAX_SHOT_S))
             png = os.path.join(arbeit, f"text{i}.png")
             textebene(shot[sprache], png)
             ziel = os.path.join(arbeit, f"seg{i}.mp4")
-            segment(quelle, png, laenge, ziel)
+            segment(quelle, png, roh_laenge - laenge, laenge, ziel)
             teile.append(ziel)
             starts.append(uhr + 0.3)
             uhr += laenge

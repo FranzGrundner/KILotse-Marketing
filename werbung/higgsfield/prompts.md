@@ -190,12 +190,10 @@ Der Clip nennt die Lösung nicht — das tut der Abspann („KI & Automatisierun
 kleine Betriebe"). Ein Image-Clip, der zusätzlich erklärt, wird zu keinem von
 beidem.
 
-### Credit-Rechnung
+### Credit-Rechnung — tatsächlich: **0**
 
-| Posten | Menge | Credits |
-|---|---|---|
-| Bildsuche (grau, dann bunt daraus) | beliebig | 0 (free gens) |
-| Videos, 1–2 Versuche je Shot | 3–6 | 30–60 |
+Gebaut am 01.08.2026, drei Bilder und drei Videos, **ohne einen einzigen
+Credit**. Wie das geht, steht unten unter „Der Gratisweg".
 
 ---
 
@@ -234,6 +232,46 @@ Was die Kette erledigt:
 
 Ist ein Satz länger als sein Bild, sagt das Skript es beim Bauen — dann wird der
 Satz gekürzt, nicht der Clip gedehnt.
+
+**Gekürzt wird vorne, nicht hinten.** Kling liefert 7 s, drei davon plus Abspann
+wären 21 s und damit über der 8–20-s-Regel. Bei einer Kamerafahrt liegt die
+Pointe aber am Ende — die Einstellung, auf die zugefahren wird. Wer hinten
+abschneidet, wirft genau das Bild weg, wegen dem der Shot existiert. Stellschraube
+ist `max_shot` je Clip (02-cafe: 5 s → 18 s gesamt).
+
+## Der Gratisweg (01.08.2026, zweiter Durchlauf — ändert die Kostenrechnung)
+
+**Der ganze Café-Clip hat null Credits gekostet.** Die „10 Credits je Video" aus
+dem ersten Durchlauf gelten nur, solange man den Schalter nicht kennt:
+
+- **Bilder:** Modell auf ein Modell mit `UNLIMITED`-Kennzeichnung stellen
+  (**Nano Banana 2** — Googles Bildmodell, genau richtig für „gleicher Raum,
+  anderes Licht") und den **Unlimited**-Schalter in der Werkzeugleiste umlegen.
+  Der Knopf zeigt dann statt einer Zahl `Unlimited ✦`.
+  **Falle:** Die Bildanzahl über 1 zu stellen schaltet Unlimited stillschweigend
+  ab. Gratis heißt: ein Bild je Lauf, dafür beliebig oft.
+- **Video:** **Kling 3.0**, dann die Auflösung von 4K auf Standard stellen —
+  darunter erscheint der Hinweis „Change to std for Unlimited" — und den
+  **Unlimited mode** einschalten. Der Knopf zeigt dann `Generate Unlimited`.
+  Ergebnis: 720p, 7,04 s, 828 × 1108.
+- **Der Gratismodus steht in der Warteschlange:** rund 5 Minuten je Video statt
+  Sekunden. Das ist der ganze Preis.
+
+**Fallen, die je einen Anlauf gekostet haben:**
+
+1. **`Turn to video` setzt den Unlimited-Schalter jedes Mal zurück.** Vor jedem
+   Generate nachsehen, ob am Knopf eine Zahl steht.
+2. **Seedance 2.0 trägt eine `FREE`-Kennzeichnung und kostet 72 Credits.** Beim
+   Auswählen springt es auf 8 s/1080p. Die Kennzeichnung meint nicht den Preis.
+3. **Ein Modellwechsel im Videoformular wirft das Startbild heraus.** Erst das
+   Modell wählen, dann das Bild schicken.
+4. **Das Startbild lässt sich im Formular nicht setzen** — der leere Rahmen
+   öffnet einen Dateidialog. Der einzige Weg ist Bild öffnen → `Turn to video`.
+5. **`Enhance` abschalten,** wenn der Prompt Reglosigkeit verlangt. Shot 1 lebt
+   davon, dass sich fast nichts bewegt; eine automatische Prompt-Aufhübschung
+   arbeitet dagegen.
+6. Beim Seitenwechsel springt ein **Rabatt-Popup mit Countdown** auf („61 % OFF").
+   Wegklicken. Dasselbe Theater wie am Kauftag.
 
 ## Am Werkzeug abgelesen (01.08.2026, erster Durchlauf)
 
