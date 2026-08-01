@@ -68,9 +68,15 @@ SHOTS = [
      "en": "Let me show you the way."},
 ]
 
+# Im Schlussbild steht, WAS verkauft wird — nicht noch einmal der Claim: der
+# steht als Textkarte im Bild davor, und ohne die Kategorie weiss ein
+# Zuschauer, der den Clip weitergeleitet bekommt, nicht, worum es ueberhaupt
+# geht. Formulierung wortgleich zur Homepage (<title> von ki-lotse.tech).
 ABSPANN = {
-    "de": ("Ich zeige dir den Weg.", "Franz Grundner · KI-Lotse · Pattaya"),
-    "en": ("Let me show you the way.", "Franz Grundner · KI-Lotse · Pattaya"),
+    "de": ("KI & Automatisierung für kleine Betriebe",
+           "Franz Grundner · KI-Lotse · Pattaya"),
+    "en": ("AI & automation for small businesses",
+           "Franz Grundner · KI-Lotse · Pattaya"),
 }
 
 
@@ -151,12 +157,13 @@ def abspannbild(sprache, ziel):
                    (390, 470), 210, 1.0)
     bild_einsetzen(blatt, os.path.join(ASSETS_DIR, "avatar-franz-rund-512.png"),
                    (700, 470), 250, 1.0)
-    satz, name = ABSPANN[sprache]
-    text_bei(d, (BREITE // 2, 730), satz, schrift(46, leicht=True), WEISS,
-             anker="mm")
-    text_bei(d, (BREITE // 2, 850), "ki-lotse.tech", schrift(72, fett=True),
+    kategorie, name = ABSPANN[sprache]
+    f_kat = schrift(44)
+    for i, zeile in enumerate(umbrechen(d, kategorie, f_kat, BREITE - 120)):
+        text_bei(d, (BREITE // 2, 720 + i * 58), zeile, f_kat, WEISS, anker="mm")
+    text_bei(d, (BREITE // 2, 870), "ki-lotse.tech", schrift(72, fett=True),
              WEISS, anker="mm")
-    text_bei(d, (BREITE // 2, 960), name, schrift(34, leicht=True),
+    text_bei(d, (BREITE // 2, 975), name, schrift(34, leicht=True),
              mischen(AKZENT, WEISS, 0.85), anker="mm")
     blatt.save(ziel)
 
