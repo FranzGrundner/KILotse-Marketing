@@ -52,21 +52,21 @@ Bildspur: Hier stehen Screenshots im Bild, und ein englischer Clip mit deutschen
 Bildschirmen wäre schlechter als gar keiner. `shots.py` holt darum je Sprache
 einen eigenen Satz (`shots/de/`, `shots/en/`) über `/sprache/<code>`.
 
-**Was die englische Fassung noch einschränkt:** Die Demo übersetzt ihre
-Oberfläche, aber nicht die Seed-Daten. Leistungsnamen („Grundreinigung",
-„Gartenpflege"), Serviceobjekte („Küche + Gastraum") sowie Checkliste und Notiz
-am Einsatz stehen auch auf Englisch weiter deutsch da. Der Clip weicht dem aus,
-statt es zu zeigen:
+**Beide Fassungen zeigen inhaltlich dasselbe** — seit `wartung` v1.2.0
+(01.08.2026) sind auch die Beispieldaten der Demo übersetzt. Davor stand im
+englischen Bildschirm „Grundreinigung", „Küche + Gastraum" und die Checkliste
+„Filter gereinigt", und die englische Fassung musste darum herumschneiden:
+Szene 2 endete vor der Checkliste, Szene 3 zeigte statt der Vertragstabelle nur
+die Spalte *Rhythm*. Beides ist erledigt.
 
-- Szene 2 schneidet vor Notiz und Checkliste ab — Foto und Unterschrift, auf die
-  es ankommt, sind sprachneutral.
-- Szene 3 zeigt statt der ganzen Vertragstabelle nur die Spalte *Rhythm*
-  („Monthly on day 1", „Every 14 days", „Weekly: Tue, Fri"). Zwei getrennte
-  Ausschnitte nebeneinanderzumontieren wäre eine erfundene Ansicht.
+Wie es gelöst ist: Der Demo-Seed schreibt **i18n-Schlüssel** (`demo.leistung.pool`)
+statt fertiger Texte in die DB, `blueprint.dt()` löst beim Anzeigen genau die
+Werte mit dem Präfix `demo.` auf. Beim Kunden läuft das wirkungslos mit — was
+ein Betrieb selbst einträgt, bleibt unangetastet.
 
-Sobald der Demo-Seed mehrsprachig ist, kann Szene 3 auf Englisch dieselbe
-Tabelle zeigen wie auf Deutsch — die Ausschnitte stehen dafür in `AUSSCHNITTE`
-je Sprache bereit.
+Die Ausschnitte bleiben trotzdem je Sprache gepflegt: unterschiedlich lange
+Beschriftungen verschieben die Spaltenbreiten, und der englische Titel von
+Szene 2 braucht zwei Zeilen statt einer.
 
 ## Bauen
 

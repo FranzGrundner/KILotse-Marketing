@@ -124,11 +124,12 @@ TEXTE = {
     },
 }
 
-# Bildausschnitte je Sprache (links, oben, rechts, unten in Anteilen). Sie
-# muessen getrennt gepflegt werden: englische Spaltenkoepfe sind kuerzer, und
-# im englischen Nachweis endet der brauchbare Teil frueher — Checkliste und
-# Notiz sind Seed-Daten und stehen dort weiter auf Deutsch. Der Ausschnitt
-# hoert deshalb vor ihnen auf, statt sie mitzuzeigen.
+# Bildausschnitte je Sprache (links, oben, rechts, unten in Anteilen). Getrennt
+# gepflegt, weil unterschiedlich lange Beschriftungen die Spaltenbreiten
+# verschieben — inhaltlich zeigen beide Sprachen seit `wartung` v1.2.0 dasselbe:
+# die Beispieldaten der Demo sind seither uebersetzt. Davor stand im englischen
+# Bildschirm noch „Grundreinigung", und Szene 3 musste sich auf die
+# Rhythmus-Spalte zurueckziehen.
 AUSSCHNITTE = {
     "de": {
         "nachweis_fakten": (0.015, 0.179, 0.42, 0.443),
@@ -138,15 +139,10 @@ AUSSCHNITTE = {
         "rechnungen": (0.455, 0.16, 0.99, 0.80),
     },
     "en": {
-        "nachweis_fakten": (0.015, 0.085, 0.42, 0.275),
-        "nachweis_beleg": (0.015, 0.450, 0.640, 0.790),
-        # Nur Rhythmus und Status: die Spalten daneben ("Service object",
-        # "Service") tragen Seed-Daten, die auf Deutsch stehen — in einem
-        # englischen Clip liest sich das wie ein Fehler. Zwei getrennte
-        # Ausschnitte nebeneinanderzusetzen waere eine erfundene Ansicht, also
-        # bleibt es bei einem, und den Zusammenhang stellt die Ueberschrift her.
-        "vertraege": (0.585, 0.33, 0.80, 1.0),
-        "vertraege_lupe": None,
+        "nachweis_fakten": (0.015, 0.179, 0.42, 0.443),
+        "nachweis_beleg": (0.015, 0.452, 0.634, 0.786),
+        "vertraege": (0.015, 0.33, 0.72, 1.0),
+        "vertraege_lupe": (0.556, 0.33, 0.72, 1.0),
         "rechnungen": (0.455, 0.16, 0.99, 0.80),
     },
 }
@@ -322,14 +318,17 @@ def szene_nachweis(blatt, d, t, laenge, s):
 
     # Ausschnitt 2: das Foto und die quittierte Unterschrift.
     a2 = auftritt(t, 1.5)
-    karte(blatt, d, "nachweis", A["nachweis_beleg"],
-          (s(72), y + h + s(36)), s(830), deckung=a2, hebung=s(30),
-          rand=AKZENT_HELL)
+    h2 = karte(blatt, d, "nachweis", A["nachweis_beleg"],
+               (s(72), y + h + s(36)), s(780), deckung=a2, hebung=s(30),
+               rand=AKZENT_HELL)
 
+    # Die Fazitzeile haengt an der Karte, nicht an einer festen Hoehe: der
+    # englische Titel braucht zwei Zeilen, und damit rutscht alles darunter.
     a3 = auftritt(t, laenge - 1.4, 0.5)
     if a3 > 0.01:
-        haken(d, (s(96), s(1178)), s(20), AKZENT, s(7), a3)
-        text_bei(d, (s(134), s(1156)), T["s2_fazit"],
+        fazit_y = min(y + h + s(36) + h2 + s(34), s(1200))
+        haken(d, (s(96), fazit_y + s(22)), s(20), AKZENT, s(7), a3)
+        text_bei(d, (s(134), fazit_y), T["s2_fazit"],
                  schrift(s(40), fett=True), AKZENT, deckung=a3)
     marke(d, s, auftritt(t, 0.4))
 
