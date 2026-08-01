@@ -133,6 +133,30 @@ Was die Kette erledigt:
 Ist ein Satz länger als sein Bild, sagt das Skript es beim Bauen — dann wird der
 Satz gekürzt, nicht der Clip gedehnt.
 
+## Am Werkzeug abgelesen (01.08.2026, erster Durchlauf)
+
+Der Clip ist gebaut. Was dabei anders war als angenommen:
+
+- **Bilder kosten im Plus-Plan gar nichts.** Sie laufen gegen ein eigenes
+  Kontingent („free gens", Stand 2.980) statt gegen die Credits. Die Regel
+  „Motivsuche auf Bildebene" ist damit noch günstiger als gerechnet.
+- **Ein Video kostet 10 Credits** (Kling 3.0, 5 s, 720p). Der ganze Clip mit
+  drei Shots und acht Standbildern: **30 Credits**. Nicht 60–120.
+- **Der Soul-ID-Charakter ist in der Bildwerkstatt voreingestellt.** Wer ihn
+  nicht aktiv entfernt (× an der Charakter-Kachel), bekommt Franz' Gesicht auf
+  jede Figur im Bild — auch auf den Mann im Unterhemd. Für Clips ohne Franz
+  ist das der erste Handgriff.
+- **Die Presets sind Stil-Looks, keine Kamerafahrten.** Kamerabewegung gehört in
+  den Prompt, das Preset bleibt auf `GENERAL`.
+- **Kontinuität kommt aus dem Startframe, nicht aus dem Prompt.** Shot 2 und 3
+  wurden aus *demselben* Startbild wie Shot 1 erzeugt — gleicher Raum, gleiche
+  Kamera. Der Versuch, für Shot 3 ein eigenes „aufgeräumtes Büro" zu
+  generieren, lieferte einen sichtbar anderen Raum und wurde verworfen.
+- **Kling liefert 828 × 1108** (≈ 3:4), egal was die Oberfläche als
+  Seitenverhältnis anzeigt. Der Beschnitt auf 4:5 verliert dadurch fast nichts,
+  aber die Breite wird auf 1080 hochgerechnet — sichtbar weicher als echtes
+  1080p. Falls das stört: höhere Auflösung kostet mehr Credits.
+
 ## Credit-Rechnung für diesen Clip
 
 | Posten | Menge | Credits |
