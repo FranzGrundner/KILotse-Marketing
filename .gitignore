@@ -8,3 +8,9 @@ werbung/szene*-kontaktbogen.png
 # die Screenshots bleiben drin (sie zeigen, was im ausgelieferten Clip steckt).
 werbung/poolservice/sprecher/
 werbung/poolservice/szene*-kontaktbogen.png
+
+# Higgsfield: Rohmaterial und Ergebnisse bleiben lokal (gross, jederzeit neu
+# montierbar). Prompts und Montage-Skript gehoeren ins Repo.
+werbung/higgsfield/roh/
+werbung/higgsfield/fertig/
+werbung/higgsfield/sprecher/
