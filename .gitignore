@@ -3,3 +3,8 @@
 # sprecher.py laedt die Sprachdateien neu, video.py die Kontaktboegen.
 werbung/sprecher/
 werbung/szene*-kontaktbogen.png
+
+# Dasselbe fuer den Poolservice-Clip: clip.py synthetisiert die Saetze neu,
+# die Screenshots bleiben drin (sie zeigen, was im ausgelieferten Clip steckt).
+werbung/poolservice/sprecher/
+werbung/poolservice/szene*-kontaktbogen.png
