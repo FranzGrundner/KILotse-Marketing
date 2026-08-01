@@ -40,11 +40,40 @@
 - **Kein Kundenname.** Strodos wird nicht genannt; das Referenzargument gehört ins
   Gespräch, nicht in eine Datei, die weitergeleitet wird.
 
+## Englische Fassung (01.08.2026)
+
+Es gibt den Clip in beiden Sprachen: `poolservice-clip-de.mp4` (22,6 s) und
+`poolservice-clip-en.mp4` (19,7 s). Aufbau, Takt und Bildsprache sind gleich,
+gesprochen wird beides von derselben multilingualen Stimme — für eine Marke ist
+die wiedererkennbare Stimme mehr wert als perfekte Muttersprachler-Aussprache.
+
+Anders als beim Higgsfield-Eyecatcher teilen sich die Sprachen **nicht** die
+Bildspur: Hier stehen Screenshots im Bild, und ein englischer Clip mit deutschen
+Bildschirmen wäre schlechter als gar keiner. `shots.py` holt darum je Sprache
+einen eigenen Satz (`shots/de/`, `shots/en/`) über `/sprache/<code>`.
+
+**Was die englische Fassung noch einschränkt:** Die Demo übersetzt ihre
+Oberfläche, aber nicht die Seed-Daten. Leistungsnamen („Grundreinigung",
+„Gartenpflege"), Serviceobjekte („Küche + Gastraum") sowie Checkliste und Notiz
+am Einsatz stehen auch auf Englisch weiter deutsch da. Der Clip weicht dem aus,
+statt es zu zeigen:
+
+- Szene 2 schneidet vor Notiz und Checkliste ab — Foto und Unterschrift, auf die
+  es ankommt, sind sprachneutral.
+- Szene 3 zeigt statt der ganzen Vertragstabelle nur die Spalte *Rhythm*
+  („Monthly on day 1", „Every 14 days", „Weekly: Tue, Fri"). Zwei getrennte
+  Ausschnitte nebeneinanderzumontieren wäre eine erfundene Ansicht.
+
+Sobald der Demo-Seed mehrsprachig ist, kann Szene 3 auf Englisch dieselbe
+Tabelle zeigen wie auf Deutsch — die Ausschnitte stehen dafür in `AUSSCHNITTE`
+je Sprache bereit.
+
 ## Bauen
 
 ```
-python -X utf8 shots.py     # Screenshots aus der Live-Demo (nur bei Änderungen nötig)
-python -X utf8 clip.py      # Sprecherspur + Video
+python -X utf8 shots.py            # Screenshots beider Sprachen aus der Live-Demo
+python -X utf8 clip.py --beide     # Sprecherspur + Video, DE und EN
 ```
 
-Prüfansicht einer einzelnen Szene: `python -X utf8 clip.py --szene 2`
+Einzeln: `--sprache en`. Prüfansicht einer Szene: `python -X utf8 clip.py
+--sprache en --szene 2` (legt `szene2-en-kontaktbogen.png` an).
