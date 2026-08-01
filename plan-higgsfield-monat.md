@@ -284,6 +284,20 @@ Also 10–12 Motive → 20–24 fertige Posts.
 Dazu **Standbilder**: Profilbild, Post-Köpfe, Vorschaukarten-Motive, ein Motiv je
 Betriebsart für die Paketseiten.
 
+**Was hinter den Nummern steckt — und der unausgearbeitete Vorrat — steht in
+`werbung/higgsfield/ideen.md`.** Dort ist je Idee vermerkt, ob sie Produktbeweis
+braucht (dann lokal mit echten Screenshots bauen) oder reine Atmosphäre ist
+(dann Higgsfield über den Gratisweg). Wer den nächsten Clip baut, sucht sich
+dort einen aus.
+
+### Stand 01.08.2026
+
+Fertig sind **01 Eyecatcher**, **07 Das graue Café wird bunt** (als `02-cafe`)
+und der erste Betriebsart-Clip **Poolservice** (als `03-pool`), jeweils DE und
+EN. **Zusammen null Credits** — siehe `prompts.md` §„Der Gratisweg". Damit ist
+die Kostenannahme dieses Plans überholt: der Engpass ist nicht mehr Video,
+sondern Wartezeit. Das gehört in die Abo-Entscheidung zu **#457**.
+
 ---
 
 ## 6. Technische Regeln für Facebook
