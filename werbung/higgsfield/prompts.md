@@ -267,6 +267,341 @@ weitergeleitet wird — dieselbe Regel wie in `werbung/poolservice/skript.md`.
 
 ---
 
+## Clip „Der Lotse" (Markenfilm, Motiv 1)
+
+Zweck: der Markenfilm. Er erklärt nicht, was Franz verkauft, sondern **welche
+Rolle er einnimmt** — und beantwortet damit stumm den häufigsten Einwand:
+„Übernimmt mir da einer mein Geschäft?" Nein. Der Lotse geht wieder von Bord.
+
+Er ist der haltbarste Clip der Halde: **kein Gesicht, kein Screenshot, kein
+Preis, kein Bausteinname.** Nichts darin kann veralten, also ist er alle paar
+Wochen wieder postbar, während die Betriebsart-Clips rotieren müssen.
+
+Länge 15 s (3 × 5 s), 4:5. Ablage `roh/04-lotse/`.
+
+### Zwei Vorentscheidungen, die hier begründet werden
+
+**Das Firefly-Schiff wird NICHT wiederverwendet** (geprüft 01.08.2026).
+`Franz/Logos/Firefly *.mp4` ist nicht die Aufnahme einer Reede, sondern die
+Titelkarte des Werbevideos #160: eine gezeichnete Galeone auf einer stilisierten
+Weltkarte, 16:9, mit eingebranntem deutschem Text. Illustrationsstil statt Foto,
+Text im Bild (bricht die gemeinsame Bildspur für DE und EN), und im
+4:5-Beschnitt bleibt von der Karte nichts. `ideen.md` behauptete das Gegenteil —
+Annahme, nicht Befund.
+
+**Shot 3 zeigt keinen Bildschirm.** Die Idee sah „Schnitt auf einen echten
+Bildschirm" vor. Dagegen sprechen drei Dinge: ein Screenshot altert und nimmt
+dem Clip genau die Eigenschaft, wegen der er gebaut wird; er zwingt die
+`shots.py`-Kette in einen Markenfilm; und ein 1400 × 875 breites Dashboard wird
+im 4:5-Rahmen zur Briefmarke. Stattdessen **führt Shot 3 die Metapher zu Ende**:
+das Lotsenboot dreht ab. Den Produktbeweis liefert `werbung/poolservice/`, und
+zwar mit echten Oberflächen — dieser Clip muss ihn nicht mitschleppen.
+
+### Die Regel, an der dieser Clip hängt
+
+**Shot 3 kommt aus dem Startframe von Shot 1.** Der ganze Clip behauptet, es sei
+dasselbe Schiff in derselben Bucht — nur später und heller. Zweimal „ein
+Frachter im Dunst" zu prompten liefert zwei verschiedene Schiffe, und dann geht
+niemandem von Bord, sondern es fährt irgendein anderer Frachter weg. Shot 2
+(Nahaufnahme der Hände) ist ein Detailschnitt in einem anderen Raum und darf
+frisch geprompted werden.
+
+**Erster Handgriff: den Soul-ID-Charakter abwählen** (× an der Charakter-Kachel).
+Franz ist hier weder Kapitän noch Lotse.
+
+### Shot 1 — der Frachter im Morgendunst (das Mutterbild, hier wird gesucht)
+
+```
+A large cargo ship lying at anchor in a wide bay at dawn, seen from low down on
+the water. Thick morning haze, flat pale grey-blue light, the dark hull rising
+out of the mist with its outline softened by fog. A small pilot boat with one
+white navigation light runs in along the hull from the right, a low bow wave
+behind it, tiny against the ship. Calm water, almost no swell, nobody visible.
+Camera at water level, wide, the ship filling the left half of the frame.
+```
+**MARKE hier ohne die Lichtzeile** — „warm late-afternoon tropical light" würde
+gegen den eigenen Prompt arbeiten. Stattdessen anhängen:
+```
+cinematic, natural light, shallow depth of field, cool desaturated blue-grey
+tones, no on-screen text
+```
++ NEGATIV.
+
+Video daraus: **sehr langsame seitliche Fahrt**, das Lotsenboot schiebt sich am
+Rumpf entlang. Sonst bewegt sich fast nichts. `Enhance` abschalten (Falle 5) —
+die Reglosigkeit ist der Punkt, das Wasser soll nicht anfangen zu schäumen.
+
+### Shot 2 — die Hände am Steuerrad (frisch, anderer Raum)
+
+```
+Close-up of a pair of weathered, sun-darkened hands resting on the wooden spokes
+of a ship's helm, seen from behind and slightly above, the person's face and body
+out of frame. Worn brass fittings, salt-dulled varnish on the wood. Beyond the
+helm, a blurred grey-blue dawn sea through a wheelhouse window. The hands sharp,
+the sea soft. Overcast dawn light.
+```
++ MARKE (ohne Lichtzeile, wie oben) + NEGATIV.
+
+Video: die Hände korrigieren **einmal** um wenige Grad, dann Ruhe. Kamera steht.
+Dass hier nichts fährt, ist Absicht — Shot 1 bewegt sich, Shot 2 hält still,
+Shot 3 fährt wieder. Der Ruhepunkt liegt auf dem Satz, der die Aussage trägt.
+
+Kein Gesicht im Bild: Das erfüllt nebenbei die teuerste Soul-ID-Regel („nie eine
+zweite Person mit sichtbarem Gesicht") kostenlos — und Hände altern nicht.
+
+### Shot 3 — der Lotse geht von Bord (aus dem Startframe von Shot 1)
+
+```
+Same bay, same cargo ship, same camera position at water level. The haze has
+lifted, clear pale morning light, the hull now fully visible and under way with
+a bow wave building. The small pilot boat turns away from the ship and runs back
+towards the open water on the right, its wake curving behind it, getting smaller.
+Nobody visible on either boat. One continuous shot, no cut.
+```
++ MARKE (ohne Lichtzeile) + NEGATIV.
+
+Findet das Modell aus dem Startframe nicht in die Weiterfahrt: nicht neu
+prompten, sondern das **Bild** aus Shot 1 aufhellen lassen (Bild-zu-Bild:
+„haze lifted, clear morning light, ship under way") und daraus das Video ziehen.
+Der Weg über ein frisches Außenbild ist hier ausdrücklich **nicht** erlaubt —
+anders als beim Café, wo vom Innenraum nur der Fensterausschnitt zu sehen war.
+Hier ist das Schiff das ganze Bild, ein zweites fällt sofort auf.
+
+### Text (lokal eingebrannt, nicht generiert)
+
+| Shot | DE | EN |
+|---|---|---|
+| 1 | Der Lotse steuert dein Schiff nicht. | A pilot doesn't steer your ship. |
+| 2 | Er kennt die Untiefen. | He knows where the rocks are. |
+| 3 | Du bleibst am Steuer. Ich kenne den Weg. | You stay at the wheel. I know the way. |
+
+Der Schlusssatz ist bewusst **nicht** „Ich zeige dir den Weg" wie beim
+Eyecatcher: zwei Clips mit demselben Schlussbild und demselben Schlusssatz sind
+in der Rotation austauschbar. „Du bleibst am Steuer" sagt zusätzlich etwas, das
+sonst nirgends im Material steht — der Kunde gibt nichts aus der Hand.
+
+**Umbrüche stehen von Hand** (`\n` im `CLIPS`-Eintrag). Der automatische
+Zeilenumbruch ist gierig und schob „nicht." bzw. „ship." / „are." als Waise in
+die zweite Zeile — beim ersten Satz hängt genau an der Verneinung die Aussage.
+
+### Gebaut am 01.08.2026 — **0 Credits**, drei Bilder, drei Videos, kein Fehlschlag
+
+Ergebnis: `fertig/04-lotse-{de,en}-4x5.mp4`, je 18,0 s, 1080 × 1350.
+
+**Die Startframe-Regel hat sich selbst bewiesen:** Auf dem Rumpf steht in Shot 1
+*und* in Shot 3 derselbe Schiffsname — *MV Sea Protector*. Es ist nachweislich
+dasselbe Schiff, obwohl Nebel und Licht völlig verschieden sind. Genau das hätte
+ein zweiter Prompt nicht geliefert.
+
+Zwei Abweichungen vom Prompt, beide zum Besseren übernommen: Shot 1 steht
+bugvoraus und mittig statt „linke Bildhälfte", und die Kamera liegt etwas höher
+als Wasserlinie. Der Bug wirkt so wuchtiger. Shot 3 wechselte auf eine
+Dreiviertelansicht — der Schnitt liest sich dadurch als Zeitsprung, was er sein
+soll.
+
+---
+
+## Clip „Zwei Uhren" (Feierabend, produktunabhängig)
+
+Zweck: Er verkauft **nicht Software, sondern Feierabend**. Der wundeste Punkt bei
+Leuten, die zum Leben nach Thailand gegangen sind und dann im Laden festsitzen —
+und der einzige aus dem Vorrat, der ohne ein einziges Produktwort auskommt.
+
+Wie Eyecatcher, Café und Lotse **ohne Produktbeweis und ohne alternde Aussage**:
+kein Screenshot, kein Preis, kein Bausteinname. Eine Uhrzeit altert nicht.
+
+Länge 15 s (3 × 5 s) + Abspann = 18 s, 4:5. Ablage `roh/05-uhren/`.
+
+**Erster Handgriff: den Soul-ID-Charakter abwählen** (× an der Charakter-Kachel).
+Der Ladenbesitzer ist nicht Franz.
+
+### Die Mechanik — der Titel ist die ganze Aussage
+
+**Dieselbe Uhrzeit, zwei Ausgänge.** Shot 1: der Laden ist zu, und er setzt sich
+noch einmal an den Rechner. Shot 2: dieselbe Uhr, derselbe Zeigerstand — er
+klappt zu und geht. Der Vergleich muss der Zuschauer **sehen**, nicht lesen; der
+eingebrannte Text bestätigt ihn nur.
+
+Der Farbbogen trägt mit: **kalt → warm.** Shot 1 und 2 liegen im blaugrünen
+Neonlicht von der Straße, Shot 3 in einer warmen Glühbirne. Das Café macht
+grau → bunt mit der Farbe, dieser Clip macht dasselbe mit dem Licht — und mit
+der Zeit, die stehen bleibt.
+
+### Die Regel, an der dieser Clip hängt
+
+**Shot 1 und Shot 2 kommen aus DEMSELBEN Standbild — nicht nur aus demselben
+Startframe, sondern aus derselben Datei.** Erzeugt wird ein einziges Mutterbild,
+und daraus werden **zwei Videos mit verschiedenen Prompts** gezogen. Damit ist
+die Kontinuität nicht wahrscheinlich, sondern zwingend: gleicher Raum, gleiche
+Kamera, gleiches Hemd — und vor allem **derselbe Zeigerstand**, weil es
+physisch dieselben Pixel sind.
+
+Das nimmt der Uhr ihre Unzuverlässigkeit ab. Videomodelle malen Zifferblätter
+gern zu Kauderwelsch; hier ist das gleichgültig, denn verlangt ist nicht
+**lesbar**, sondern **gleich**. Genau deshalb steht im Bildprompt „tick marks
+instead of numbers" — Striche verunglücken, Ziffern verunglücken sichtbar.
+
+Zwei Bilder zu erzeugen (eines sitzend, eines stehend) wäre der teurere und
+schlechtere Weg: Bild-zu-Bild verschiebt bei einer geänderten Körperhaltung
+gern auch die Zeiger, und dann ist der Titel widerlegt.
+
+**Nur der Mensch ändert sich.** Licht, Lampe und Kamera bleiben in Shot 2
+unangetastet — jede weitere Abweichung gäbe dem Zuschauer eine zweite Variable
+und schwächt den Vergleich. Einzige Ausnahme: der Bildschirm geht aus. Das ist
+keine Störung, sondern die Handlung.
+
+### Shot 1 — noch einmal hinsetzen (das Mutterbild, hier wird gesucht)
+
+```
+Interior of a small shop in a Thai side street at night, seen from the shop
+floor. Metal shelves with goods on both sides, the roller shutter at the front
+half down, the shop lights already switched off. At the back a cluttered desk
+with an open laptop, a receipt spike and a stack of order slips. A man in his
+fifties in a plain faded blue short-sleeved shirt sits at the desk in front of
+the laptop, the screen lighting his face from below. One warm desk lamp,
+everything else lit only by cold blue-green neon spilling in from the street
+through the gap under the shutter. On the wall beside the desk a plain round
+analogue wall clock, simple hands, tick marks instead of numbers, clearly
+visible. Nobody else in the shop. Camera at standing height, six metres back,
+centred on the desk.
+```
+**MARKE hier ohne die Lichtzeile** — „warm late-afternoon tropical light" würde
+gegen den eigenen Prompt arbeiten. Stattdessen anhängen:
+```
+cinematic, natural light, shallow depth of field, realistic skin texture,
+cold blue-green night tones with one warm lamp, no on-screen text
+```
++ NEGATIV.
+
+Video daraus: **langsam heranfahren** (slow push in). Er tippt, sieht auf den
+Schirm, sonst bewegt sich fast nichts. `Enhance` abschalten (Falle 5).
+
+### Shot 2 — dieselbe Uhr (aus DEMSELBEN Bild, anderer Videoprompt)
+
+```
+Same shop, same desk, same man, same light. He closes the laptop, pushes the
+chair back, stands up and steps out of frame to the right, leaving the empty
+chair and the dark laptop behind. The wall clock does not move. Camera pushes
+in slowly, exactly as before.
+```
+
+**Dieselbe Kamerafahrt wie Shot 1, gleiches Tempo.** Dieselbe Begründung wie
+beim Café: erst die Wiederholung liest sich als Vergleich statt als neue Szene.
+Hier ist sie nicht Kür, sondern Pflicht — der ganze Clip behauptet, es sei
+derselbe Augenblick.
+
+**Der Schluss des Shots ist die Pointe:** der leere Stuhl. Die Montage kürzt
+vorne, das Ende überlebt also — genau richtig.
+
+*Wenn Kling die ganze Handlung nicht in fünf Sekunden schafft:* Aufstehen allein
+genügt. Der eingebrannte Satz sagt „Du gehst"; das Bild muss es nicht
+zu Ende erzählen. Erst wenn er **sitzen bleibt**, ist der Versuch unbrauchbar.
+
+### Shot 3 — davor (frisch, anderer Raum)
+
+```
+A small shop front in a Thai side street at night, seen from across the road.
+The roller shutter is down and the shop behind it is dark. On the pavement in
+front of it a man in his fifties in a plain faded blue short-sleeved shirt sits
+on a plastic chair at a small folding table with a bottle and a glass, seen from
+behind and slightly to the side, his face not visible, looking down the street.
+A warm bulb hangs over his table, string lights along the front, scooters parked
+at the kerb, wet asphalt. Further down the road a bright cold blue-white shop
+sign. Deep blue night sky. Camera at standing height, across the road, locked
+off, not moving.
+```
++ MARKE (ohne Lichtzeile, wie oben) + NEGATIV.
+
+**Das Hemd steht in beiden Prompts ausdrücklich mit Farbe drin** („plain faded
+blue short-sleeved shirt"). Shot 3 wird frisch geprompted, das Modell hält also
+nichts von selbst — die Regel „Kleidung ausdrücklich vorgeben" aus dem Soul-ID-
+Test gilt hier ohne Soul ID genauso, nur trägt sie diesmal die Kontinuität.
+
+**Von hinten, kein Gesicht.** Derselbe Kniff wie im Eyecatcher: über zwei
+verschiedene Prompts hält kein Modell ein Gesicht, von hinten fällt es nicht auf.
+
+**Die Kamera steht.** Der Eyecatcher fährt am Ende vor, das Café zurück, der
+Poolservice lässt einen Pickup wegfahren, der Lotse ein Boot abdrehen. Ein
+fünfter Clip, der zum Schluss wieder etwas wegfahren lässt, wäre in der Rotation
+austauschbar. Hier kommt niemand weg — er ist **da**, und das ist der Punkt.
+
+Aus demselben Grund ist der Schlussort **nicht** die Beach Bar: die gehört dem
+Eyecatcher. Er sitzt vor seinem eigenen, geschlossenen Laden. Der Ort hat sich
+nicht geändert, nur sein Verhältnis dazu — dasselbe Leitmotiv wie beim Café,
+aber ein anderes Bild.
+
+### Text (lokal eingebrannt, nicht generiert)
+
+| Shot | DE | EN |
+|---|---|---|
+| 1 | 3 Uhr früh. Und du sitzt noch da. | 3 a.m. You're still at the desk. |
+| 2 | Gleiche Uhrzeit. Du gehst. | Same time. You're leaving. |
+| 3 | Dafür bist du hergekommen. | This is what you came for. |
+
+Die Uhrzeit steht im Text, damit die Aussage auch dann trägt, wenn das Modell
+das Zifferblatt verunglückt — und sie **richtet sich nach dem Bild, nicht
+umgekehrt**. Geplant war 23:40; das Modell hat die Zeiger auf 3 Uhr gestellt,
+also heißt es 3 Uhr. Ein Zuschauer, der die Uhr liest, hätte den Widerspruch
+sonst gesehen, und die ganze Mechanik des Clips lädt ihn ausdrücklich dazu ein,
+genau dorthin zu schauen. 3 Uhr früh ist obendrein das härtere Bild.
+
+Der Schlusssatz nennt weder Lösung noch Werkzeug. „Dafür bist du hergekommen"
+ist der einzige Satz im ganzen Material, der den Zuschauer bei seinem eigenen
+Grund packt, hier zu sein — und er altert nie. Was verkauft wird, sagt der
+Abspann.
+
+**Umbrüche stehen von Hand** (`\n` im `CLIPS`-Eintrag), Lehre aus „Der Lotse".
+
+### Gebaut am 02.08.2026 — **0 Credits**, zwei Bilder, drei Videos, kein Fehlschlag
+
+Ergebnis: `fertig/05-uhren-{de,en}-4x5.mp4`, je 18,0 s, 1080 × 1350.
+
+**Die Ein-Bild-Regel hat sich belegt, und zwar messbar.** Aus dem Schlussbild
+beider Shots geschnitten und nebeneinandergelegt: Minutenzeiger auf 12,
+Stundenzeiger auf 3 — in beiden identisch, obwohl der eine Shot den Mann am
+Schirm zeigt und der andere den leeren Stuhl. Zwei getrennt erzeugte Bilder
+hätten das nicht geliefert; ein per Bild-zu-Bild abgeleitetes zweites Bild
+vermutlich auch nicht.
+
+**Das Zifferblatt ist Kauderwelsch** — statt der 9 steht eine 0, die 5 ist
+doppelt. Belanglos, und genau der Grund, warum im Bildprompt „tick marks instead
+of numbers" steht (das Modell hat sich nicht daran gehalten). Verlangt war
+**gleich**, nicht **lesbar**, und gleich ist es.
+
+**Der Text musste dem Bild folgen, nicht umgekehrt.** Geplant war 23:40, das
+Modell stellte die Uhr auf 3. Da die Mechanik des Clips den Zuschauer
+ausdrücklich auffordert, auf die Uhr zu sehen, wäre der Widerspruch aufgefallen.
+Also heißt es jetzt „3 Uhr früh" — und das ist obendrein das härtere Bild.
+
+**Zwei Abweichungen vom Prompt, beide übernommen:** Der Laden wurde ein
+Ersatzteil-/Kramladen mit tiefen Regalen statt eines Minimarkts — die Regalflucht
+gibt der Heranfahrt mehr Tiefe, als der Prompt verlangt hatte. Und Shot 2 fährt
+etwas weniger weit heran als Shot 1; im Schnitt liest sich das nicht als Fehler,
+weil Raum, Licht und Uhr identisch bleiben.
+
+**Am Werkzeug abgelesen (zusätzlich zu den zwölf bekannten Fallen):**
+
+13. **`Turn to video` schlägt oft fehl und schließt nur das Fenster.** Zwei von
+    drei Versuchen taten gar nichts. Was hilft: die Kachel in der **Mitte**
+    anklicken (an den Rändern liegen Herz/Download/`…`), volle acht bis zehn
+    Sekunden warten, bis das Fenster wirklich steht, und den Knopf dann über
+    sein Element ansteuern statt über eine Bildschirmposition.
+14. **Ein zweites Video aus demselben Bild braucht `Turn to video` gar nicht.**
+    Nach dem ersten Generate bleibt das Startbild im Formular stehen — Prompt
+    ersetzen, Unlimited prüfen, nochmal Generate. Genau so sind Shot 1 und 2
+    entstanden, und das ist der bequemste Weg zur Ein-Bild-Regel.
+15. **Läufe überlappen wirklich.** Zwei Videos und ein Bild liefen gleichzeitig,
+    rund 3–4 Minuten je Video. Wer seriell wartet, verschenkt die Hälfte der Zeit.
+16. **Das Startbild lässt sich im Formular nicht tauschen** (ergänzt Falle 4):
+    Ein Klick auf das vorhandene Vorschaubild öffnet nur eine Großansicht, keinen
+    Bildwähler.
+17. **Die Datei-Adresse lässt sich nicht erraten.** `…_thumbnail.webp` durch
+    `.mp4` zu ersetzen liefert 404. Der Download-Knopf an der Kachel (erscheint
+    beim Überfahren) legt sie als `hf_<datum>_<zeit>_<uuid>.mp4` im
+    Downloads-Ordner ab; von dort umbenennen nach `roh/<clip>/`.
+
+---
+
 ## Montage — was nach dem Generieren passiert
 
 `montage.py` macht aus den Rohclips den fertigen Post. Die Bildspur bleibt für
@@ -342,6 +677,37 @@ dem ersten Durchlauf gelten nur, solange man den Schalter nicht kennt:
    arbeitet dagegen.
 6. Beim Seitenwechsel springt ein **Rabatt-Popup mit Countdown** auf („61 % OFF").
    Wegklicken. Dasselbe Theater wie am Kauftag.
+
+**Nachtrag 01.08.2026 (beim Bauen von „Der Lotse" am Werkzeug abgelesen):**
+
+7. **Die Bildwerkstatt öffnet auf „Nano Banana Pro", nicht auf „Nano Banana 2".**
+   Pro kostet 1,5–2 Credits je Bild und trägt **keine** UNLIMITED-Kennzeichnung;
+   der Banner „Nano Banana Pro & 2 UNLIMITED" meint den Ultra-Plan. Das Modell
+   muss also jedes Mal aktiv umgestellt werden — erst danach lässt sich der
+   Unlimited-Schalter überhaupt sinnvoll umlegen.
+8. **Der Unlimited-Schalter der Bildwerkstatt fällt auch beim bloßen Neuladen
+   der Seite zurück**, nicht nur bei `Turn to video`. Vor jedem Generate auf den
+   Knopf sehen: steht dort eine Zahl, kostet es.
+9. **Im Videoformular ist „Unlimited mode" unsichtbar, solange 4K eingestellt
+   ist.** Der Schalter erscheint erst unterhalb der Auflösung, wenn diese auf
+   1080p oder 720p steht. Abkürzung: Bei 4K steht dort die Zeile
+   **„Change to std for Unlimited"** — ein Klick darauf erledigt beides.
+10. **Falle 3 bestätigt, und sie ist teurer als sie klingt:** Ein Modellwechsel
+    im Videoformular wirft nicht nur das Startbild hinaus, sondern setzt auch
+    Auflösung und Unlimited zurück. Passiert das mitten im Ablauf, hilft nur:
+    Modell zurückstellen → `Turn to video` erneut → Auflösung → Unlimited →
+    Prompt prüfen. In dieser Reihenfolge.
+11. **Der Prompt im Videoformular bleibt beim Startbildwechsel stehen.** Nach
+    `Turn to video` steht dort noch der Text des vorigen Shots. Wer ihn nicht
+    ersetzt, animiert das neue Bild mit der alten Anweisung.
+12. **Klicks ins Formular gehen leicht daneben**, weil die Leiste beim Tippen
+    umbricht und die Schaltflächen verrutschen. Sicherer ist, das Prompt-Feld
+    über sein Element anzusteuern statt über eine Bildschirmposition.
+
+**Der Ablauf, der ohne Umweg durchläuft:**
+Modell Kling 3.0 → Bild öffnen → `Turn to video` → Prompt ersetzen → Auflösung
+720p → Unlimited an → am Knopf prüfen, dass dort **„Generate Unlimited"** steht
+→ Generate. Rund 3–5 Minuten je Video; die drei Läufe können sich überlappen.
 
 ## Am Werkzeug abgelesen (01.08.2026, erster Durchlauf)
 

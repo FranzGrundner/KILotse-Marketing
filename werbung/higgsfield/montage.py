@@ -62,9 +62,12 @@ CLIPS = {
     "01-eyecatcher": {
         "ordner": "",
         "shots": [
+            # Ohne den Handumbruch fiel „not." als Waise in die zweite Zeile —
+            # und an der Verneinung haengt der ganze Satz. Die deutsche Fassung
+            # passt in eine Zeile und bleibt deshalb ohne „\n".
             {"datei": "01-buero",
              "de": "Alle sind draußen. Du nicht.",
-             "en": "Everyone's outside. You're not."},
+             "en": "Everyone's outside.\nYou're not."},
             {"datei": "02-arm",
              "de": "Das muss nicht so sein.",
              "en": "It doesn't have to be."},
@@ -82,9 +85,12 @@ CLIPS = {
             {"datei": "01-grau",
              "de": "Nicht das Café ist müde.",
              "en": "It's not the café that's tired."},
+            # Umbruch zwischen die beiden Saetze statt dorthin, wo die Zeile
+            # zufaellig voll ist: sonst standen „mehr." bzw. „paperwork."
+            # allein in der zweiten Zeile.
             {"datei": "02-bunt",
-             "de": "Gleicher Raum. Keine Zettel mehr.",
-             "en": "Same room. No more paperwork."},
+             "de": "Gleicher Raum.\nKeine Zettel mehr.",
+             "en": "Same room.\nNo more paperwork."},
             {"datei": "03-hinaus",
              "de": "Und der Abend gehört dir.",
              "en": "And the evening is yours."},
@@ -94,15 +100,60 @@ CLIPS = {
         "ordner": "03-pool",
         "max_shot": 5.0,
         "shots": [
+            # Ein einziger Satz, also keine Satzgrenze zum Umbrechen: getrennt
+            # wird vor der Verneinung, damit „nicht da.«" zusammenbleibt.
+            # Vorher stand „da.«" allein — ein verwaistes Schlusszeichen.
             {"datei": "01-vorwurf",
-             "de": "»Ihr wart letzte Woche nicht da.«",
+             "de": "»Ihr wart letzte Woche\nnicht da.«",
              "en": "“You weren't here last week.”"},
             {"datei": "02-beweis",
              "de": "Doch. Foto, Datum, Name.",
-             "en": "Yes we were. Photo, date, name."},
+             "en": "Yes we were.\nPhoto, date, name."},
             {"datei": "03-weg",
              "de": "Diskussion beendet.",
              "en": "Argument over."},
+        ],
+    },
+    "04-lotse": {
+        "ordner": "04-lotse",
+        "max_shot": 5.0,
+        "shots": [
+            # Umbrueche von Hand: sonst faellt die Verneinung („nicht.") bzw.
+            # das Satzende („are.") als Waise in die zweite Zeile — und im
+            # ersten Satz haengt genau daran die Aussage.
+            {"datei": "01-frachter",
+             "de": "Der Lotse steuert\ndein Schiff nicht.",
+             "en": "A pilot doesn't\nsteer your ship."},
+            {"datei": "02-haende",
+             "de": "Er kennt die Untiefen.",
+             "en": "He knows where\nthe rocks are."},
+            {"datei": "03-abdrehen",
+             "de": "Du bleibst am Steuer.\nIch kenne den Weg.",
+             "en": "You stay at the wheel.\nI know the way."},
+        ],
+    },
+    "05-uhren": {
+        "ordner": "05-uhren",
+        "max_shot": 5.0,
+        "shots": [
+            # Shot 1 und 2 kommen aus DERSELBEN Bilddatei, nur mit zwei
+            # Videoprompts — deshalb steht die Uhr in beiden nachweislich
+            # gleich. Siehe prompts.md, „Die Regel, an der dieser Clip haengt".
+            #
+            # Die Uhrzeit richtet sich nach dem BILD, nicht umgekehrt: das
+            # Modell hat die Zeiger auf 3 Uhr gestellt (Minutenzeiger 12,
+            # Stundenzeiger 3, in beiden Shots identisch). Der urspruengliche
+            # Text sagte 23:40 — ein Zuschauer, der die Uhr liest, haette den
+            # Widerspruch gesehen. 3 Uhr frueh ist ausserdem das haertere Bild.
+            {"datei": "01-nochmal",
+             "de": "3 Uhr früh.\nUnd du sitzt noch da.",
+             "en": "3 a.m.\nYou're still at the desk."},
+            {"datei": "02-gehen",
+             "de": "Gleiche Uhrzeit.\nDu gehst.",
+             "en": "Same time.\nYou're leaving."},
+            {"datei": "03-draussen",
+             "de": "Dafür bist du hergekommen.",
+             "en": "This is what you came for."},
         ],
     },
 }
@@ -114,8 +165,10 @@ CLIPS = {
 ABSPANN = {
     "de": ("KI & Automatisierung für kleine Betriebe",
            "Franz Grundner · KI-Lotse · Pattaya"),
+    # "KI-Lotse" bleibt im Deutschen der Name; auf Englisch sagt die Abkuerzung
+    # niemandem etwas (KI = deutsch fuer AI), darum hier die englische Fassung.
     "en": ("AI & automation for small businesses",
-           "Franz Grundner · KI-Lotse · Pattaya"),
+           "Franz Grundner · AI guide · Pattaya"),
 }
 
 
@@ -178,7 +231,14 @@ def textebene(satz, ziel):
 
     d = ImageDraw.Draw(ebene)
     f = schrift(64, fett=True)
-    zeilen = umbrechen(d, satz, f, BREITE - 160)
+    # Ein "\n" im Satz erzwingt einen Umbruch. Noetig, weil der automatische
+    # Umbruch gierig ist und keine Satzgrenzen kennt: „Du bleibst am Steuer. Ich
+    # / kenne den Weg." trennt mitten im zweiten Satz. Bei zwei kurzen Saetzen
+    # auf einer Karte gehoert der Umbruch zwischen die Saetze, nicht dahin, wo
+    # die Zeile zufaellig voll ist.
+    zeilen = []
+    for absatz in satz.split("\n"):
+        zeilen += umbrechen(d, absatz, f, BREITE - 160)
     # Von unten setzen, mit Sicherheitsabstand: Facebook legt im Feed eigene
     # Bedienelemente ueber den unteren Rand.
     y = HOEHE - 210 - len(zeilen) * 78
@@ -394,7 +454,8 @@ def bauen(sprache, clip_id, clip, mit_stimme=True):
                 ende = start + dauer(pfad)
                 grenze = starts[i + 1] if i + 1 < len(shots) else gesamt
                 if ende > grenze + 0.2:
-                    print(f"   Hinweis: „{shot[sprache]}“ ist {ende - grenze:.1f} s "
+                    einzeilig = " ".join(shot[sprache].split())
+                    print(f"   Hinweis: „{einzeilig}“ ist {ende - grenze:.1f} s "
                           f"länger als sein Bild.")
 
         ton = tonspur(starts, gesamt, arbeit, sprache, clip, mit_stimme)

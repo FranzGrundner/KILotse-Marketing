@@ -29,32 +29,18 @@ Die stärksten Ideen sind die, die **ohne Ton und ohne Erklärung** funktioniere
 | 01 | **Alle sind draußen. Du nicht.** — Eyecatcher, produktunabhängig | Higgsfield | `fertig/01-eyecatcher-*` |
 | 02 | **Das graue Café wird bunt** — derselbe Laden, nur ohne Zettel | Higgsfield | `fertig/02-cafe-*` |
 | 03 | **Der Beweis** — Poolservice, Vorwurf → Foto → erledigt | Higgsfield | `fertig/03-pool-*` |
+| 04 | **Der Lotse** — Markenfilm, der Lotse geht wieder von Bord | Higgsfield | `fertig/04-lotse-*` |
+| 05 | **Zwei Uhren** — gleiche Uhrzeit, zwei Ausgänge; verkauft Feierabend | Higgsfield | `fertig/05-uhren-*` |
 | — | **Poolservice — der Beweis-Clip** (5 Szenen, echte Screenshots) | lokal | `werbung/poolservice/` |
 
 ---
 
 ## Warten — Higgsfield (Atmosphäre, kein Produktbeweis)
 
-### Der Lotse — der Markenfilm
-Frachter im Morgendunst, ein kleines Lotsenboot längsseits. Schnitt auf
-verwitterte Hände am Steuerrad. Schnitt auf einen **echten** Bildschirm.
-Text: *„Der Lotse steuert dein Schiff nicht. Er kennt die Untiefen."*
-
-Kein Gesicht, kein Text im Bild, nichts das kippen kann — und er altert nie,
-also alle paar Wochen wieder postbar. Das Schiff-Standbild aus dem
-Firefly-Versuch existiert schon (`project_kilotse_video`). **Das ist der
-naheliegendste nächste Clip.**
-
 ### Der Stapel
 Aufsicht auf einen Schreibtisch, unter Papier begraben. Kamera fährt hinein,
 der Stapel wächst, kippt. Schnitt: derselbe Tisch, leer, nur ein Tablet.
 Der leere Tisch ist die Botschaft — funktioniert stumm und ohne Übersetzung.
-
-### Zwei Uhren
-Ein Ladenbesitzer schließt nachts ab und setzt sich noch einmal an den Rechner,
-Neonlicht durchs Fenster. Schnitt: gleiche Uhrzeit, er steht auf und geht.
-Verkauft nicht Software, sondern Feierabend — der wundeste Punkt bei Leuten,
-die zum Leben nach Thailand gegangen sind und dann im Laden festsitzen.
 
 ### Zwanzig Türen
 Ein langer Gang, links und rechts Türen, hinter jeder ein anderer Betrieb.

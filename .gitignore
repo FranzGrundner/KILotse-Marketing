@@ -14,3 +14,6 @@ werbung/poolservice/szene*-kontaktbogen.png
 werbung/higgsfield/roh/
 werbung/higgsfield/fertig/
 werbung/higgsfield/sprecher/
+
+# Python-Zwischenstufen (montage.py importiert ../video.py)
+__pycache__/
