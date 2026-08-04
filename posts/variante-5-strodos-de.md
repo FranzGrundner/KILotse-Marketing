@@ -20,7 +20,7 @@ Dateien suchen.
 → Neue Anfrage kommt rein → KI erstellt einen Angebotsentwurf → ein Klick → fertiges PDF  
 → Alle Projekte, Kunden, Rechnungen an einem Ort  
 → Instagram-Posts für fertige Pools: Foto rein, Caption von KI, fertig  
-→ Kein Abo, keine Cloud, läuft auf seinem eigenen Rechner
+→ Kein Abo, keine Cloud — lokal statt auf fremden Servern
 
 Das war kein Standard-Tool — das ist genau auf sein Business zugeschnitten.
 

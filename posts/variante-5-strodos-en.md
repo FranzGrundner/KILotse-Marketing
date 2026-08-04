@@ -19,7 +19,7 @@ across different files.
 → New inquiry comes in → AI drafts a quote → one click → ready-to-send PDF  
 → All projects, customers, invoices in one place  
 → Instagram posts for finished pools: pick a photo, AI writes the caption, done  
-→ No subscription, no cloud, runs on his own machine
+→ No subscription, no cloud — local, not on someone else's server
 
 Not an off-the-shelf tool — built exactly for how his business works.
 

@@ -3,6 +3,14 @@
 > Geeignet für: Posts, Loom-Video, Erstgespräch-Beweis, Linktree-Showcase
 > Kein echter Kundenname im Post nötig — "Pool-Unternehmer in Österreich" reicht.
 
+> **Sprachregelung seit 02.08.2026 (#458): alles in der Vergangenheitsform.**
+> Strodos wird **nicht** als *laufender* Referenzkunde beworben — nicht „das
+> läuft dort", nicht „live", nicht „im Einsatz". Was belegbar ist und deshalb
+> gesagt werden darf: **gebaut und übergeben.** „Ich habe für einen
+> Pool-Unternehmer in Österreich ein komplettes Business-System gebaut" trägt
+> das Argument vollständig; ein behaupteter Echtbetrieb, den ein Interessent im
+> Zweifel nachfragt, trägt es nicht mehr, sondern kostet die Glaubwürdigkeit.
+
 ---
 
 ## Ausgangssituation (Vorher)
@@ -112,6 +120,6 @@ inquiries, quotes, invoices, marketing. Fully custom, no monthly SaaS fees."
 3. PDF generieren — fertig zum Versenden (30 Sek.)
 4. Kommunikations-Log kurz (20 Sek.) — "nichts geht mehr verloren"
 5. Marketing-Modul: Caption für Instagram in 30 Sekunden (30 Sek.)
-6. Abschluss: "Das ist für einen echten Kunden im Einsatz — ich baue sowas auch für dich"
+6. Abschluss: "Das habe ich für einen echten Kunden gebaut — sowas baue ich auch für dich"
 
 **Wichtig:** Echte Kundendaten im Demo-Modus ersetzen (Demo-Pool, Demo-Kunde).

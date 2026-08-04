@@ -22,8 +22,8 @@ automate exactly that, from "show me how to actually use ChatGPT" all the way to
 
 **A real example:** for a pool company in Austria I built a complete business
 system — enquiry, quote, PDF, invoice, maintenance contracts, all in one browser
-tab. Quotes that used to take hours are now a two-minute click, and there are no
-monthly software fees.
+tab. Quotes that took hours became a two-minute click, and it runs locally
+instead of on a monthly subscription.
 
 Next week I have **3 free 30-minute calls** open. No agency, no sales pressure —
 we find the biggest time sink in your business, and I'll tell you honestly
@@ -48,10 +48,19 @@ claimed "property inquiries — from ~8h down to ~2h per week". That number come
 from `werbung/demo-case-study-immobilien.md`, which says in its own first line:
 demo data, no real customer. In a business group, where the goal is paying
 clients, that is precisely the figure someone will ask about. The pool company in
-Austria is real, live, and running — and `werbung/case-study-strodos.md` itself
-sanctions the anonymised form ("Pool-Unternehmer in Österreich reicht"). The
+Austria is a real, completed customer project — and `werbung/case-study-strodos.md`
+itself sanctions the anonymised form ("Pool-Unternehmer in Österreich reicht"). The
 customer name stays out; the customer's data never gets shown, only the demo
 (demo.ki-lotse.tech) or the printed prospectus.
+
+**Corrected 02.08.2026 (#458): past tense only.** This paragraph used to say the
+Austrian system was "real, live, and running", and the post itself claimed quotes
+"are now" a two-minute click. Both asserted an ongoing production deployment,
+which is not something we advertise. What is defensible is what was built and
+handed over — so every claim about Strodos stays in the past tense. Note that the
+version submitted to Pattaya Expats on 01.08. still carries the old wording; it
+cannot be edited retroactively, and the correction takes effect from the next
+rotation.
 
 **3. "This week" → "Next week".** The post goes out on a Saturday; an offer for
 "this week" expires the same evening.
