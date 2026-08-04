@@ -292,11 +292,20 @@ dort einen aus.
 
 ### Stand 01.08.2026
 
-Fertig sind **01 Eyecatcher**, **07 Das graue Café wird bunt** (als `02-cafe`)
-und der erste Betriebsart-Clip **Poolservice** (als `03-pool`), jeweils DE und
-EN. **Zusammen null Credits** — siehe `prompts.md` §„Der Gratisweg". Damit ist
-die Kostenannahme dieses Plans überholt: der Engpass ist nicht mehr Video,
-sondern Wartezeit. Das gehört in die Abo-Entscheidung zu **#457**.
+Fertig sind **01 Eyecatcher**, **07 Das graue Café wird bunt** (als `02-cafe`),
+der erste Betriebsart-Clip **Poolservice** (als `03-pool`), der Markenfilm
+**01 Der Lotse** (als `04-lotse`) und **Zwei Uhren** (als `05-uhren`, gebaut
+02.08.), jeweils DE und EN, je 18 s. **Zusammen null Credits** — siehe
+`prompts.md` §„Der Gratisweg". Damit ist die Kostenannahme dieses Plans
+überholt: der Engpass ist nicht mehr Video, sondern Wartezeit. Das gehört in die
+Abo-Entscheidung zu **#457** — die Begründung für Plus statt Starter war
+ausschließlich der Video-Bedarf, und **fünf** Clips für null Credits sind der
+Gegenbeweis.
+
+Damit ist die Zielgröße von 10–12 Motiven zur Hälfte erreicht. Was weiterhin
+fehlt, sind **Betriebsart-Clips** (§0: der wichtigste Teil der Halde) — bisher
+gibt es genau einen, den Poolservice. Vier der fünf fertigen Clips sind
+produktunabhängige Image-Clips.
 
 ---
 
@@ -347,23 +356,33 @@ sondern Wartezeit. Das gehört in die Abo-Entscheidung zu **#457**.
 Nichts davon wartet auf das Abo. Die Punkte mit 💰 kosten Geld, alle anderen nichts.
 
 ### Heute, Sa 01.08. — **Samstag ist in vielen FB-Gruppen der einzige Self-Promo-Tag**
-- [ ] **EN-Post der Woche 1** endlich raus. Er fehlt seit dem 29.07., weil „Pattaya
-      EXPATS" entgegen dem Namen deutschsprachig ist. Ziel: „Pattaya Business Network",
-      Variante 2 (Problem EN) — liegt fertig in `posts/`.
+- [x] **EN-Post der Woche 1 eingereicht (01.08.).** Variante 2 (Problem EN) in
+      **„Pattaya Expats"** — nicht in „Pattaya Business Network", die es entgegen der
+      Annahme dieses Plans gar nicht gibt. Erster Versuch am selben Tag zurückgezogen
+      (deutsche Vorschaukarte), zweiter Versuch mit englischer Karte und
+      `ki-lotse.tech/?lang=en` läuft. **Die Gruppe moderiert vorab — noch nicht sichtbar.**
+      Stand und Lehren: `kanaele.md`.
 - [ ] **Soul-ID-Gratistest** starten (10 Credits/Tag, §3.1). Das ist das Kauftor.
 - [ ] **HeyGen-Gratistest** anlegen (3 Videos mit Wasserzeichen). Läuft nebenher.
 
 ### So 02.08.
 - [ ] Testbilder beurteilen → Kaufentscheidung. Bei Bestehen: 💰 Monatsabo kaufen,
       **Kündigungstermin sofort in den Kalender** (3 Tage vor Ablauf).
-- [ ] Zielliste Direktansprache anlegen: **20 konkrete Betriebe in Pattaya/Jomtien**
-      mit Name, Betriebsart, Kontaktweg. Quelle: Google Maps + FB. Betriebsarten, für
-      die ein Paket fertig liegt und ein Referenzkunde existiert, zuerst.
+- [x] **Zielliste Direktansprache angelegt (02.08.2026): `zielliste-direktansprache.md`,
+      21 Betriebe in sechs Betriebsarten**, nach Priorität sortiert — Poolservice zuerst
+      (einzige Betriebsart mit echtem Kundenprojekt), dann Makler/Condo, Rent-a-Bike,
+      Spa, Café, Werkstatt. Je Betrieb Name, Kontaktweg und die Paketseite, die
+      geschickt wird. Quelle war die Websuche, **nicht** Google Maps: für
+      Guesthouses liefert sie nur Buchungsportale ohne direkten Kontaktweg — diese
+      Betriebsart bleibt offen und braucht Handarbeit vor Ort.
 
 ### Mo 03.08. – Fr 07.08.
-- [ ] **Poolservice zuerst.** Strodos ist ein echter, laufender Referenzkunde in genau
-      dieser Branche — „das habe ich für einen Pool-Service gebaut, hier ist es live"
+- [ ] **Poolservice zuerst.** Strodos ist ein echtes, abgeschlossenes Kundenprojekt in
+      genau dieser Branche — „das habe ich für einen Pool-Betrieb in Österreich gebaut"
       ist das stärkste Argument, das Franz hat. Erste 5 Betriebe ansprechen.
+      **Nicht** „hier ist es live" (korrigiert 02.08., #458): gebaut und übergeben ist
+      belegbar, ein laufender Echtbetrieb wird nicht behauptet. Gezeigt wird die
+      öffentliche Demo, nie Kundendaten.
 - [x] **Erster Betriebsart-Clip (Poolservice/Wartung) fertig — 01.08.2026.**
       `werbung/poolservice/poolservice-clip-de.mp4` (4:5, 23 s, Skript und
       Begründungen in `werbung/poolservice/skript.md`). Gebaut wie #160: lokal
