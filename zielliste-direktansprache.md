@@ -1,6 +1,7 @@
 # Zielliste Direktansprache — Pattaya / Jomtien
 
-> Todo #452 · angelegt 02.08.2026 · Quelle: Websuche (Firmenseiten, Facebook,
+> Todo #452 · angelegt 02.08.2026 · **alle sechs Prioritäten am 02.08.2026
+> nachgeprüft** · Quelle: Websuche (Firmenseiten, Facebook,
 > Branchenverzeichnisse). Gehört zu `plan-higgsfield-monat.md` §9 und §0.
 >
 > **Der Zweck dieser Datei ist nicht Vollständigkeit, sondern Reihenfolge.**
@@ -139,14 +140,100 @@ zäheste), P2 und P5 danach.
 fertige Pakete greifen ineinander (`makler-hausverwaltung`, `ferienwohnung-condo`).
 Der `condo`-Baustein ist mit v1.2.0 der reifste im Bestand.
 
-Paketseiten: `…/paket/makler-hausverwaltung` · `…/paket/ferienwohnung-condo`
+Paketseiten: **[makler-hausverwaltung](https://ki-lotse.tech/paket/makler-hausverwaltung)**
+· **[ferienwohnung-condo](https://ki-lotse.tech/paket/ferienwohnung-condo)**
 
-| # | Betrieb | Kontaktweg | Notiz |
-|---|---|---|---|
-| 6 | **API Property Pattaya** | ☎ +66 9 2656 5336 (TH) · +66 6 2328 2945 (EN) · ✉ api.property2021@gmail.com | Getrennte Nummern für Thai und Englisch — kleines, zweisprachiges Team, also erreichbar ohne Vorzimmer. |
-| 7 | **Gecko Properties** | ☎ +66 38 412 150 · +66 84 656 4846 · ✉ info@gecko-properties.com | Eigener Jomtien-Bereich auf der Seite. Größer — rechne mit längerem Weg zum Entscheider. |
-| 8 | **Jomtien Realty** | 🌐 jomtien-realty.com | Nennt sich „Property Consultants", also beratungslastig — Verwaltung mehrerer Einheiten ist wahrscheinlich. |
-| 9 | **Jomtien Property** | 🌐 jomtien-property.com | Seit 2006 am Ort. Lange Bestandsdauer heißt gewachsene Zettelwirtschaft. |
+> **Nachgeprüft am 02.08.2026.** Drei Korrekturen: ein Betrieb ist nicht
+> anschreibbar und fliegt raus, ein neuer ist dazugekommen und **verdrängt alle
+> anderen von Platz 1**, und die entscheidende Trennlinie war eine andere als
+> gedacht — siehe Kasten unten. Bleiben **vier** Adressen.
+
+> **Die Trennlinie ist nicht „Makler ja/nein", sondern „verwaltet er fremde
+> Objekte?".** Ein Makler *vermittelt* und ist danach fertig; wer **verwaltet**,
+> hat jeden Monat wiederkehrende Arbeit an fremdem Eigentum — Mieterwechsel,
+> Reparaturen, Abrechnung an den Eigentümer. Nur beim Zweiten trägt das Paket.
+> Das habe ich bei der ersten Fassung nicht geprüft und dafür Vermutungen
+> hingeschrieben („lange Bestandsdauer heißt gewachsene Zettelwirtschaft").
+
+### P1 · East Coast Real Estate 🇬🇧 — *neu, und der beste Treffer der ganzen Liste*
+
+- 🌐 [thaiproperty.com](https://thaiproperty.com/)
+- ☎ +66 38 730 352 · ✉ info@thaiproperty.com
+- 📍 414/19 Moo 12, **Jomtien Complex**, Nongprue —
+  [auf Google Maps ansehen](https://www.google.com/maps/search/?api=1&query=East+Coast+Real+Estate+Jomtien+Complex+Nongprue)
+
+**Warum ganz nach vorn:** Als einziger Betrieb der Gruppe wirbt er wörtlich mit
+dem, was das Paket kann — *„Short and long-term rental management, tenant
+sourcing and property care — all handled for you."* Das ist keine Vermittlung,
+das ist **Verwaltung fremder Objekte im Auftrag des Eigentümers**: wiederkehrende
+Termine, wechselnde Mieter, Nachweis gegenüber einem Abwesenden. Genau der
+Zuschnitt von `condo` + `dokumente` + `deadline`.
+
+Gemischtes Team (westliche und thailändische Vornamen auf der Team-Seite),
+Copyright 2026, englische Seite mit internationalen Referenzen. Ansprache auf
+Englisch, per E-Mail — der Entscheider antwortet dort mit hoher
+Wahrscheinlichkeit selbst.
+
+### P2 · API Property Pattaya 🇹🇭
+
+- 🌐 [apipropertypattaya.com](https://www.apipropertypattaya.com/en/homepage-english/)
+- 📘 [facebook.com/API.Property.Pattaya](https://www.facebook.com/API.Property.Pattaya/) · zweite Seite [„by Min"](https://www.facebook.com/api.property.min/)
+- ☎ +66 92 656 5336 (Thai) · +66 62 328 2945 (Englisch) · ✉ api.property2021@gmail.com
+- 📍 29/1129 Moo 12, Jomtien 2nd Road, Nongprue —
+  [auf Google Maps ansehen](https://www.google.com/maps/search/?api=1&query=API+Property+Pattaya+Jomtien+Second+Road)
+
+**Thai-geführt, nicht bloß zweisprachig** — das ist die Korrektur. Die
+Facebook-Seite trägt ihren Titel auf Thai (ขาย/เช่า/ซื้อ บ้านคอนโด), und es gibt
+eine zweite Seite „API Property Pattaya **by Min**", also eine Person hinter dem
+Laden. Die getrennten Nummern für Thai und Englisch sind kein Zeichen für ein
+großes Team, sondern für eines, das beides selbst macht.
+
+Ansprache also **auf Thai über die Seite oder LINE**, kurz, mit Bild — und hier
+zählt die thailändische Oberfläche der Bausteine als Argument.
+
+### P3 · Jomtien Property 🇬🇧 — *aber der Anwendungsfall stimmt nicht ganz*
+
+Firmiert als **Property Marketing Specialists (Jomtien) Co., Ltd.**
+
+- 🌐 [jomtien-property.com](https://jomtien-property.com/) · © 2006–2026, also gepflegt
+- ☎ / 💬 WhatsApp +66 94 253 0427 · 💚 LINE `6dFdfm8` · ✉ info@jomtien-property.com
+- 📍 Unit C109, Laguna Beach Resort 2, 165/543 Soi 9 Thepprasit Rd, Moo 12 —
+  [auf Google Maps ansehen](https://www.google.com/maps/search/?api=1&query=Jomtien+Property+Laguna+Beach+Resort+2+Thepprasit+Soi+9)
+
+**Vollständigster Kontaktsatz der Gruppe** — LINE-ID steht offen auf der Seite.
+Seit 2006 am Ort, Seite auf Russisch, Englisch und Chinesisch (russischsprachige
+Kundschaft prägt den Auftritt).
+
+**Aber:** Sie bieten **keine Verwaltung für Eigentümer** an, nur Verkauf und
+Vermietung. Damit trägt das Hausverwaltungs-Paket hier nicht von selbst; wenn
+überhaupt, dann über `crm` und `dokumente` für den Vermittlungsvorgang. Ein
+zweiter Anlauf, kein erster.
+
+### P4 · Gecko Properties 🇬🇧 — *groß, und sitzt nicht in Jomtien*
+
+- 🌐 [gecko-properties.com](https://www.gecko-properties.com/en) (blockt automatisierte Abrufe)
+- ☎ +66 38 412 150 · +66 84 656 4846 · ✉ info@gecko-properties.com
+- 📍 116/27 **Pattaya Klang Road**, Moo 9, Nongprue —
+  [auf Google Maps ansehen](https://www.google.com/maps/search/?api=1&query=Gecko+Properties+Pattaya+Klang+Road+Moo+9)
+
+**Korrektur:** Ich hatte ihn unter Jomtien geführt, weil die Seite einen
+Jomtien-Bereich hat. Das Büro steht in **Zentral-Pattaya**. Über 2.000 Objekte im
+Bestand — der größte der Gruppe, entsprechend lang der Weg zum Entscheider und
+entsprechend wahrscheinlich, dass schon eine Software im Haus ist. Verwaltung
+für Eigentümer ist nirgends ausgewiesen. Letzter der Gruppe.
+
+### Gestrichen
+
+- ~~**Jomtien Realty** (`jomtien-realty.com`)~~ — **nicht anschreibbar.** Die
+  Domain läuft auf einem GoDaddy-Parkserver, dessen Zertifikat auf einen ganz
+  anderen Namen lautet (`*.prod.sin2.secureserver.net`); die Seite lässt sich
+  nicht abrufen. Weder Telefon noch E-Mail noch Adresse sind irgendwo
+  auffindbar. Ob es die Firma noch gibt, ist offen — anschreiben kann man sie
+  jedenfalls nicht.
+
+**Reihenfolge fürs Anschreiben:** P1 zuerst und mit Abstand (er verkauft
+wörtlich das Problem, das du löst), dann P2 auf Thai. P3 und P4 nur, wenn die
+ersten beiden nichts bringen.
 
 ---
 
@@ -156,14 +243,64 @@ Paketseiten: `…/paket/makler-hausverwaltung` · `…/paket/ferienwohnung-condo
 hat ein sichtbares, tägliches Problem — Übergabeprotokoll, Schadensstand, Fotos.
 Fast alle sind inhabergeführt und über Facebook direkt erreichbar.
 
-Paketseite: `ki-lotse.tech/paket/rent-a-bike`
+Paketseite: **[ki-lotse.tech/paket/rent-a-bike](https://ki-lotse.tech/paket/rent-a-bike)**
+· [englisch](https://ki-lotse.tech/paket/rent-a-bike?lang=en)
 
-| # | Betrieb | Kontaktweg | Notiz |
-|---|---|---|---|
-| 10 | **BIG BIKE for RENT Jomtien** | FB `/bigbikerentjomtien/` | Hochwertige Maschinen (Kawasaki, Ducati, Yamaha) = hoher Schadenswert = größtes Interesse an lückenloser Übergabedokumentation. |
-| 11 | **Jomtien Motorbike Rentals by Little Ying** | FB `/JomtienMotorbikeRentals/` | Klein und inhabergeführt — kurzer Entscheidungsweg. |
-| 12 | **Fair Rental Jomtien** | 🌐 fairrentaljomtien.com · Soi Thep Prasit 17 | Eigene Website mit Flottenliste, führt seinen Bestand also schon strukturiert. |
-| 13 | **DEE RENT Motorbikes** | FB `/DeeRentMotorbikes/` | — |
+> **Nachgeprüft am 02.08.2026.** Ein Neufund mit offener LINE-ID, eine
+> Verdopplung (Fair Rental hat **zwei** Filialen und dazu Autos), und zwei
+> Einträge, die nur aus einer Facebook-Seite bestehen und sonst nichts.
+
+### P1 · Jomtien Motorbike Rent (JMR) 🇬🇧 — *neu, bester Kontaktweg der Gruppe*
+
+- 🌐 [jomtienmotorbikerent.com](https://jomtienmotorbikerent.com/) · © 2026
+- ☎ / 💬 WhatsApp +66 95 690 3769 · 💚 **LINE `jomtienmotorbikerent`** · ✉ info@jomtienmotorbikerent.com
+- 📍 356/41 Bun Kanchana, Jomtien —
+  [auf Google Maps ansehen](https://www.google.com/maps/search/?api=1&query=Jomtien+Motorbike+Rent+Bun+Kanchana)
+
+**Roller und Autos** — zwei Fahrzeugarten heißt zwei Übergabeprotokolle,
+zwei Schadensbilder, zwei Preislogiken. Genau dort fängt eine Liste an, in der
+man den Überblick verliert. Seite auf Englisch mit Thai-Umschaltung, LINE-ID
+steht offen da: **schreib ihn zuerst an.**
+
+### P2 · Fair Rental Jomtien & Pratumnak 🇬🇧 — *zwei Filialen, nicht eine*
+
+- 🌐 [fairrentaljomtien.com](https://www.fairrentaljomtien.com/) · © 2025
+- **Jomtien:** ☎ / 💬 +66 93 443 0908 · 📍 381/273 Soi Thepprasit 17, Moo 12 —
+  [Maps](https://www.google.com/maps/search/?api=1&query=Fair+Rental+Jomtien+Soi+Thepprasit+17)
+- **Pratumnak:** ☎ / 💬 +66 98 257 3299 · 📍 354/417 Soi Thappraya 12, Moo 12 —
+  [Maps](https://www.google.com/maps/search/?api=1&query=Fair+Rental+Pratumnak+Soi+Thappraya+12)
+
+**Korrektur und zugleich das stärkste Argument:** Es sind **zwei Standorte**, und
+zum Rollerbestand (11 Modelle von 125 bis 350 ccm) kommt eine **Taxi-Flotte**
+(Camry, Fortuner, Commuter). Zwei Filialen × zwei Fahrzeugarten — wer hier ohne
+System arbeitet, weiß nicht, welcher Roller gerade wo steht. Das ist der
+wörtliche Zweck von `vermietung`.
+
+Kein LINE ausgewiesen, dafür WhatsApp an beiden Nummern.
+
+### P3 · BIG BIKE for RENT Jomtien ❓
+
+- 🌐 [bigbikerent.com](https://bigbikerent.com/) — **blockt automatisierte Abrufe (HTTP 403)**
+- 📘 [facebook.com/bigbikerentjomtien](https://www.facebook.com/bigbikerentjomtien/)
+
+Existiert und hat eine eigene Website; laut deren Beschreibung sind **LINE und
+WhatsApp auf Englisch und Thai** vorhanden — ich konnte die Nummern nicht
+auslesen, die Seite wehrt sich gegen automatische Abrufe. **Kontaktweg von Hand
+holen**, dann ist es ein guter Lead: Kawasaki, Ducati, Yamaha, Suzuki.
+
+Hoher Fahrzeugwert heißt hohes Interesse an lückenlosen Übergabefotos — das
+Argument gilt weiterhin, es ist nur nicht belegt, sondern hergeleitet.
+
+### P4 und P5 · Nur eine Facebook-Seite, sonst nichts
+
+- **Jomtien Motorbike Rentals by Little Ying** — [FB](https://www.facebook.com/JomtienMotorbikeRentals/) ❓
+- **DEE RENT Motorbikes** — [FB](https://www.facebook.com/DeeRentMotorbikes/) ❓
+
+Beide sind auffindbar, aber **außer der Facebook-Seite gibt es nichts**: keine
+Website, keine Nummer, keine Adresse, kein Hinweis auf das Baujahr des letzten
+Beitrags. Das macht sie nicht wertlos — kleine, inhabergeführte Läden sind
+genau die Zielgruppe —, aber es macht sie zu einem **Messenger-Versuch ins
+Ungewisse**. Erst ansehen, ob die Seite lebt, dann schreiben. Nach P1 bis P3.
 
 ---
 
@@ -172,13 +309,50 @@ Paketseite: `ki-lotse.tech/paket/rent-a-bike`
 **Warum:** `termine` v2.0.0 kann seit 24.07. öffentliche Selbstbuchung, dazu
 `loyalty` (Stempelkarte) — beides sofort sichtbarer Nutzen ohne Erklärung.
 
-Paketseite: `ki-lotse.tech/paket/spa-massage-friseur`
+Paketseite: **[ki-lotse.tech/paket/spa-massage-friseur](https://ki-lotse.tech/paket/spa-massage-friseur)**
 
-| # | Betrieb | Kontaktweg | Notiz |
-|---|---|---|---|
-| 14 | **Jomtien Health Massage** | ☎ 093 346 1060 · LINE `Pamtanawin12` · FB `/jomtienhealthmassage/` · Thappraya Rd, Moo 12 | **Der beste Kontaktweg der ganzen Liste**: LINE-ID steht offen da. Wirbt mit Zertifizierung — legt also Wert auf Nachweisbarkeit. |
-| 15 | **Jomtien Sauna** (จอมเทียนซาวน่า) | ☎ +66 64 931 0369 · FB `/jomtiensaunamassage/` | — |
-| 16 | **The One Massage** | FB `/TheOneMassage.Pattaya/` | — |
+> **Nachgeprüft am 02.08.2026.** Eine Einordnung war falsch: Die Sauna ist kein
+> Terminbetrieb, dort trägt ein anderer Baustein. Ein Eintrag bleibt ohne jeden
+> Beleg.
+
+### P1 · Jomtien Health Massage 🇹🇭 — *der beste Kontaktweg der ganzen Liste*
+
+- 📘 [facebook.com/jomtienhealthmassage](https://www.facebook.com/jomtienhealthmassage/) · Eintrag bei TripAdvisor mit Stand 2026
+- ☎ 093 346 1060 · 💚 **LINE `Pamtanawin12`** · ✉ tanawinkopha@gmail.com
+- 📍 413/29 Thappraya Road, Moo 12 —
+  [auf Google Maps ansehen](https://www.google.com/maps/search/?api=1&query=Jomtien+Health+Massage+Thappraya+Road)
+
+Die LINE-ID steht offen auf der Seite — kein anderer Betrieb der Liste macht es
+einem so leicht. Wirbt damit, **als einziger in Jomtien vom Gesundheitsministerium
+zertifiziert** zu sein, und bietet Behandlung im Haus des Kunden an. Beides
+zusammen heißt: Termine außer Haus, mit Nachweispflicht — `termine` v2.0.0 mit
+öffentlicher Selbstbuchung trifft genau das.
+
+Ansprache auf **Thai über LINE**, kurz, mit Bild.
+
+### P2 · Jomtien Sauna (จอมเทียนซาวน่า) 🇹🇭 — *aber mit dem anderen Baustein*
+
+- 📘 [facebook.com/jomtiensaunamassage](https://www.facebook.com/jomtiensaunamassage/) · TripAdvisor-Eintrag aktiv, Stand 2026
+- ☎ +66 64 931 0369
+- 📍 386/125 Moo 12, Watboonkanchana, Banglamung —
+  [auf Google Maps ansehen](https://www.google.com/maps/search/?api=1&query=Jomtien+Sauna+Watboonkanchana+Banglamung)
+
+**Korrektur meiner Einordnung.** Das ist kein Terminbetrieb, sondern ein
+**Eintrittsbetrieb**: 200 THB an der Kasse, Sauna, Dampfbad, großer Pool,
+ermäßigte Tage für Thais und für Damen (Mittwoch und Wochenende). Eine
+Terminbuchung braucht dort niemand.
+
+Was dagegen sehr gut passt: **`loyalty`** — die digitale Stempelkarte für
+wiederkehrende Gäste, und `kasse` für die Tagesabrechnung mit mehreren
+Preisstufen. Wer mit Rabatttagen arbeitet, zählt am Monatsende von Hand.
+
+### P3 · The One Massage ❓ — *nichts als eine Facebook-Seite*
+
+- 📘 [facebook.com/TheOneMassage.Pattaya](https://www.facebook.com/TheOneMassage.Pattaya/)
+
+Außer der Seite ist nichts auffindbar: keine Nummer, keine Adresse, kein
+Eintrag in einem Verzeichnis. **Schwächster Eintrag der Gruppe** — erst
+ansehen, ob die Seite lebt, sonst streichen.
 
 ---
 
@@ -189,24 +363,98 @@ fertig. Aber: Gastronomie ist der härteste Markt für Software-Ansprache
 (dünne Margen, hohe Fluktuation). Deshalb hinten — nicht weil das Material
 fehlt, sondern weil die Trefferquote niedriger ist.
 
-Paketseite: `ki-lotse.tech/paket/cafe-restaurant`
+Paketseite: **[ki-lotse.tech/paket/cafe-restaurant](https://ki-lotse.tech/paket/cafe-restaurant)**
+· [englisch](https://ki-lotse.tech/paket/cafe-restaurant?lang=en)
 
-| # | Betrieb | Kontaktweg | Notiz |
-|---|---|---|---|
-| 17 | **Café Sunshine** | ☎ +66 87 140 9898 · FB `/cafesunshine7/` · Jomtien Beach, Soi Splendid | Europäische und thailändische Küche — spricht die Zielgruppe an, in der du selbst postest. |
-| 18 | **Siri's Beach Café** | ☎ +66 63 530 3756 · FB `/surfbeachcafe/` · Na Jomtien Soi 8 | — |
-| 19 | **Jimmy's Restaurant and Bar** | FB `/jimmysrestaurantandbarjomtien/` · Soi 7 Jomtien | Britisch-thailändisch, Live-Programm — Veranstaltungen heißt Terminverwaltung. |
+> **Nachgeprüft am 02.08.2026.** Eine Adresse war falsch, eine Domain ist tot.
+> Alle drei Betriebe gibt es.
+
+### P1 · Jimmy's Restaurant and Bar 🇬🇧
+
+- 📘 [facebook.com/jimmysrestaurantandbarjomtien](https://www.facebook.com/jimmysrestaurantandbarjomtien/) — aktiv, mit Fotostrecke
+- 📍 Soi 7, Jomtien —
+  [auf Google Maps ansehen](https://www.google.com/maps/search/?api=1&query=Jimmy%27s+Restaurant+and+Bar+Jomtien+Soi+7)
+
+**Nach vorn gerückt**, weil er als einziger der drei etwas hat, das über die
+Speisekarte hinausgeht: **Live-Musik**. Ein Veranstaltungsprogramm heißt Termine,
+Ankündigungen und wiederkehrende Gäste — `termine` und `loyalty` haben dort
+etwas zu tun, `speisekarte` sowieso. Britisch-thailändische Küche, englischer
+Auftritt: der Wirt liest selbst mit.
+
+### P2 · Café Sunshine 🇬🇧 — *Adresse korrigiert, Domain tot*
+
+- 📘 [facebook.com/cafesunshine7](https://www.facebook.com/cafesunshine7/)
+- ☎ +66 87 140 9898
+- 📍 **Jomtien Soi 7, direkt an der Beach Road** —
+  [auf Google Maps ansehen](https://www.google.com/maps/search/?api=1&query=Cafe+Sunshine+Jomtien+Beach+Road+Soi+7)
+- Geöffnet ab 8 Uhr, Frühstück täglich 7–11 Uhr
+
+**Zwei Korrekturen:** Ich hatte „Soi Splendid" notiert — es ist **Soi 7 an der
+Beach Road**. Und die eigene Domain `sunshine.jomtien.net` liefert **404**; es
+zählt nur die Facebook-Seite. Europäische und thailändische Küche, Lage direkt
+am Strand.
+
+Frühstücksgeschäft ab 7 Uhr heißt: fester Tagesablauf, wiederkehrende Gäste —
+`loyalty` ist hier das leichtere Argument als eine Terminverwaltung.
+
+### P3 · Siri's Beach Café 🇹🇭❓
+
+- 📘 [facebook.com/surfbeachcafe](https://www.facebook.com/surfbeachcafe/)
+- ☎ +66 63 530 3756
+- 📍 Na Jomtien, Soi 8 —
+  [auf Google Maps ansehen](https://www.google.com/maps/search/?api=1&query=Siri%27s+Beach+Cafe+Na+Jomtien+Soi+8)
+
+Existiert, Nummer und Lage bestätigt. Mehr gibt es nicht her: keine Website,
+kein erkennbares Zusatzgeschäft, das ein Paket tragen würde. Weit draußen in
+Na Jomtien. **Letzter der Gruppe.**
 
 ---
 
 ## Priorität 6 — Werkstatt / Handwerk
 
-Paketseite: `ki-lotse.tech/paket/werkstatt-handwerk`
+Paketseite: **[ki-lotse.tech/paket/werkstatt-handwerk](https://ki-lotse.tech/paket/werkstatt-handwerk)**
 
-| # | Betrieb | Kontaktweg | Notiz |
-|---|---|---|---|
-| 20 | **Garage 26** | FB `/garagetwentysix/` | Big-Bike-Service, Federung, Lackierung — Auftragsdurchlauf mit mehreren Schritten. |
-| 21 | **1mo Garage** | FB `/1mo.garage/` · ☎ +66 97 009 3889 · IG `1mo_garage` | Aktiv auf Instagram, also gewohnt digital zu arbeiten. |
+> **Nachgeprüft am 02.08.2026.** Beide gibt es, beide Leistungsbeschreibungen
+> stimmen. Was auffällt, ist etwas anderes — siehe unten.
+
+### P1 · 1mo Garage 🇹🇭
+
+- 📘 [facebook.com/1mo.garage](https://www.facebook.com/1mo.garage/) · 📷 [instagram.com/1mo_garage](https://www.instagram.com/1mo_garage/)
+- ☎ +66 97 009 3889
+
+Motorradreparatur, dazu Tuning, Customizing, Chiptuning und Stuntumbauten, mit
+„Spot and Chill Zone". Das ist kein Ölwechselbetrieb, sondern **Auftragsarbeit
+mit mehreren Schritten und Kundenabsprachen** — genau der Fall, in dem
+`aufgaben` (die Aufgabe ist der Auftrag), `zeiterfassung` und `lager`
+ineinandergreifen. Seit 04.08. buchen die drei aufeinander.
+
+Aktiv auf Instagram und mit veröffentlichter Nummer: der einzige der beiden mit
+einem harten Kontaktweg.
+
+### P2 · Garage 26 🇬🇧❓
+
+- 📘 [facebook.com/garagetwentysix](https://www.facebook.com/garagetwentysix/)
+
+Federungs-Service und SAG-Einstellung, Big-Bike-Wartung, Lackierung. Die
+Leistungsbeschreibung stimmt, aber **es gibt keine Nummer und keine Adresse**,
+nur die Facebook-Seite.
+
+### Was diese Gruppe über sich verrät
+
+**Keiner der beiden hat eine Website, keiner eine veröffentlichte Adresse.**
+Bei den Poolbetrieben hatte jeder zweite eine eigene Seite; hier läuft alles
+über Facebook und Instagram.
+
+Das ist beides zugleich: die **größte Chance** (wer nichts hat, hat auch keine
+Software abzulösen) und die **größte Hürde** (wer Facebook für ausreichend
+hält, sieht keinen Bedarf). Für die Ansprache heißt das — nicht mit „System"
+oder „Digitalisierung" anfangen, sondern mit dem einen Satz, der weh tut:
+*welcher Auftrag steht gerade wo, und was hat er bisher gekostet?*
+
+Und es heißt: **Diese Betriebsart ist zu Recht die letzte.** Nicht weil die
+Betriebe schlecht wären, sondern weil zwei Adressen ohne Telefonnummer kein
+Arbeitsvorrat sind. Wenn Priorität 6 drankommt, ist der bessere Schritt eine
+Runde über Google Maps als ein Messenger-Versuch ins Ungewisse.
 
 ---
 
@@ -235,4 +483,36 @@ zweite Liste, nicht ein weiterer Clip.
   Buchungsportale (Booking, Trivago, Hotels.com), die den Betrieb zwar zeigen,
   aber keinen direkten Kontaktweg. Dafür braucht es Google Maps oder einen
   Spaziergang die Jomtien Beach Road entlang — beides Handarbeit.
-- **Keine Prüfung, ob der Betrieb heute noch offen ist.** Siehe Regel 1.
+- **Keine Prüfung, ob der Betrieb heute noch offen ist.** Alle Angaben sind am
+  02.08.2026 im Netz gegengeprüft — Domain lebt, Kontaktweg existiert, Adresse
+  stimmt, Leistungsbeschreibung passt zum Paket. **Was das nicht beweist:** ob
+  gestern noch jemand aufgesperrt hat. Dafür braucht es den Anruf, und Regel 1
+  bleibt.
+
+## Was die Nachprüfung gekostet und gebracht hat
+
+Alle sechs Prioritäten sind durchgeprüft (Priorität 1 am 02.08. separat).
+**Vier Einträge fielen weg, drei kamen dazu, elf Angaben waren falsch oder
+unvollständig.** Von 21 Namen der ersten Fassung blieben **22 Adressen** — die
+Zahl täuscht, weil Streichungen und Neufunde sich fast aufheben.
+
+**Was gestrichen wurde und warum:**
+
+| Eintrag | Grund |
+|---|---|
+| Pattaya Pool Shop | dieselbe Firma wie Pattaya Swimming Pools |
+| Pattaya Pool Service | Domain tot |
+| Jomtien Realty | Parkserver, kein Kontaktweg auffindbar |
+
+**Was dazukam — und alles drei ganz nach vorn:**
+
+- **East Coast Real Estate** wirbt wörtlich mit Verwaltung fremder Objekte.
+- **Jomtien Motorbike Rent** hat eine offene LINE-ID und vermietet Auto *und* Roller.
+- **NY Pool Service** und **Clean Pro Pattaya** (bei Priorität 1) sind
+  thai-geführt und arbeiten mit wiederkehrenden Verträgen.
+
+**Die Lehre für die nächste Liste:** Der teuerste Fehler war nicht eine falsche
+Nummer, sondern eine **ungeprüfte Vermutung im Notizfeld** („lange
+Bestandsdauer heißt gewachsene Zettelwirtschaft"). Die klang plausibel und war
+falsch — Jomtien Property verwaltet gar nichts. Ein Notizfeld darf nur
+enthalten, was auf der Seite des Betriebs steht.
