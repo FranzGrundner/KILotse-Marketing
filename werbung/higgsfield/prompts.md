@@ -602,6 +602,281 @@ weil Raum, Licht und Uhr identisch bleiben.
 
 ---
 
+## Clip „Die gute Fee" (MyPro, Motiv 6)
+
+> ⚠ **Dieser Clip gehört nicht zu KI-Lotse.** Er ist für die **gemeinsame Firma
+> mit Andi**, und die hat noch keinen Namen und kein Erscheinungsbild. Alles
+> Markenhafte darin ist **Platzhalter zu Demozwecken**: der grüne Grund, das
+> Kompass-Logo, der Avatar, `ki-lotse.tech` im Abspann und im Sprechtext von
+> Shot 3. Wird der Clip wirklich verwendet, **wird der Abspann komplett neu
+> gemacht** — das Erscheinungsbild überlegt sich Andi.
+>
+> **Nicht in die KI-Lotse-Rotation stellen.** Er verkauft nicht KI-Lotse.
+
+Zweck: MyPro verkaufen, ohne die Oberfläche zu zeigen. Das verstaubte Büro ist
+die Betriebsart-freie Fassung von „veraltete Software" — sie passt auf jeden
+Betrieb und altert nicht.
+
+Länge 18 s (3 × 5 s + Abspann), 4:5. **Der erste Clip, der bewusst Credits
+ausgibt** — Begründung unten.
+
+### Die Regel, an der dieser Clip hängt
+
+**Der Zauberstab wechselt die Hand.** Eine Fee, die hereinfliegt, alles richtet
+und wieder geht, sagt stumm gesehen: *ein anderer macht das für dich.* Genau das
+ist MyPro nicht — dort baut der Kunde selbst, mit seinem eigenen KI-Abo. Also
+bringt die Fee den Stab, gibt ihn ab, und **der Mann schwingt ihn selbst**. Erst
+dann stimmt das Bild mit dem Satz überein, und erst dann funktioniert der Clip
+ohne Ton.
+
+Damit steht die Fee in derselben Figur wie der Lotse: sie kommt an Bord, macht
+ihre Arbeit und geht wieder von Bord. Der Kunde gibt nichts aus der Hand.
+
+**Der Raumwechsel ist hier ausdrücklich erlaubt** — anders als beim Eyecatcher
+und beim Lotsen. Dort behauptete der Clip, es sei derselbe Raum bzw. dasselbe
+Schiff, deshalb war ein neu generierter Raum ein Fehler. Hier ist die Verwandlung
+die Aussage: aus dem engen Kabuff wird ein heller Raum mit großer Fensterfront.
+Was zusammenbleiben muss, ist nicht die Einrichtung, sondern **der Mann und die
+Kameraposition** — und die kommen aus der Startframe-Kette.
+
+**Die Kette:** Mutterbild A → Shot 1. Letzter Frame von Shot 1 → Shot 2. Letzter
+Frame von Shot 2 → Shot 3. Das ist Regel 2 dieser Datei, hier zum ersten Mal über
+drei Glieder. Frame herausziehen geht lokal:
+
+```
+ffmpeg -sseof -0.1 -i roh/06-fee/01-grab.mp4 -frames:v 1 -q:v 2 roh/06-fee/frame-01.png
+```
+
+**Erster Handgriff: den Soul-ID-Charakter abwählen** (× an der Charakter-Kachel).
+Der Mann am Schreibtisch ist der Kunde, nicht Franz — mit stehendem Charakter
+trägt er Franz' Gesicht, und dann sitzt der Anbieter im eigenen Elend.
+
+### Shot 1 — das Grab (das Mutterbild, hier wird gesucht)
+
+```
+A man in his fifties seen from directly behind, sitting at a desk in a cramped
+old-fashioned office, shoulders rounded, head slightly lowered. In front of him
+a beige CRT monitor from the nineties showing a dense grey spreadsheet, the only
+real light source in the room. Dust hanging thick in the air, cobwebs in the
+upper corners, stacks of yellowed paper and ring binders along the walls. Behind
+him a small window with closed dusty blinds, letting in thin slats of grey light.
+Faded brown and grey tones, everything worn and tired. Camera behind the man at
+shoulder height, slightly above, the monitor glow filling the centre of the frame.
+```
+**MARKE hier ohne die Lichtzeile** — „warm late-afternoon tropical light" würde
+den ganzen Shot kaputtmachen. Stattdessen anhängen:
+```
+cinematic, dim available light, shallow depth of field, realistic skin texture,
+desaturated brown-grey tones, no on-screen text
+```
++ NEGATIV.
+
+Video daraus: **fast reglos**, ein sehr langsames Heranschieben an Rücken und
+Bildschirm. Der Staub treibt in den Lichtschlitzen, die Schultern senken sich
+einmal mit dem Atem. Sonst bewegt sich nichts. In der letzten Sekunde treibt
+**ein kleiner warmer Lichtpunkt oben rechts ins Bild** — das ist der Haken in
+den Schnitt. `Enhance` abschalten (Falle 5): die Reglosigkeit ist der Punkt.
+
+### Shot 2 — die Fee bringt den Stab (aus dem letzten Frame von Shot 1)
+
+```
+Same office, same camera behind the man. A small winged fairy the size of a hand,
+glowing warm gold, flies in from the upper right and comes to rest beside the
+man's shoulder, a trail of fine sparks behind her. Where the sparks fall, the
+floating dust lights up. She holds out a slender wand towards him and he reaches
+for it and takes it. The room is still dark and grey; the fairy and the wand are
+the only warm light. One continuous shot, no cut.
+```
++ MARKE (ohne Lichtzeile, wie oben) + NEGATIV.
+
+**Das Nehmen ist der teuerste Handgriff des ganzen Clips** und der, an dem die
+Aussage hängt. Wenn das Modell die Übergabe nicht bringt, lieber diesen Shot
+nachziehen als weiterbauen — ein Clip, in dem der Stab bei der Fee bleibt, sagt
+das Gegenteil.
+
+Sparfassung, falls die Übergabe nach drei Anläufen nicht sitzt: Die Fee lässt den
+Stab **fallen**, er landet auf dem Schreibtisch, seine Hand kommt ins Bild und
+nimmt ihn. Eine fallende Gerade kann jedes Modell, eine Übergabe zwischen zwei
+Figuren nicht.
+
+### Shot 3 — die Verwandlung (aus dem letzten Frame von Shot 2)
+
+```
+Same office, same camera behind the man, who now holds the wand. He raises it.
+The room transforms around him in one continuous movement: the small blinded
+window widens into a floor-to-ceiling glass front, sunlight floods in, dust and
+cobwebs dissolve, the paper stacks and ring binders disappear, the worn furniture
+becomes a clean modern desk in a bright room with plants, the beige CRT becomes a
+slim bright screen. Colour returns to everything. The man turns towards the
+camera and he is beaming. One continuous shot, no cut.
+```
+**Hier MARKE mit der Lichtzeile** — dies ist die eine Einstellung im Clip, in die
+das warme Licht der Marke gehört. + NEGATIV.
+
+**Den Zoom nicht bekämpfen.** Bild-zu-Video erzwingt eine langsame Hineinfahrt
+(Gattungsmerkmal, an Firefly *und* Higgsfield belegt — Rezept A4). Beim
+KI-Lotse-Intro war das tödlich, weil dort passgenaue Overlays drüberlagen; hier
+arbeitet die Fahrt für den Shot. Also nicht „static camera" prompten und sich
+ärgern, sondern die Fahrt einplanen.
+
+**Der Schluss ist die Pointe** — das strahlende Gesicht liegt am Ende der
+Bewegung. Beim Kürzen auf 5 s gilt deshalb wie immer: **vorne abschneiden, nicht
+hinten** (`max_shot` in `montage.py`).
+
+### Text (lokal eingebrannt, nicht generiert)
+
+| Shot | DE | EN |
+|---|---|---|
+| 1 | Software von gestern? | Software from yesterday? |
+| 2 | Nicht mehr auf dem Stand\nvon heute? | Not where it should be\ntoday? |
+| 3 | MyPro ist dein Zauberstab.\nSchwingen musst du ihn. | MyPro is your magic wand.\nYou do the waving. |
+
+Karte und Stimme sagen hier **dasselbe** — die Sätze sind kurz genug zum Lesen
+und vollständig genug zum Sprechen. Eine Ausnahme: Im Sprechtext von Shot 3
+steht **„DU"** in Großbuchstaben (`sprech_de`), auf der Karte klein.
+
+**Kein KI-Lotse, keine Domain** — weder gesprochen noch geschrieben. Siehe den
+Kasten oben: Der Clip gehört der gemeinsamen Firma, nicht KI-Lotse.
+
+### Die drei Textfehler, die diese Fassung ersetzt hat
+
+Die erste Fassung war in beiden Sprachen unbrauchbar. Was dabei gelernt wurde,
+gilt für jeden weiteren Clip:
+
+1. **„Now you're the fairy" geht im Englischen nicht.** *Fairy* ist dort auch
+   ein Schimpfwort für Schwule; der Satz landet völlig woanders als gemeint.
+   **Bei jedem englischen Text die Nebenbedeutung prüfen, nicht nur die
+   Übersetzung.**
+2. **Die Karten erzählten nach, was man ohnehin sieht.** Man sieht eine Fee, und
+   der Text sagte „Fee". Verschenkte Fläche — der Text soll sagen, was das Bild
+   *nicht* kann.
+3. **„Schwingen musst du ihn selbst" gegen „Schwingen musst DU ihn".** Beide
+   sind richtig; ohne Betonung klingt der zweite abgeschnitten, mit
+   Kontrastbetonung ist er vollständig. Gewählt wurde der zweite, und zwar aus
+   einem Grund, der über den Satz hinausgeht (Franz, 14.08.2026):
+
+   > **„du" ist eine Aufforderung, „selbst" ist eine Einschränkung.**
+
+   Derselbe Sachverhalt, zwei Haltungen: *du* heißt „du darfst", *selbst* heißt
+   „dir hilft keiner". Wer Ermächtigung verkauft, darf an der Schlussstelle
+   nicht aus Versehen Alleinsein verkaufen.
+
+### Die Stimme kommt nicht von `edge-tts`
+
+**ElevenLabs v3 über Higgsfield**, Stimme „Arthur", die Fee „Juno". Grund:
+`edge-tts` hat „veraltete" zu englischem Kauderwelsch verschliffen — dieselbe
+Falle wie damals bei „ki-lotse.tech" im Loom-Video, nur diesmal mitten im Wort.
+
+Drei Dinge, die dabei zählen:
+
+- **Die Regieanweisung steht im Skript.** `[disappointed][tired]` auf Shot 1
+  und 2, `[cheerful][excited]` auf Shot 3 — der Stimmungsbogen folgt dem Bild
+  vom staubigen Büro zum strahlenden Gesicht (Franz' Vorgabe). Eine Stimme, drei
+  Haltungen, kein Stimmwechsel.
+- **Die Fee ist eine zweite Stimme**, 2,8 s nach Beginn von Shot 2 eingemischt —
+  genau dann, wenn sie im Bild an der Schulter steht und nicht mehr nur ein
+  Lichtpunkt ist. Gemischt wird **lokal mit ffmpeg** in eine Datei; `montage.py`
+  kennt nur eine Sprachdatei je Shot.
+- **`montage.py` erzeugt nur, was fehlt.** Fertige MP3s in
+  `sprecher/<sprache>/06-fee/` bleiben stehen — deshalb braucht der Weg über
+  Higgsfield keine Zeile Code. Wer neu erzeugen will, löscht die Dateien.
+
+Kosten: **0,15 bis 0,3 Credits je Zeile**, acht Zeilen rund 2,25. Sprache ist
+damit so billig wie Bilder — die Credit-Frage entscheidet sie nicht.
+
+### Der Abspann bewegt sich — und wird trotzdem nicht generiert
+
+Erster Clip mit **bewegtem Abspann**: „MyPro" blitzt auf, als hätte es der
+Zauberstab geschrieben (weißer Schein, Funkenkranz, ein letztes Aufziehen von
+88 auf 100 %), danach kommen Satz, Domain und Name nacheinander dazu.
+
+**Das rendert `montage.py` lokal, Bild für Bild mit PIL** — kein Modell kommt
+daran. Videomodelle schreiben bei Text Kauderwelsch (Baustein-Regel ganz oben in
+dieser Datei), und beim KI-Lotse-Intro hat dieselbe Einsicht schon einmal zum
+Selberrendern geführt. Schrift ist Handwerk.
+
+Eingeschaltet wird das über `held` im `CLIPS`-Eintrag; ohne dieses Feld bleibt
+alles beim Standbild. **Das ist Absicht:** eine Marke, die bei jedem Post anders
+auftritt, ist keine Marke mehr. Der bewegte Abspann gehört den Clips, die ein
+**Erzeugnis beim Namen nennen** — die fünf produktfreien behalten die ruhige
+Markenfläche. Stellschrauben: `TAKT` (wann was kommt), `HELD_GROESSE`, `FUNKEN`.
+
+**Was hier steht, ist Platzhalter** (siehe Kasten oben). Nützlich ist daran nur
+die *Naht*: `held` und `abspann` sind die Stellen, an denen ein anderer Name und
+andere Zeilen eingesetzt werden, ohne den Clip anzufassen. Was zusätzlich
+getauscht werden muss, wenn das Erscheinungsbild der gemeinsamen Firma steht:
+`AKZENT` (der grüne Grund), die beiden Assets `logo-icon-weiss.png` und
+`avatar-franz-rund-512.png`, die Zeile `ki-lotse.tech` in `abspannbilder()` —
+und der Sprechtext von Shot 3, der die Domain ansagt.
+
+### Am Werkzeug abgelesen (14.08.2026) — die halbe Wegweisung oben ist überholt
+
+Beim Bauen dieses Clips hat sich fast jede Annahme aus dem August-Durchlauf
+geändert. **Was hier steht, sticht die Abschnitte „Der Gratisweg" und „Am
+Werkzeug abgelesen (01.08.)".**
+
+- **Der Gratisweg über Nano Banana 2 ist zu.** Das Modell trägt keine
+  UNLIMITED-Kennzeichnung mehr, und sobald man es wählt, **verschwindet der
+  Unlimited-Schalter ganz aus der Leiste**; Generate verlangt 1,5 Credits.
+  Gratis sind jetzt **Seedream 5.0 lite** und **Seedream 4.5**. Die Motivsuche
+  lief auf Seedream 4.5 (2K, Unlimited an): **fünf Bilder, 0 Credits.**
+- **Seedance ist bei 2.5 und fällt für die Startframe-Kette aus.** Es kostet 33
+  statt 72 — aber es hat **kein Startbild-Feld mehr**, sondern „References", und
+  der Referenz-Wähler nimmt die Auswahl nicht an (jede Kachel trägt einen Knopf
+  „Check eligibility", offenbar eine Freigabeprüfung). Auch „Edit Video" hilft
+  nicht: das ist Video-zu-Video-Bearbeitung, kein Verlängern.
+- **Kling 3.0 kann 1080p für 17,5 Credits.** Das ist der Fund. Kling hat das
+  Startbild-Feld, das die ganze Kette trägt, und liefert **1244 × 1660** statt
+  der 828 × 1108, aus denen die fünf älteren Clips hochgerechnet sind. Ein
+  ganzer Clip kostet damit **52,5 Credits**, nicht 600.
+- **Ein Kaufangebot fängt den ersten Generate-Klick ab** („Boost credits" für
+  mehr parallele Läufe, mit Balance-Anzeige). Nichts kaufen, wegklicken, zweiter
+  Klick läuft. **Der erste Klick erzeugt nichts** — wer nicht nachsieht, glaubt,
+  der Lauf sei gestartet.
+- **`Turn to video` setzt das Modell auf Kling 3.0 zurück**, nicht nur den
+  Unlimited-Schalter. Das ist hier kein Schaden, weil Kling ohnehin das Ziel ist.
+- **Das Prompt-Feld ist kein Formularelement**, sondern ein bearbeitbarer
+  Bereich: Werte lassen sich nicht setzen, nur anklicken → alles markieren →
+  tippen.
+- **Falle 14 bestätigt:** Ein zweites und drittes Video aus demselben Bild
+  braucht `Turn to video` nicht. Prompt ersetzen, Generate — Startbild,
+  Auflösung und Modell bleiben stehen. So sind alle drei Shots entstanden.
+
+**Und die Ein-Bild-Regel hat wieder gewonnen:** Statt der geplanten Frame-Kette
+über drei Glieder kamen alle drei Shots aus **demselben Mutterbild** mit drei
+Bewegungs-Prompts — wie beim Café und bei „Zwei Uhren". Der Übergang trägt
+trotzdem: Shot 2 endet damit, dass er den Stab nimmt, Shot 3 beginnt damit, dass
+er ihn von unten hochhebt.
+
+**Zwei Prompt-Lücken, die je einen Anlauf gekostet haben:**
+
+1. **Sag, was im Bild NICHT sein soll, sonst erfindet es das Modell.** Ohne
+   Verbot stand eine Fotokamera oben auf dem Monitor.
+2. **Sag, was die Figur anhat.** Ohne Kleidungsangabe saß der Mann oben ohne und
+   muskelbepackt am Schreibtisch — unfreiwillig komisch. `fully clothed, no bare
+   shoulders, no muscular physique` gehört in die Negativliste jeder Figur.
+
+### Credit-Rechnung — tatsächlich: **52,5**
+
+| Posten | Menge | Credits |
+|---|---|---|
+| Bildsuche Mutterbild (Seedream 4.5, Unlimited) | 5 Bilder | 0 |
+| Shot 1 — Kling 3.0, 7 s, 1080p | 1 Anlauf | 17,5 |
+| Shot 2 — die Übergabe | 1 Anlauf | 17,5 |
+| Shot 3 — die Verwandlung | 1 Anlauf | 17,5 |
+| **Summe** | | **52,5** |
+
+**Kein einziger Fehlschlag auf Videoebene** — weil die fünf Anläufe alle auf
+Bildebene passiert sind, wo sie nichts kosten. Das ist Regel 1 dieser Datei, zum
+vierten Mal bestätigt.
+
+Kontostand vorher 960, nachher rund 907. **Damit ist die Ausgangsfrage
+beantwortet und zugleich verschoben:** Das Guthaben lässt sich über Auflösung
+nicht verbrauchen. Wer 960 Credits nicht verfallen lassen will, macht **mehr
+Clips**, nicht teurere — bei 52,5 je Clip sind das rund siebzehn weitere.
+
+---
+
 ## Montage — was nach dem Generieren passiert
 
 `montage.py` macht aus den Rohclips den fertigen Post. Die Bildspur bleibt für
@@ -744,3 +1019,930 @@ Der Clip ist gebaut. Was dabei anders war als angenommen:
 Mit der Sparfassung (Shot 2 als Schnitt) rund 40–75. Zum Vergleich: Starter hat
 200 Credits im Monat, Plus 1.000. Ohne die Bild-zuerst-Regel läge derselbe Clip
 bei 160–270 — also fast einem ganzen Starter-Monat für ein einziges Video.
+
+---
+---
+
+# Kampagne „Musst du nicht" — Clip 07 und 08
+
+> Angelegt 14.08.2026. Gerüst, Variationsachse und die Auflösung der Regel
+> „Keine erfundenen Kunden" stehen in `ideen.md` §„Kampagne Musst du nicht".
+> **Für den Test nur Deutsch** — die englische Spur kommt erst, wenn Andi
+> zugestimmt hat.
+
+## Was hier anders ist als bei Clip 01–06
+
+1. **Eine Einstellung, zwei Leute, ein Dialog.** Kein Schnitt, keine Fahrt. Die
+   neuen Modelle liefern Sprache und Lippen aus demselben Lauf — die Tonspur
+   wird **nicht** getrennt gebaut. Das heißt zugleich: **kein Nachbessern.**
+   Sitzt die Betonung nicht, wird der ganze Clip neu gewürfelt. Deshalb muss der
+   Text vor dem ersten Lauf stehen; am Bild lernen ist hier zu teuer.
+2. **Zehn Sekunden, nicht fünf.** Der Dialog passt nicht in einen 5-s-Lauf. Ein
+   Clip = ein 10-s-Lauf, also rund 20 Credits statt 10.
+3. **Die MARKE aus §Bausteine gilt NICHT.** Tropisches Spätnachmittagslicht ist
+   KI-Lotse. Diese Kampagne spielt in Mitteleuropa und lebt von Alltäglichkeit.
+4. **Kamera immer fest.** Wackelkamera macht aus der Szene eine Doku — und aus
+   dem Straßeninterview damit eine gefälschte Umfrage. Der feste, komponierte
+   Rahmen ist das, was die Szene als Szene ausweist.
+5. **Erster Handgriff wie immer: Soul-ID abwählen** (× an der Charakter-Kachel).
+   Franz kommt in keinem der beiden Clips vor.
+
+**MARKE „Musst du nicht"** (an jeden Bildprompt anhängen)
+```
+plain everyday realism, flat natural daylight, Central European setting, muted
+everyday colours, realistic skin texture, ordinary clothing, locked-off camera,
+eye-level, no on-screen text
+```
+
+**NEGATIV** (zusätzlich zum Block aus §Bausteine)
+```
+no handheld shake, no documentary look, no readable signage, no brand logos
+```
+
+---
+
+## Die Methode, die alles davor überholt: **englisch drehen, deutsch vertonen**
+
+Franz' Einfall vom 14.08., beim Bully-Versuch bestätigt: *„was wenn wir sie
+englisch sprechen lassen, das sollte im Video super funktionieren und
+nachvertonen müssen wir für deutsch sowieso."*
+
+**Der Gedanke ist zwingend.** Die Tonspur wird ohnehin ersetzt — also verschenken
+wir mit deutschem Dialog genau den Bereich, in dem das Modell gut ist. Auf
+Englisch stimmen nicht nur die Laute; **die ganze Darstellung wird besser**:
+Betonung, Blicke, Pausen, Timing. Das Stolpern über ch und ä steckt auch im
+Gesicht, nicht nur im Ohr. Urteil Franz zum Ergebnis: *„perfekt auf englisch."*
+
+**Die Bedingung:** Englische Münder formen englische Wörter. Eine deutsche
+Tonspur darüber hält nur, wenn die Bildgestaltung es verzeiht. **Drei Wege, alle
+am selben Tag erprobt:**
+
+1. **Weite Einstellung** — Küche, Bar. Münder klein, Abweichung unsichtbar.
+2. **Etwas vor dem Mund** — Bully, Vollgitter. Dann sind sogar Großaufnahmen frei.
+3. **Gegenlicht / Silhouette** — Bühne. **Der freieste Weg von allen:** Ist die
+   Figur ein Scherenschnitt, gibt es überhaupt keine sichtbare Mundbewegung, und
+   man kann *jeden* Text in *jeder* Sprache darüberlegen. Franz: *„man sieht
+   keine Mundbewegungen, also ziemlich egal, man kann jeden Text den man will
+   drauflegen."*
+
+In einer ausgeleuchteten Großaufnahme ohne Abdeckung geht es nicht.
+
+**Merke, wie Weg 3 entstanden ist:** Von drei Startframe-Fassungen hat Claude die
+dunkle als *fehlerhaft* bezeichnet — „der Sänger ist mitverdunkelt, er spricht
+doch". Franz hat sie trotzdem gewählt. Der vermeintliche Fehler war der Vorteil.
+**Ein dunkles Gesicht ist kein Mangel, sondern Freiheit für die Tonspur.**
+
+**Das Handwerk dabei: der englische Text wird nicht übersetzt, er wird auf Länge
+geschrieben.** Die Sprechfenster im Bild müssen zu den deutschen Aufnahmen
+passen, sonst nützt die bessere Darstellung nichts. Silben abgleichen, nicht
+Bedeutung:
+
+| Deutsch | Silben | Englisch | Silben |
+|---|---|---|---|
+| Musst du nicht arbeiten? | 6 | Shouldn't you be working? | 6 |
+| Die Bestellungen hab ich mir gebaut, mit MyPro. Läuft, während ich hier steh. | 22 | I built the ordering myself, with MyPro. It runs while I'm standing here. | 21 |
+| Also nicht? | 3 | So you don't? | 3 |
+| Muss ich nicht. | 3 | I don't have to. | 4 |
+
+## Multi-shot funktioniert — und ist an die Mundabdeckung gekoppelt
+
+Der Schalter **Multi-shot** (Video-Werkstatt, über dem Prompt) hat zwei
+Betriebsarten, **Auto** und **Custom**. Auf **Auto** wählt das Modell die
+Auflösung selbst, ohne jede Kameraangabe im Prompt. **Er ist keine Attrappe.**
+
+Ergebnis beim Bully-Versuch, 15 s: Totale → **Detail-Insert** (Stock, Puck,
+Schlittschuh) → **Nah** auf den einen → **Gegenschnitt nah** auf den anderen →
+Totale. Fünf Auflösungen, echter Schuss-Gegenschuss. Das ist Montage, nicht
+Kamerafahrt.
+
+> **Die Kopplung, die man sich merken muss: Multi-shot baut Großaufnahmen.**
+> Damit geht es nur zusammen mit deutscher Vertonung, **wenn der Mund verdeckt
+> ist.** Ohne Abdeckung erzwingt Multi-shot, dass man den Modellton behält —
+> also den Akzent.
+
+**Nebenwirkung, die Arbeit macht:** Das Modell legt bei einer Sporthalle
+durchgehend Raumgeräusch unter den ganzen Clip. Damit findet
+`silencedetect=noise=-32dB` die Sprechfenster nicht mehr, weil nirgends Stille
+ist. Für die Vertonung muss die Schwelle höher oder es braucht einen anderen
+Weg — Handwerk, kein Hindernis, aber einzuplanen.
+
+## Clip 07 — „Die Küche" (Frau fragt Mann, Unterton: Sorge)
+
+Länge 10 s, 4:5. Ablage `roh/07-kueche/`. Der leere Platz ▢ ist hier mit
+**Dienstplänen** gefüllt — ein Betrieb mit Personal.
+
+### Startframe (Bild zuerst, kostet nichts)
+
+Modell **Seedream 4.5**, 2K, Unlimited an — der Gratisweg vom 14.08. Nano Banana
+ist zu. Erster Handgriff: **Soul-ID abwählen** (× an der Charakter-Kachel).
+
+**Gebaut am 14.08.2026, zweiter Anlauf — das ist das Mutterbild:**
+```
+Wide two-shot of a plain Central European family kitchen, mid-morning, grey
+overcast daylight through a window. Camera at eye level, locked off, standing
+back from the scene: both people are fully visible from head to knee with clear
+space around them, nothing cropped at the edges of the frame. On the left a man
+in his late forties in a plain dark grey t-shirt and jeans sits at a wooden
+kitchen table, leaning back in his chair, relaxed, one hand around a coffee mug
+that stands on the table, a tablet lying flat on the table in front of him. On
+the right, in the open doorway of the same kitchen, a woman in her forties in a
+plain light blouse and jeans stands holding a laundry basket against her hip,
+stopped mid-step, looking over at him with a questioning expression. Everyday
+kitchen: kettle, fruit bowl, tea towels on the oven handle, plain cupboards.
+Plain everyday realism, flat natural daylight, muted everyday colours, realistic
+skin texture, ordinary clothing, no on-screen text.
+```
+
+**Der erste Anlauf war unbrauchbar und warum:** Er stand als „medium wide
+two-shot, both fully in frame" da — das Modell hat beides überhört, den Mann am
+linken Rand angeschnitten und **den Tisch ganz weggelassen**. Ohne Tisch fehlt
+die Kaffeetasse-und-Tablet-Gruppe, also das einzige Bildzeichen dafür, dass der
+Mann schon fertig ist. Was geholfen hat, war nicht „wide", sondern die
+ausdrückliche Anweisung, **wo die Kamera steht** („standing back from the
+scene") und **was das Bild zeigen muss** („from head to knee", „nothing cropped
+at the edges"), dazu `no close-up, no cropped bodies` in der Negativliste.
+
+**Negativliste für diesen Startframe** (zusätzlich zum Block aus §Bausteine und
+der MARKE-Negativliste dieser Kampagne):
+```
+fully clothed, no bare shoulders, no muscular physique, no wall clock,
+no laptop, no smartphone, no pets, no flowers on the table
+```
+
+Die Kleidungsangabe und das ausdrückliche Verbot stehen hier, weil beim Fee-Clip
+genau diese zwei Lücken je einen Anlauf gekostet haben: ohne Kleidungsangabe saß
+die Figur oben ohne da, ohne Verbot erfand das Modell Gegenstände dazu. Die Uhr
+ist verboten, weil Modelle auf Zifferblätter Kauderwelsch schreiben — die
+Tageszeit erzählt das Licht.
+
+### Am Werkzeug abgelesen (14.08.2026, Startframe Clip 07)
+
+- **Die Bildanzahl schaltet Unlimited ab.** Wer von 1/4 auf 2/4 stellt, verliert
+  den Gratisweg lautlos: der Schalter springt auf Aus und Generate verlangt
+  wieder Credits. **Unlimited gilt nur für ein Bild je Lauf.** Also lieber
+  mehrmals einzeln laufen lassen als die Anzahl hochdrehen.
+- **Beim Unlimited-Lauf zieht der erste Klick.** Das Kaufangebot, das im
+  Fee-Durchlauf den ersten Generate-Klick abgefangen hat, kam hier nicht — es
+  hängt offenbar an Läufen, die Credits kosten.
+- **Ein Gratis-Bild dauert 1–3 Minuten**, nicht Sekunden: erst „Processing"
+  (Warteschlange), dann „Generating". Das ist der eigentliche Preis des
+  Gratiswegs. Wer glaubt, es hänge, klickt ein zweites Mal und stellt sich in
+  die Schlange dahinter.
+- **4:5 gibt es in der Seitenverhältnis-Liste nicht** (1:1, 4:3, 3:4, 16:9,
+  9:16, 2:3, 3:2, 21:9). **3:4** bleibt die Wahl, wie bei allen älteren Clips.
+- **Kein Soul-ID-Charakter aktiv** — bei Seedream 4.5 stand keine Charakter-
+  Kachel in der Leiste, Franz' Gesicht kam auf keine der beiden Figuren.
+
+### Das Videomodell kann kein Deutsch — der Beweis steht in vier Wörtern
+
+Zwei Läufe, zusammen 57,5 Credits, beide mit demselben Ergebnis: Bild und
+Lippen tadellos, die Sprache nach Ausländern, die es versuchen. Der zweite Lauf
+hatte ausdrücklich `native German accent, no foreign accent` im Prompt. Es half
+nichts.
+
+**Franz hat gehört, woran es liegt, und das ist die eigentliche Erkenntnis:**
+Es scheitert an „ni**ch**t", „wirkli**ch**", „Dienstpl**ä**ne", „a**r**beiten",
+„all**ei**ne" — also an **ch (Ich-Laut), ä, r, ei**. Das sind genau die Laute,
+die es im Englischen nicht gibt. Das Modell spricht Deutsch mit einem englischen
+Lautvorrat: Es formt die Wörter, aber die Phoneme fehlen ihm.
+
+**Daraus folgt eine Regel, die für alle künftigen Clips gilt:**
+
+> **Das Videomodell macht Bild, Takt und Körper. Die Stimme kommt von
+> ElevenLabs. Immer.**
+
+Nicht weil es billiger ist (25–32,5 Credits gegen 0,9), sondern weil kein Prompt
+einem Modell Laute hinzufügt, die es nie gelernt hat.
+
+### Was die Achsel mit der Sprechmelodie macht
+
+Franz' Frage beim zweiten Lauf: *Wenn er beim letzten Satz mit den Achseln
+zuckt, ergibt das nicht von selbst die Sprechweise?* — **Ja, und darin liegt der
+einzige Vorteil des Videomodells.** Bei ElevenLabs hat die Stimme keinen Körper:
+kein Raum, kein Stuhl, kein Gegenüber, keine Schulter. Ein Tag ist eine
+Behauptung über Gefühl, keine Bewegung. Das Videomodell berechnet Geste und Satz
+gemeinsam.
+
+Messbar geworden ist das am Takt: Der erste, ungeführte Lauf sprach mit **0,16 s
+je Silbe** (gehetzt), der geführte mit **0,18 s** (normal), und die umgeschriebene
+Zeile hat sich von selbst eine Atempause in der Mitte genommen — sechs
+Sprechblöcke statt vier. **Körperregie im Prompt zahlt sich also aus, auch wenn
+der Ton hinterher ersetzt wird**: Sie erzeugt den Takt, in den die echte Stimme
+dann hineinpasst.
+
+### Geschrieben klingt vorgelesen
+
+Zwischenstand, den Franz am ElevenLabs-Ton gehört hat: *„hört sich nicht nach
+gesprochen an, sondern nach vorgelesen."* Ursache war nicht die Stimme, sondern
+der **Satzbau**:
+
+> geschrieben: Ich hab mir die Dienstpläne mit MyPro gebaut. Die laufen allein.
+> gesprochen:  Die Dienstpläne hab ich mir gebaut, mit MyPro. Laufen jetzt von allein.
+
+Zwei Handgriffe machen den Unterschied: **nachschieben** („mit MyPro" ans Ende
+statt in die Mitte) und **weglassen** (kein Subjekt im zweiten Satz). Das ist
+der Fingerabdruck von Sprache, und die Satzmelodie folgt zwangsläufig.
+Bemerkenswert: Es war genau **die eine Zeile, die den Produktnamen trägt** —
+dort sickert Werbesprache ein, die anderen drei klangen nie vorgelesen.
+
+### Besetzung: die Stimme gehört zur Figur, nicht zum Ohr
+
+Gecastet wurden neun Stimmen an derselben Zeile, 2,4 Credits insgesamt.
+
+| Stimme | Urteil |
+|---|---|
+| Arthur | **Erzähler.** „Wie aus einem Graf-Bobby-Film." Für die Fee richtig, für eine Küche nie. Braucht für 18 Silben 4,64 s gegen Johns 3,76 — ein Viertel mehr. |
+| John | Dynamik stimmt, Stimme nervt („vom Nebentisch im Café"). |
+| Marcus | Gute Stimme, träge und undynamisch. |
+| Grady | Schläft. |
+| Holden | Sehr gut — **aber ein distinguierter Herr**, passt nicht zum Mann am Küchentisch. |
+| Archie | Zu jugendlich. |
+| **Fraser, Benji** | **Beide passend.** Gewählt: Benji (der knappere). |
+| **Helena** | Frau, mittleres Alter — sitzt auf Anhieb. |
+
+**Die Regel dahinter:** Das Bild besetzt die Rolle, nicht das Ohr. Holden war
+die schönste Stimme im Test und trotzdem falsch. Und: Der Stimmenfilter kennt
+Geschlecht und Alter, aber **keine Sprache** — Arthur wird nicht einmal als
+„mittleres Alter" geführt, was den Erzähler-Verdacht schon vorher verraten hätte.
+
+### Sprache-zu-Sprache ist kein sauberer Tausch
+
+Versuch, Johns Sprechweise mit Marcus' Stimme zu verbinden: MP3 in ein
+Mini-Video verpackt (der Reiter **nimmt nur Video**, keine Tondatei), durch
+`Voice Change` geschickt, Tonspur wieder herausgelöst. 1 Credit.
+
+Das Timing wird auf zwei Hundertstel genau übernommen (3,74 s gegen Johns
+3,76 s) — **aber die Klangfarbe driftet.** Franz: *„die Stimme von Marcus ist
+Richtung John gedriftet."* Es ist eine Mischung, kein Transplantat. Für
+„Rhythmus von A, Stimme von B" **unbrauchbar**; wer eine bestimmte Stimme will,
+muss sie suchen, nicht bauen.
+
+### „Also" wird englisch gelesen — phonetisch schreiben hilft
+
+Letzter Stolperstein: Helena las „Also nicht?" als englisches *ˈɔːlsoʊ*. Kein
+Wunder — bei einer zweiwörtrigen Zeile fehlt jeder deutsche Kontext, und „also"
+ist ein englisches Wort.
+
+**Die Lösung: `Alzo nicht?` ins Sprachfeld schreiben.** Das Z erzwingt das
+stimmhafte S des deutschen *ˈalzo*. Gegenprobe „Wirklich nicht?" scheiterte am
+Ich-Laut — dieselbe Falle wie beim Videomodell, nur seltener.
+
+> **Merksatz: phonetisch schreiben, was gesprochen wird; richtig schreiben, was
+> zu lesen ist.** Der eingebrannte Untertitel behält „Also nicht?".
+
+### Der Ablauf, der am Ende funktioniert hat
+
+1. **Startframe** auf Seedream 4.5, Unlimited, 3:4 — 0 Credits.
+2. **Videolauf** Kling 3.0, **zwei Sekunden länger als der Text braucht**, mit
+   Körperregie und Haltung im Prompt. Der Ton ist Wegwerfware, aber er setzt den
+   Takt.
+3. **Sprechfenster messen:** `silencedetect=noise=-32dB:d=0.25` auf den fertigen
+   Clip. Das sind die Anker.
+4. **Zeilen einzeln in ElevenLabs v3** mit Regie-Tags, phonetisch geschrieben wo
+   nötig.
+5. **Vorlauf und Nachlauf wegschneiden**, jede Zeile **mittig auf ihr Fenster**
+   legen (nicht auf dessen Anfang), mit `atrim` + `adelay`.
+6. **Raumton darunter:** braunes Rauschen unter 200 Hz (Kühlschrank) plus ein
+   Hauch rosa Rauschen — zusammen bei `volume=0.016` und `0.005`. Gegen die
+   Sprecherkabinen-Stille; man soll ihn nicht hören, sondern vermissen, wenn er
+   fehlt.
+7. **Tafeln als PNG in Clip-Größe rendern** (PIL), nicht generieren und nicht
+   abfotografieren.
+8. **Untertitel als ASS-Datei**, nicht als SRT.
+
+**Falle bei den Untertiteln:** Über die SRT-Route rechnet libass die
+Schriftgröße gegen eine angenommene Bildhöhe von 288 Pixeln hoch — bei 1660 px
+Bildhöhe wird `FontSize=54` zu rund 310 Pixeln und füllt den halben Schirm. Eine
+**ASS-Datei mit `PlayResX`/`PlayResY` auf die echte Bildgröße** löst das; die
+Vorlage liegt als `roh/07-kueche/untertitel-de.ass`.
+
+**Skripte der Sitzung** (Arbeitsordner, nicht im Repo): `bauen.ps1` baut die
+ganze Kette in zwei Durchgängen, `tafel_musst.py` und `tafel_traumpaar.py`
+rendern die zwei Tafeln.
+
+### Die Stimme aus dem Videomodell ist unbrauchbar — und das ist kein Unfall
+
+Kling liefert Dialog, Lippen und Ton aus einem Lauf, und die Lippen sitzen
+tadellos. **Das Deutsch klingt trotzdem nach Ausländern, die es versuchen** —
+dazu schläfrig, weil dem Modell nie gesagt wurde, *wie* gesprochen werden soll.
+
+**Die Regel, die daraus folgt: Bild vom Videomodell, Stimme von ElevenLabs.**
+Ein Kling-Lauf kostet 25 Credits und ist nicht nachbesserbar; vier ElevenLabs-
+Zeilen kosten zusammen **0,9 Credits**. Wer die Sprache im Videomodell zu
+reparieren versucht, zahlt das Fünfundzwanzigfache für ein Glücksspiel auf genau
+die Fähigkeit, die es gerade nicht gezeigt hat.
+
+Besetzung: **Helena** (Frau, mittleres Alter) und **Arthur** (Mann) — Arthur ist
+aus dem Fee-Clip erprobt, auch für das Wort „MyPro". Regie über Inline-Tags:
+`[curious]` auf die Frage, `[surprised]` auf die Nachfrage, `[amused][dry]` auf
+beide Antworten des Mannes. Die Tags sind der ganze Unterschied zwischen wach
+und eingeschlafen.
+
+**Der Filter der Stimmenliste kennt Geschlecht und Alter, aber keine Sprache.**
+Frau + mittleres Alter lässt sechs übrig (Helena, Isla, Juno, Maeve, Nadine,
+Opal). Ohne Anhören hilft nur der Vorname als Indiz für die Herkunft der
+Sprecherin.
+
+### Das Bild diktiert den Takt, nicht der Text
+
+Der fertige Clip hat **feste Sprechfenster**, und die kann keine Tonspur dehnen.
+Gemessen mit `silencedetect` an `01-kueche.mp4`:
+
+| Zeile | Fenster im Bild | ElevenLabs netto | zu lang um |
+|---|---|---|---|
+| Musst du nicht arbeiten? | 0,97 s | 1,22 s | 0,25 s |
+| Ich hab mir … Die laufen allein. | 2,82 s | 3,40 s | 0,58 s |
+| Also nicht? | 0,70 s | 1,12 s | 0,42 s |
+| Muss ich nicht. | 0,77 s | 1,06 s | 0,29 s |
+
+**Kling spricht schneller als ein Mensch** — 0,16 s je Silbe auf den ersten
+beiden Zeilen, das ist gehetzt. Natürliches Deutsch braucht überall rund ein
+Fünftel mehr. Drei Handgriffe fangen das auf:
+
+1. **Vorlauf wegschneiden.** ElevenLabs legt 0,1–0,2 s Stille vor jede Zeile und
+   bis zu 0,6 s dahinter. Roh sind die vier Dateien 9,84 s, netto 6,80 s.
+2. **Mittig auf die Mundbewegung legen**, nicht auf deren Anfang. Dann verteilt
+   sich der Überhang auf beide Seiten — 0,3 s Vorlauf fallen weniger auf als
+   0,6 s Nachlauf, bei dem der Mund schon steht und die Stimme weiterredet.
+3. **Letztes Bild halten.** `tpad=stop_mode=clone:stop_duration=0.45` verlängert
+   den Clip auf 10,5 s, damit die Pointe ausklingen kann. Ein Standbild vor der
+   Tafel ist ohnehin die bessere Montage.
+
+**Fürs nächste Mal:** Den Videolauf gleich **zwei Sekunden länger** bestellen als
+der Text braucht. Bei 2,5 Credits je Sekunde kosten die zwei Sekunden 5 Credits —
+deutlich weniger als das Gefummel danach, und die Stimme darf atmen.
+
+Der Befehl steht in `scratchpad/ton.ps1` (Sitzung 14.08.); die Sprachdateien
+liegen nach Hausbrauch in `sprecher/de/07-kueche/`.
+
+### Videoprompt (aus dem Startframe)
+
+```
+Locked-off camera, no camera movement. The woman in the doorway speaks first,
+then the man at the table answers without getting up, takes a sip of coffee
+during the pause, and answers again. Natural German dialogue, calm everyday
+tone, no gestures beyond the coffee mug.
+
+Woman: "Musst du nicht arbeiten?"
+Man: "Ich hab mir die Dienstpläne mit MyPro gebaut. Die laufen allein."
+Woman: "Also nicht?"
+Man: "Muss ich nicht."
+
+Pronounce "MyPro" as "Mai-Pro", English "my" plus German "Pro".
+```
+
+### Der Takt — warum genau diese Fassung
+
+Der Dialog muss in einen Lauf von 10 s passen. Gerechnet in Silben (rund
+0,27 s je Silbe, dazu ~0,3 s je Sprecherwechsel):
+
+| Zeile | Silben | Dauer |
+|---|---|---|
+| Musst du nicht arbeiten? | 6 | 1,6 s |
+| Ich hab mir die Dienstpläne mit MyPro gebaut. | 12 | 3,2 s |
+| Die laufen allein. | 5 | 1,4 s |
+| Also nicht? | 3 | 0,8 s |
+| Muss ich nicht. | 3 | 0,8 s |
+| vier Sprecherwechsel | | 1,2 s |
+| **Summe** | | **≈ 9,0 s** |
+
+Damit bleibt rund eine Sekunde für den Schluck Kaffee in der Pause — der Beat,
+der die Pointe trägt.
+
+**Zwei Schnitte machen das möglich:**
+
+1. **„jetzt" gestrichen** — „Die laufen allein" statt „Die laufen jetzt allein".
+   Das „jetzt" behauptet ein Vorher-Nachher, das die Szene ohnehin zeigt.
+2. **„Also musst du nicht." → „Also nicht?"** — kürzer und besser. Der
+   Fragende behält damit seine Rolle (die Erkenntnis gehört ihr, nicht ihm),
+   aber es klingt nach echter Nachfrage statt nach Aufsagen. Der Echo-Bau
+   *musst → muss* bleibt erhalten.
+
+**Fällt die Rechnung im Lauf länger aus**, ist die Reihenfolge zum Kürzen:
+erst „Also nicht?" ganz weg (dann fehlt aber der Zuschauer-Stellvertreter),
+dann „Die laufen allein." Die Frage und die Pointe sind unantastbar.
+
+**Die Aussprache ist ein echtes Risiko.** Weil Bild und Ton aus einem Lauf
+kommen, kostet ein falsch betontes „MyPro" den ganzen Clip. Die Ausspracheregel
+gehört deshalb in den Prompt, nicht in die Hoffnung.
+
+### Text (lokal eingebrannt, DE)
+
+| Sekunde | Zeile |
+|---|---|
+| 0–1,8 | Musst du nicht arbeiten? |
+| 1,8–5,3 | Ich hab mir die Dienstpläne mit MyPro gebaut. |
+| 5,3–6,9 | Die laufen allein. |
+| 6,9–8,0 | Also nicht? |
+| 8,0–10 | Muss ich nicht. |
+| Tafel | **Musst du nicht.** |
+
+---
+
+## Clip 08 — „Die Straße" (ZURÜCKGESTELLT, 14.08.2026)
+
+> **Nicht bauen.** Für den Test wird nur Clip 07 gedreht. Dieser Clip bleibt
+> ausgearbeitet liegen, damit die zweite Beziehung (Neugier statt Sorge) fertig
+> in der Schublade steht, falls Clip 07 trägt. Sein Dialog ist noch auf dem
+> alten Stand ohne Produktnamen — vor dem Bauen nachziehen.
+
+(Interviewerin fragt Passanten, Unterton: Neugier)
+
+Länge 10 s, 4:5. Ablage `roh/08-strasse/`. ▢ ist hier mit **Angeboten** gefüllt —
+ein Einzelunternehmer. Bewusst ein anderes Ding als in Clip 07: die Serie soll
+Breite zeigen, nicht ein Produkt wiederholen.
+
+**Dieser Clip ist der heikle.** Umfrage-Optik ist die Form einer Kundenstimme.
+Er ist nur zu bauen, wenn die drei Griffe aus `ideen.md` sitzen: keine Zahl,
+kein Betriebsname, sichtbare Kennzeichnung — und feste Kamera.
+
+### Startframe
+
+```
+A pedestrianised shopping street in a small Central European town, midday, flat
+overcast light. A woman in her thirties in a plain jacket holds a small handheld
+microphone toward a man in his fifties in a plain work polo shirt, who stands
+next to a parked bicycle holding an ice cream cone. Ordinary passers-by blurred
+in the background, plain shop fronts without readable signage. Medium two-shot,
+eye level, locked-off camera.
+```
+
+### Videoprompt
+
+```
+Locked-off camera, no camera movement, no handheld shake. The woman with the
+microphone asks, the man answers between two licks of the ice cream, she follows
+up, he answers. Natural German dialogue, friendly everyday tone, both relaxed.
+
+Woman: "Dienstag, elf Uhr. Müssten Sie nicht arbeiten?"
+Man: "Ich hab mir meine Angebote gebaut. Die schreiben sich jetzt selber."
+Woman: "Also müssen Sie nicht."
+Man: "Muss ich nicht."
+```
+
+### Text (lokal eingebrannt, DE)
+
+| Sekunde | Zeile |
+|---|---|
+| 0–2 | Dienstag, elf Uhr. Müssten Sie nicht arbeiten? |
+| 2–5 | Ich hab mir meine Angebote gebaut. Die schreiben sich jetzt selber. |
+| 5–7 | Also müssen Sie nicht. |
+| 7–10 | Muss ich nicht. |
+| Tafel | **Musst du nicht.** |
+
+---
+
+## Clip 09 — „Die Bar" (Frau fragt Mann, Unterton: Erstaunen)
+
+Franz' Szene vom 14.08.2026, vorgezogen vor Clip 08 (Straße), weil sie die
+zweite Beziehung ohne die Doku-Falle liefert. Länge 13 s, 3:4.
+Ablage `roh/09-bar/`. ▢ ist mit **der Abrechnung** gefüllt.
+
+**Die Beziehung ist Erstaunen, nicht Sorge.** In der Küche fragt sie besorgt, ob
+er sich das leisten kann; hier ist sie überrascht und erfreut, dass er schon da
+ist. Derselbe Satz, anderer Unterton — genau die Achse, auf der die Serie läuft.
+Der Ort erzählt die Uhrzeit von selbst, wie beim Bett-Einfall.
+
+### Der Text
+
+```
+Sie: Musst du nicht noch arbeiten?
+Er:  Die Abrechnung hab ich mir gebaut, mit MyPro. Läuft seit sechs.
+Sie: Also nicht?
+Er:  Muss ich nicht.
+     (Gläser, kein Wort)
+```
+
+**Drei Eingriffe in Franz' Rohfassung, jeder mit einem Grund:**
+
+1. **„was mir viel Zeit erspart" gestrichen.** Das ist ein Erfolgsversprechen und
+   verstößt gegen den ersten der drei Griffe aus `ideen.md` (kein Ergebnis, keine
+   Zahl). Ersetzt durch **„Läuft seit sechs."** — sagt dasselbe, behauptet aber
+   nichts: ein Zustand, kein Nutzen, und er erklärt nebenbei, warum er um diese
+   Zeit an der Bar sitzt.
+2. **„den Ablauf vereinfacht" → „die Abrechnung".** „Ablauf" ist die blasse
+   Mitte zwischen „was mit KI" und einem Ding, das man anfassen kann.
+3. **Der Trinkspruch „auf MyPro" gestrichen, das Anstoßen bleibt — stumm.** Auf
+   eine Software anzustoßen ist der Moment, in dem der Sketch zur Werbung kippt:
+   Bis dahin erwähnt jemand beiläufig etwas, danach wird ein Produkt gefeiert.
+   Die Geste allein ist stärker, weil der Zuschauer die Verbindung selbst zieht.
+
+„Also nicht? / Muss ich nicht." steht wörtlich wie in Clip 07. **Das ist Absicht
+und die Signatur der Serie** — an der Wiederholung erkennt man beim zweiten Clip,
+dass es ein Format ist.
+
+### Der Whisky steht schon da — und das spart Credits
+
+Franz' Rohfassung hatte sechs Körperaktionen: hereinkommen, Hand auf die Hüfte,
+setzen, dem Kellner winken, Glas bekommen, anstoßen. **Ein Kellner, der ein Glas
+bringt und übergibt, ist genau die Stelle, an der diese Modelle Matsch
+produzieren** — Hände und Objekte lösen sich ineinander auf. Clip 07 hat
+funktioniert, weil er still war.
+
+Deshalb steht der Whisky vor dem freien Hocker, bevor der Clip beginnt. Das
+nimmt zwei Aktionen heraus **und erzählt mehr**: Er wurde erwartet. Der Barmann
+bleibt im Hintergrund, unscharf, ohne Handlung.
+
+### Startframe
+
+Modell Seedream 4.5, 2K, 3:4, Unlimited. Soul-ID abwählen.
+
+```
+Wide two-shot of a quiet hotel bar in the evening, warm low light, dark wood bar
+counter, softly lit bottles on the shelf behind it. Camera at eye level, locked
+off, standing back from the scene: both people fully visible from head to knee
+with clear space around them, nothing cropped at the edges of the frame. On the
+left a woman in her forties in an elegant red evening dress with shoulder straps
+sits on a bar stool, turned half sideways towards the room, a champagne flute in
+her hand, relaxed. Next to her an empty bar stool, and on the counter in front of
+that stool a tumbler of whisky already poured. On the right a man in his forties
+in a dark suit has just stepped into the frame and is reaching out to put his
+hand on her hip. Far in the background, out of focus, a bartender stands still
+behind the counter. Plain everyday realism, warm natural bar light, muted
+colours, realistic skin texture, fully clothed, no on-screen text.
+```
+
+Negativliste zusätzlich: `no nudity, no neon, no crowd`.
+
+**Warum der Mann schon im Bild steht:** Ein Startframe ohne ihn zwingt das Modell,
+eine Figur aus dem Nichts hereinlaufen zu lassen — teurer Zufall. Steht er am
+rechten Rand und greift bereits, bleibt der Auftritt eine einzige Bewegung.
+
+### Gebaut am 14.08.2026 — **37,5 Credits**, kein Fehlschlag
+
+| Posten | Menge | Credits |
+|---|---|---|
+| Startframe, vier Anläufe (Seedream 4.5, Unlimited) | 4 Bilder | 0 |
+| Stimmprobe auf die heiklen Wörter | 2 Zeilen | 0,45 |
+| Besetzung: vier Frauenstimmen + Holden | 5 Zeilen | 1,5 |
+| Restliche zwei Zeilen in Petra und Holden | 2 Zeilen | 0,3 |
+| Fehlgriff (Zeile mit falscher Stimme erzeugt) | 1 Zeile | 0,15 |
+| **Videolauf Kling 3.0, 14 s, 1080p** | 1 Anlauf | **35** |
+| **Summe** | | **37,4** |
+
+Gegen die knapp 60 Credits von Clip 07 — bei einer Sekunde mehr Länge und einer
+schwierigeren Szene. Der Unterschied ist **kein zweiter Videolauf**: Der Text
+stand vorher fest, und die Aussprache war für 0,45 Credits geprüft.
+
+Besetzung: **Petra** (sie) und **Holden** (er). Fenster im fertigen Bild:
+3,05–4,67 / 5,96–9,11 / 10,26–10,97 / 12,24–12,91. Raumton ist hier eine Spur
+lauter als in der Küche und liegt höher (Gemurmel statt Kühlschrank):
+`brown lowpass 180 @0.015` plus `pink 200–1800 @0.009`.
+
+### Zwei Funde, die beim nächsten Clip Zeit sparen
+
+**Die Kameraposition beschreiben, nicht die Personen.** Zwei Anläufe scheiterten
+daran, dass jemand mit dem Rücken zur Kamera stand — erst als im Prompt stand,
+*wo die Kamera steht* und dass der Tresen quer durchs Bild läuft, kamen beide
+Gesichter. Derselbe Griff wie „standing back from the scene" bei der Küche.
+
+**Die Stimme gehört zur Figur, nicht zur Sprache.** Holden war in der Küche als
+„distinguierter Herr" falsch und sitzt im Anzug an der Hotelbar auf Anhieb. Wer
+nach dem Bild besetzt statt nach dem Ohr, spart die halbe Sucherei.
+
+**Was das Modell verweigert hat:** einen zweiten Barhocker, viermal, trotz
+`no side table, no round table, no cocktail table, no coffee table`. Es stellt
+stattdessen einen Hocker als Ablage für den Whisky hin. Konsequenz: Der Mann
+**bleibt stehen** statt sich zu setzen — was ohnehin drei Körperaktionen spart.
+
+### Die heiklen Wörter — vor dem Videolauf prüfen
+
+`Abrechnung`, `Läuft`, `noch`, `nicht` — ch, äu, r. **Die Reihenfolge ist hier
+umgekehrt: erst die Stimmen, dann das Bild.** Eine Aussprache lässt sich später
+phonetisch reparieren (`Alzo`), ein *Wort* aber nicht: Ein Wortwechsel ändert die
+Mundbewegungen, und die sind nach dem Videolauf eingebacken. Ein Credit
+Stimmprobe schützt 32,5 Credits Bildlauf.
+
+## Clip 10 — „Das Bully" (Mitspieler fragt Mitspieler) · GEPLANT
+
+Franz' Szene vom 14.08.2026. Zwei Hobbyspieler in voller Montur am Bullypunkt,
+der eine steht bereit, der zweite kommt dazu, der erste schaut auf. Dialog.
+Dann Anpfiff, und der erste spielt dem zweiten den Puck zu.
+
+### Warum dieser Clip die Regeln ändert
+
+**Der Helm verdeckt den Mund — und hebt damit die Fessel auf, an der alles
+andere hängt.** Weil die Stimme immer ersetzt wird, waren bisher alle
+Einstellungen weit: In einer Großaufnahme sieht man, dass die Lippen nicht zur
+Tonspur gehören. Ein **Vollgitter** macht das gleichgültig.
+
+**Deshalb ist das der Clip für Franz' Multi-shot-Versuch** (Idee vom 14.08.):
+die Kamera nicht festnageln, sondern das Modell die Auflösung selbst wählen
+lassen — Schnitte, Winkel, Nähe. Der Schalter dafür heißt **Multi-shot** und
+steht in der Video-Werkstatt über dem Prompt-Feld; bisher nie benutzt. Freie
+Kamera und untergelegte Stimme schließen sich sonst aus; mit Helm nicht mehr.
+
+**Warum Eishockey und nicht Football** (Franz' Alternative): Ein Vollgitter
+verdeckt so zuverlässig wie ein Facemask; Eishockey ist im deutschen Sprachraum
+die plausiblere Szene; und das Bully ist von Natur aus eine Zweiereinstellung
+mit eingebautem Startsignal, während der Snap elf Leute drumherum braucht.
+
+### Die Bedingung, ohne die der Witz nicht funktioniert
+
+**Es müssen Hobbyspieler sein, und die Halle muss leer sein.** Profis am Bully
+*sind* bei der Arbeit — dann ist „Musst du nicht arbeiten?" sinnlos. Zwei
+Erwachsene mit Eiszeit am **Dienstagvormittag** erklären die Frage, ohne sie zu
+erklären. Wie die Bar die Uhrzeit erzählt hat.
+
+Nebeneffekt: In einer vollen Halle müssten die beiden schreien, und unsere
+ElevenLabs-Aufnahmen sind Gesprächslautstärke. Die leere Halle löst auch das.
+
+### Der Text
+
+```
+A: Musst du nicht arbeiten?
+B: Die Bestellungen hab ich mir gebaut, mit MyPro. Läuft, während ich hier steh.
+A: Also nicht?
+B: Muss ich nicht.
+   (Anpfiff, Zuspiel)
+```
+
+▢ ist **die Bestellungen** — drittes Ding nach Dienstplänen und Abrechnung, alle
+drei anfassbar. Der Nachsatz macht den **Ort zum Argument**: Es läuft, obwohl er
+in voller Montur auf dem Eis steht. Zustand, kein Nutzen.
+
+**„während" ist geprüft und bestätigt** (14.08., Holden, 0,3 Credits) — trotz ä
+*und* ch. Die Gegenprobe „Läuft auch ohne mich" war sogar **länger** (4,16 s
+gegen 4,00 s), weil die Stimme vor „auch ohne mich" eine Pause setzt. Also
+bleibt „während": knapper und näher an der Szene.
+
+### Besetzung — die Stimme gehört zur Figur *und* zur Rolle
+
+**Der Fragende ist John** (Franz' Entscheidung 14.08.). Genau die Stimme, die in
+Clip 07 als Antwortender verworfen wurde — *„diese nervige Stimme, vom
+Nebentisch im Café."* Als Fragender ist das die richtige Qualität: einer, der
+sich einmischt, ohne gefragt zu sein.
+
+**Das erweitert die Regel aus Clip 09.** Dort hieß sie: die Stimme muss zur
+Figur im Bild passen (Holden = Anzug an der Hotelbar). Hier kommt dazu: **sie
+muss zur Rolle im Dialog passen.** Der Antwortende muss gelassen klingen, sonst
+prahlt er; der Fragende darf ruhig stören. Eine Stimme, die für die eine Rolle
+untauglich ist, kann für die andere die beste sein.
+
+Der Antwortende ist noch offen — nach der Figur eher ein Benji-Typ (Hobbyspieler
+in Montur) als ein Holden.
+
+Bisherige Fragende der Serie: Ehefrau (Sorge) · Partnerin (Erstaunen) ·
+Mitspieler (Neugier mit Ellbogen). Erster männlicher Fragender.
+
+### Gebaut am 14.08.2026 — **37,8 Credits**, kein Fehlschlag
+
+| Posten | Menge | Credits |
+|---|---|---|
+| Startframes, drei Fassungen | 3 Bilder | 0 |
+| Stimmprobe „während" | 2 Zeilen | 0,3 |
+| **Videolauf Kling 3.0, 15 s, 1080p, Multi-shot Auto** | 1 Anlauf | **37,5** |
+| **Summe** | | **37,8** |
+
+**Gewählter Startframe: die Tiefen-Fassung** — er groß im angeschnittenen
+Vordergrund, der zweite weit hinten. Der Anschnitt wäre bei Küche und Bar ein
+Fehler gewesen; hier ist er richtig, weil das Gitter Nähe erlaubt. Und er gibt
+dem Modell einen Anlass, die Kamera zu bewegen: eine Figur, die durch die ganze
+Bildtiefe kommt, lädt zum Umschneiden ein.
+
+**Ergebnis:** Fünf Auflösungen inklusive Detail-Insert und Schuss-Gegenschuss,
+Gitter durchgehend vor dem Mund, Zuspiel am Schluss im Bild. Der Pfiff fehlt —
+die 15 Sekunden waren voll. Franz: *„passt super."*
+
+**Fassung:** englisch gesprochen, **deutsch untertitelt**, kein deutscher Ton.
+Begründung: Die englische Sprechweise ist das Ergebnis des Versuchs — *„es ist
+wirklich gesprochen und nicht gelesen"* —, und eine ElevenLabs-Spur darüber
+würde genau das wieder zudecken. Der Clip muss ohnehin stumm funktionieren
+(eingebrannter Text), also trägt der Untertitel die Aussage und der Ton das
+Spiel. Eine deutsche Fassung bleibt jederzeit möglich; Petra und Holden liegen.
+
+**Die Untertitel sitzen auf gemessenen, nicht gehörten Fenstern.** Bei
+durchgehendem Hallengeräusch trennt erst `silencedetect=noise=-24dB:d=0.30`
+Sprache von Raum. Gefundene Fenster: 6,71–7,51 / 8,14–11,90 / 12,38–13,27 /
+13,94–15,04. Die Zuordnung zu den vier Zeilen ist ein Schluss aus der
+Reihenfolge und den Nahaufnahmen, kein Beleg — beim Bauen gegenhören.
+
+### Was noch offen ist
+
+- Der Zuspiel am Schluss ist der riskante Beat (kleines schnelles Objekt über
+  Eis), so wie das Anstoßen es in Clip 09 war.
+- **Wir verlieren die Gesichter.** In Küche und Bar haben sie die Szene
+  getragen. Zwei Vermummte, die über Bestellungen reden, hat einen eigenen Witz
+  — aber es ist ein anderer Ton, und das sollte bewusst so sein.
+- Bei freier Kamera bleibt `no handheld shake` in der Negativliste: Geschnitten
+  und bewegt ist Inszenierung, gewackelt ist Doku.
+
+## Abspann für beide — was hier NICHT hingehört
+
+Kein Kompass, kein Avatar, kein `ki-lotse.tech`. Das Erscheinungsbild der
+gemeinsamen Firma macht Andi; bis dahin trägt der Clip nur:
+
+- die Tafel **Musst du nicht.**
+- eine Zeile Kennzeichnung: *Szene, mit KI erzeugt.*
+
+Die Kennzeichnung ist kein Kleingedrucktes, sondern der Griff, der die Clips von
+einer gefälschten Referenz trennt. Sie gehört sichtbar ins Bild, nicht an den
+unteren Rand.
+
+## Credit-Rechnung für den Test
+
+| Posten | Menge | Credits |
+|---|---|---|
+| Startframes suchen (beide Clips) | 20–40 Bilder | 0 (freies Kontingent) |
+| Video 10 s, 1–2 Läufe je Clip | 2–4 Läufe | 40–80 |
+| **Summe für beide Clips** | | **40–80** |
+
+Ein misslungener Lauf kostet den vollen Preis, weil nichts nachgebessert werden
+kann. Deshalb erst den Startframe festzurren, dann einmal sauber laufen lassen.
+
+---
+
+## Clip „Bau dir was du willst" (Wiese, Motiv 12) — IN ARBEIT
+
+Franz' Idee vom 20.08.2026: Ein Mann sitzt mit dem Laptop auf einer leeren
+Wiese, tippt, und ein Geschaeft erscheint. Er tippt wieder, das naechste. Dann
+haemmert er los und eine ganze Stadt steht da. Ein einziger Satz am Schluss:
+**„Bau dir was du willst."**
+
+### Zwei Vorentscheidungen, die hier begruendet werden
+
+**Hochformat heisst: die Stadt waechst nach oben.** Die Kanaele sind 9:16, in
+der Breite ist kein Platz. Also Tuerme statt Ausdehnung — der staerkere Effekt,
+aber das Mutterbild muss den Himmel freihalten: Horizont tief, Figur klein.
+
+**Der Mann wird von hinten gezeigt.** Nicht aus Scheu: Jede Wachstumsstufe wird
+aus der vorigen abgeleitet, und Gesichter fallen beim Ableiten auseinander
+(dieselbe Regel wie bei den Cafe-Gaesten). Von hinten schaut der Zuschauer
+ausserdem mit ihm auf den leeren Horizont, statt ihn anzusehen.
+
+### Die Regel, an der dieser Clip haengt
+
+**Eine Kette, kein Faecher.** Stufe N+1 wird aus Stufe N abgeleitet, NICHT
+jedesmal aus dem Mutterbild. Nur so enthaelt jede Stufe alles, was die vorige
+zeigte — sonst springen die Haeuser beim harten Schnitt herum.
+
+### Shot 1 — die leere Wiese (das Mutterbild, hier wird gesucht)
+
+```
+Extreme wide landscape shot of a vast empty green meadow under a huge open sky,
+vertical format. The horizon line sits very low, about one quarter up from the
+bottom edge, so roughly three quarters of the picture is empty pale sky. A
+single small human figure sits alone in the grass in the lower part of the
+frame, seen from far away and from directly behind: a man cross-legged with an
+open laptop on his knees, tiny in the frame, no taller than one tenth of the
+frame height, his face not visible. He wears a plain grey t-shirt and jeans.
+Unbroken rolling grassland runs to the horizon in every direction, empty and
+untouched. Nothing is built anywhere. Soft even daylight from a high overcast
+sky, no sun in the frame, no hard shadows. Camera about forty metres behind him
+at chest height, locked off, the whole figure small and complete with wide empty
+space above and around him. Plain everyday realism, muted natural colours,
+realistic grass texture, no on-screen text.
+Negative: no text, no captions, no logos, no watermark, no close-up, no medium
+shot, no portrait framing, no large figure, no shoulders filling the frame, no
+cropped body, no high horizon, no tractor tracks, no field furrows, no crops, no
+distorted hands, no warped faces, no plastic skin, no oversaturation, no golden
+hour, no sunset, no lens flare, no dramatic clouds, no buildings, no houses, no
+roads, no fences, no power lines, no trees, no readable screen, no face visible.
+```
+
+**MARKE hier ohne die Lichtzeile** — „warm late-afternoon tropical light" wuerde
+gegen den eigenen Prompt arbeiten, genau wie beim grauen Cafe.
+
+**Das flache Wolkenlicht ist kein Stimmungsentscheid, sondern Technik:** Wenn
+spaeter Gebaeude ins Bild wachsen, muessen deren Schatten zum Licht passen. Bei
+diffusem Licht kann fast nichts nicht passen; bei tiefstehender Sonne faellt
+jede Stufe auseinander.
+
+**Teuer gelernt beim ersten Wurf:** *„a few metres behind him"* nimmt das Modell
+woertlich — der Mann fuellte die untere Bildhaelfte und der Horizont sass in der
+Mitte. Es braucht eine echte Zahl (vierzig Meter) UND eine Groessenangabe
+(ein Zehntel der Bildhoehe) UND die Negativliste gegen Portraetnaehe.
+
+Gebaut: `dc7522cc-42c4-4401-bed0-311f5fc12daf` (Seedream 4.5, 9:16, 0 Credits).
+
+### Shot 2 — der erste Laden (aus dem Startframe von Shot 1)
+
+```
+Keep the reference image exactly as it is: the same meadow, the same rolling
+hills, the same low horizon line, the same pale overcast sky, the same small man
+seen from directly behind sitting cross-legged in the grass with an open laptop
+on his knees, same grey t-shirt and jeans, same size and same position in the
+frame, same camera, same light. Change one single thing: far away on the horizon
+line behind him, small in the distance, one modest single-storey shop now stands
+in the grass, plain and ordinary, flat roof, one lit shop window facing the
+meadow. Everything else stays empty and unchanged.
+Negative: no text, no captions, no logos, no watermark, no city, no skyline, no
+additional buildings, no roads, no cars, no people, no change to the man, no
+change to his size, no change to the sky, no change to the camera angle, no
+close-up, no golden hour, no sunset, no trees, no fences, no power lines.
+```
+
+Gebaut: `6a024075-57eb-4b16-b6c8-814bb88a883f` — **die Kette traegt**: Mann,
+Groesse, Licht und Huegel unveraendert, ein Laden mehr.
+
+### Der eine Lauf, der alles macht — GEBAUT
+
+**Die Standbildkette war ein Umweg.** Franz am 20.08.: *„warum mehr shots, lass
+ihn einfach laufen“* — und er hatte recht. Ein einziger Kling-3.0-Lauf mit dem
+Mutterbild als Startframe macht das ganze Wachstum in einem Take.
+
+```
+The camera holds completely still, locked off, the framing stays exactly as in
+the start image. The man sits in the grass with his back to the camera and types
+on the laptop. Behind him, far away on the empty horizon, a single small building
+fades into existence. He types again and two more appear beside it. Then he types
+faster and faster, and in one continuous movement the settlement grows into a
+dense city that rises up into the sky: rows of houses, then blocks, then tall
+towers stacking upward until they fill the upper half of the frame, windows
+lighting up in the dusk. The city grows out of the horizon line and never comes
+closer to him. The man stays small, unchanged and seen from behind the whole
+time, still typing. Photorealistic, soft overcast daylight, no cut, one
+continuous shot.
+```
+
+Gebaut: `dd0f9f5c-ff66-467a-b1ef-6ebeb16d0c9e` — Kling 3.0, 720x1280, 5,0 s,
+**10 Credits**. Liegt in `roh/12-wiese/` samt `verlauf.png` (fünf Frames
+nebeneinander).
+
+**Die zwei Sätze, die den Shot tragen:** *„The city grows out of the horizon line
+and never comes closer to him“* hält die Kamera davon ab, auf die Stadt
+zuzufahren, und *„The man stays small, unchanged and seen from behind the whole
+time“* hält die Figur fest, während hinter ihr alles umgebaut wird. Ohne beides
+wandert bei so einer Verwandlung erfahrungsgemäß der Bildausschnitt mit.
+
+**Der Beleg, dass Kling das kann, lag im eigenen Bestand:** der Fee-Clip vom
+14.08. (`e9679ee8`) verwandelt ein ganzes Zimmer in einem Take — Fenster wird
+Glasfront, Staub löst sich auf, Möbel werden neu. Wer bei einem Verwandlungs-Shot
+zuerst an eine Standbildkette denkt, hat den eigenen Vorrat nicht geprüft.
+
+### Zweiter Lauf: freilassen — GEBAUT, und der bessere
+
+Franz nach dem ersten Lauf: *„lass ihm freien Lauf, die Häuser sollen aufpoppen,
+die Kamera muss nicht stillstehen“*. Dieselbe Szene, alle Fesseln raus — keine
+Negativliste, kein `locked off`, kein `never comes closer`:
+
+```
+The man hammers away on the laptop keyboard, faster and faster. With every burst
+of typing, buildings pop into existence on the horizon behind him — one snaps
+into place out of nothing, then three at once, then a whole row, then dozens,
+each appearing abruptly and in rhythm with his keystrokes. The village becomes a
+town, the town becomes a city, and the city keeps shooting upward: towers burst
+out of the ground and stack higher and higher into the sky, windows lighting up
+as dusk falls. The camera pulls back and tilts up to follow the skyline as it
+rises above him. Energetic, joyful, photorealistic, one continuous shot.
+```
+
+Gebaut: `5bc8cb5f-512e-4370-8ac2-3f96d8aa38c8` — Kling 3.0, 5,0 s, 10 Credits.
+Verlauf in `verlauf2.png`.
+
+**Der Unterschied zum ersten Lauf ist groß, und er kommt aus drei Wörtern:**
+
+| | Lauf 1 (gebändigt) | Lauf 2 (frei) |
+|---|---|---|
+| Rhythmus | Gebäude wachsen gleichmäßig ein | einzeln, ruckartig — erst **ein** Turm, dann drei |
+| Bauhöhe | flache Kästen am Horizont | Hochhäuser, die aus dem Boden schießen |
+| Schluss | Reihenhaus-Silhouette | Großstadt in der Dämmerung, Fenster beleuchtet |
+
+`pop into existence` und `snaps into place` erzeugen das Aufpoppen, das
+`in rhythm with his keystrokes` bindet es an das Tippen, und
+`towers burst out of the ground` hebt die Bauhöhe. Die Kamerafreigabe
+(`pulls back and tilts up`) kostet nichts an Ruhe — der Mann bleibt klein und
+unverändert, obwohl nichts mehr festgeschrieben ist.
+
+**Die Lehre:** Bei einem Verwandlungs-Shot bremsen Negativlisten das Ergebnis.
+Sie gehören in die Bildsuche (wo eine falsche Kameranähe das Motiv zerstört),
+nicht in den Bewegungsprompt.
+
+### Der Schnitt
+
+Harte Schnitte im Takt der Tastenanschlaege, nicht ueberblendet. Der letzte Beat
+ist der einzige, der ein echter Videolauf sein muss (Kamerarueckzug ueber die
+fertige Stadt); alles davor traegt die Standbildkette.
+
+### Text (lokal eingebrannt, nicht generiert)
+
+Eine einzige Tafel am Schluss: **Bau dir was du willst.** Kein Sprecher, kein
+Produktname im Bild — deshalb greift die Regel „Keine erfundenen Kunden" hier
+praktisch nicht, anders als bei [[Kampagne — Musst du nicht]].
+
+### Fallen der Bild-Werkstatt (Stand 20.08.2026)
+
+1. **Die Werkstatt liegt unter `/ai/image?model=…`**, nicht mehr unter `/image`.
+2. **Jedes Laden der Werkstatt wirft ein Werbe-Popup** („Organize. Share.")
+   ueber die Bedienleiste, das Klicks abfaengt. Erst schliessen, dann bedienen.
+3. **Jedes Laden setzt alles zurueck**: Modell auf Nano Banana Pro, Format auf
+   3:4, Unlimited auf aus, Referenzbild weg. Der Knopf zeigt dann „Generate 1"
+   statt „Unlimited ✦" — das ist die Pruefung, die den Credit rettet.
+4. **Das Referenzbild kommt nur ueber das „+" in der Werkstatt.** Der
+   Reference-Knopf in der Galerie-Detailansicht wirft einen bloss zurueck in die
+   Galerie. Im „+"-Menue ist das RECHTE Symbol ein Dateidialog (blockiert den
+   Browser), das LINKE fuehrt zu den eigenen Assets.
+5. **Ein Modellwechsel wirft das Referenzbild NICHT heraus** — anders als im
+   Videoformular (Falle 3 oben).
+6. **Seedream kann 9:16 direkt.** Die Bilder vom 14.08. waren alle 3:4; das
+   Hochformat kam damals erst ueber Kling.
+7. **Das Werbe-Popup NUR mit einem echten Klick auf das X schliessen.** Wer es
+   per Skript aus dem DOM entfernt, laesst zwei Dinge zurueck, die die ganze
+   Seite lahmlegen: den Abdunkel-Layer (`fixed inset-0 bg-black/65`, z-index
+   1000), der jeden Klick abfaengt, und **`pointer-events: none` auf dem
+   `<body>`**, das die Dialog-Bibliothek beim Oeffnen setzt und nur beim
+   regulaeren Schliessen zuruecknimmt. Danach sehen alle Knoepfe normal aus und
+   reagieren auf nichts mehr — auch `Reference` und `Recreate` nicht. Das hat am
+   20.08. die Stufen 3 und 4 gekostet; beide Ursachen waren gefunden und
+   beseitigt, die Oberflaeche kam trotzdem nicht zurueck. Nur ein Neuladen der
+   Seite hilft zuverlaessig.

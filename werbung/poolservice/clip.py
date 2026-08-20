@@ -100,8 +100,12 @@ TEXTE = {
              "Every contract has its rhythm, the visits appear by themselves."),
             ("04-rechnung",
              "At the end of the month it becomes the invoice."),
+            # Domain hier NICHT sprechen: "ki-lotse" ergibt im Englischen kein
+            # Wort (KI ist die deutsche Abkuerzung), jede Stimme verschleift es
+            # zu "kilotse". Die Adresse steht in Szene 5 ohnehin im Bild.
+            # Fuer Deutsch bleibt "ki-lotse punkt tech" richtig (#160).
             ("05-cta",
-             "Take a look — ki-lotse dot tech."),
+             "See it for yourself — link below."),
         ],
         "s1_titel": "Were you there?",
         "s1_zitat_kunde": "“You weren't here last week.”",

@@ -20,20 +20,22 @@ Aufruf:
 import argparse
 import asyncio
 import json
+import math
 import os
 import shutil
 import subprocess
 import sys
 import tempfile
 
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFilter
 
 BASIS = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(os.path.dirname(BASIS)))      # ../video.py
 
 import edge_tts                                               # noqa: E402
 from video import (AKZENT, ASSETS_DIR, BG, LOGOS_DIR, WEISS,   # noqa: E402
-                   auftritt, bild_einsetzen, mischen, schrift, text_bei)
+                   auftritt, bild_einsetzen, mischen, schrift, text_bei,
+                   weich)
 
 ROH = os.path.join(BASIS, "roh")
 FERTIG = os.path.join(BASIS, "fertig")
@@ -156,6 +158,113 @@ CLIPS = {
              "en": "This is what you came for."},
         ],
     },
+    # ACHTUNG: Dieser Clip gehoert NICHT zu KI-Lotse, sondern zur gemeinsamen
+    # Firma mit Andi — die hat noch keinen Namen und kein Erscheinungsbild.
+    # Grund, Logo, Avatar und Domain sind hier Platzhalter zu Demozwecken; wird
+    # der Clip verwendet, wird der Abspann komplett neu gemacht (Andi).
+    # Nicht in die KI-Lotse-Rotation stellen. Siehe prompts.md, Kasten oben am
+    # Abschnitt „Die gute Fee".
+    "06-fee": {
+        "ordner": "06-fee",
+        # Seedance liefert 8 s; drei davon plus Abspann waeren 27 s. 5 s je
+        # Shot ergibt 18 s wie bei den uebrigen Clips.
+        "max_shot": 5.0,
+        # Der erste Clip mit eigenem Abspann: er verkauft ein Erzeugnis, nicht
+        # die Kategorie. Der Satz ist die Aussage des ganzen Clips in Worten —
+        # der Zauberstab wechselt die Hand, das Werkzeug bleibt unseres.
+        #
+        # `held` schaltet den bewegten Abspann ein: der Name blitzt auf, als
+        # haette ihn der Stab geschrieben. Bleibt die Ausnahme fuer Clips, die
+        # ein Erzeugnis benennen — die uebrigen fuenf behalten das Standbild.
+        "held": {"de": "MyPro", "en": "MyPro"},
+        # KEIN „KI-Lotse" und KEINE Domain: der Clip gehoert der gemeinsamen
+        # Firma, und die hat noch keinen Namen. Ein Absender, der den falschen
+        # Namen nennt, ist schlimmer als gar keiner — lieber eine Leerstelle,
+        # die Andi spaeter fuellt.
+        "domain": None,
+        "abspann": {
+            "de": ("KI-Automatisierung durch dich, "
+                   "mit modernster Technik von uns",
+                   "Franz Grundner · Pattaya"),
+            "en": ("AI automation by you, built on our technology",
+                   "Franz Grundner · Pattaya"),
+        },
+        # Karte und Stimme sagen hier dasselbe: die Saetze sind kurz genug zum
+        # Lesen und vollstaendig genug zum Sprechen. `sprech_*` wird deshalb
+        # nicht gebraucht — es bleibt fuer Clips, wo beides auseinanderfaellt.
+        #
+        # Die Sprachdateien kommen NICHT von edge-tts, sondern aus Higgsfield
+        # (Eleven v3) und liegen fertig in `sprecher/<sprache>/06-fee/`.
+        # `stimmen()` erzeugt nur, was fehlt — die Dateien bleiben also stehen.
+        # Grund: edge-tts hat „veraltete" zu englischem Kauderwelsch verschliffen.
+        #
+        # Kein „KI-Lotse" und keine Domain im Sprechtext (siehe `domain`).
+        "shots": [
+            {"datei": "01-grab",
+             "de": "Software von gestern?",
+             "en": "Software from yesterday?"},
+            {"datei": "02-fee",
+             "de": "Nicht mehr auf dem Stand\nvon heute?",
+             "en": "Not where it should be\ntoday?"},
+            # Zwei Saetze, also wird zwischen ihnen umbrochen — der zweite ist
+            # die Aussage des ganzen Clips und darf nicht zerrissen werden.
+            #
+            # „Schwingen musst du ihn" ist ohne Betonung ein angefangener Satz;
+            # mit Kontrastbetonung auf DU ist er vollstaendig (Franz, 14.08.).
+            # Die Betonung gehoert deshalb ins Ohr und nicht ins Auge: Auf der
+            # Karte bleibt „du" klein, im Sprechtext steht „DU".
+            #
+            # Die Alternative „…musst du ihn selbst" wurde verworfen, und der
+            # Grund gilt ueber diesen Satz hinaus: **„du" ist eine Aufforderung,
+            # „selbst" eine Einschraenkung** (Franz). Der Clip verkauft
+            # Ermaechtigung — „selbst" haette daraus „du bist auf dich gestellt"
+            # gemacht, an genau der Stelle, an der die Aussage steht.
+            {"datei": "03-verwandlung",
+             "de": "MyPro ist dein Zauberstab.\nSchwingen musst du ihn.",
+             "en": "MyPro is your magic wand.\nYou do the waving.",
+             "sprech_de": "MyPro ist dein Zauberstab. Schwingen musst DU ihn!"},
+        ],
+    },
+    # Einziger Clip mit nur EINEM Shot: die Verwandlung passiert innerhalb der
+    # Aufnahme, nicht zwischen drei Einstellungen. Deshalb auch nur eine
+    # Textkarte — sie steht am Schluss und ist die ganze Aussage.
+    "12-wiese": {
+        "ordner": "12-wiese",
+        # Der Rohclip ist 5,04 s; ohne max_shot wuerde MAX_SHOT_S kuerzen und
+        # ausgerechnet das Ende wegschneiden — dort steht die fertige Stadt,
+        # wegen der es den Shot gibt.
+        "max_shot": 5.0,
+        # Wie beim Fee-Clip: gehoert der gemeinsamen Firma, nicht KI-Lotse.
+        # Anders als dort steht der Name jetzt drin — Franz benutzt GYDE seit
+        # dem 20.08. aktiv. Bleibt das Erscheinungsbild Andis Sache, ist das
+        # hier eine Zeile Aenderung.
+        "domain": None,
+        "abspann": {
+            "de": ("KI-Automatisierung durch dich, "
+                   "mit modernster Technik von uns",
+                   "GYDE"),
+            "en": ("AI automation by you, built on our technology",
+                   "GYDE"),
+        },
+        # Die Stimme sagt woertlich, was auf der Karte steht — ein Satz, der
+        # kurz genug zum Lesen und vollstaendig genug zum Sprechen ist, braucht
+        # kein `sprech_*`.
+        #
+        # Hier kommt edge-tts zum Zug, nicht Eleven v3 wie beim Fee-Clip: Der
+        # Satz hat kein Fremdwort und keine Abkuerzung, an denen sich edge-tts
+        # damals verschluckt hat („veraltete" wurde zu englischem Kauderwelsch).
+        # Wenn die Stimme zu synthetisch klingt, ist der Ersatz ein Eintrag in
+        # `sprecher/<sprache>/12-wiese/01-wachstum.mp3` — vorhandene Dateien
+        # laesst `stimmen()` stehen.
+        #
+        # „Bau dir" statt „Bau selbst": „du" ist eine Aufforderung, „selbst"
+        # eine Einschraenkung — dieselbe Regel wie beim Zauberstab oben.
+        "shots": [
+            {"datei": "01-wachstum",
+             "de": "Bau dir was du willst.",
+             "en": "Build whatever you want."},
+        ],
+    },
 }
 
 # Im Schlussbild steht, WAS verkauft wird — nicht noch einmal der Claim: der
@@ -248,23 +357,158 @@ def textebene(satz, ziel):
     ebene.save(ziel)
 
 
-def abspannbild(sprache, ziel):
-    """Markenflaeche als Standbild — der Abspann braucht keine Bewegung."""
-    blatt = Image.new("RGB", (BREITE, HOEHE), AKZENT)
+def abspannbild(sprache, ziel, clip=None):
+    """Markenflaeche als Standbild — der Abspann braucht keine Bewegung.
+
+    Ein Clip darf die beiden Zeilen ueberschreiben (`abspann` im CLIPS-Eintrag),
+    wenn er ein bestimmtes Erzeugnis verkauft statt der Kategorie.
+
+    **`domain: None` schaltet die ganze KI-Lotse-Marke ab**, nicht nur die
+    Adresszeile: Teal, Kompass-Logo und Franz' Avatar sind der Auftritt EINER
+    Firma, und ein Clip der gemeinsamen Firma darf ihn nicht tragen. Uebrig
+    bleibt eine neutrale dunkle Flaeche mit dem Namen aus `abspann` — bewusst
+    nicht in Franz' Stil, damit Andi sich daran reiben kann (dieselbe
+    Ueberlegung wie bei der Platzhalterseite zur Kampagne).
+
+    Bis zum 20.08.2026 stand „ki-lotse.tech" hier fest verdrahtet; `domain`
+    wurde nur im bewegten Abspann ausgewertet. Der Fee-Clip fiel nicht auf,
+    weil er ueber `held` den bewegten Weg nimmt.
+    """
+    eigen = (clip or {}).get("domain", "ki-lotse.tech")
+    blatt = Image.new("RGB", (BREITE, HOEHE), AKZENT if eigen else (14, 16, 20))
     d = ImageDraw.Draw(blatt)
-    bild_einsetzen(blatt, os.path.join(ASSETS_DIR, "logo-icon-weiss.png"),
-                   (390, 470), 210, 1.0)
-    bild_einsetzen(blatt, os.path.join(ASSETS_DIR, "avatar-franz-rund-512.png"),
-                   (700, 470), 250, 1.0)
-    kategorie, name = ABSPANN[sprache]
+    if eigen:
+        bild_einsetzen(blatt, os.path.join(ASSETS_DIR, "logo-icon-weiss.png"),
+                       (390, 470), 210, 1.0)
+        bild_einsetzen(blatt,
+                       os.path.join(ASSETS_DIR, "avatar-franz-rund-512.png"),
+                       (700, 470), 250, 1.0)
+    kategorie, name = (clip or {}).get("abspann", ABSPANN)[sprache]
     f_kat = schrift(44)
     for i, zeile in enumerate(umbrechen(d, kategorie, f_kat, BREITE - 120)):
         text_bei(d, (BREITE // 2, 720 + i * 58), zeile, f_kat, WEISS, anker="mm")
-    text_bei(d, (BREITE // 2, 870), "ki-lotse.tech", schrift(72, fett=True),
-             WEISS, anker="mm")
-    text_bei(d, (BREITE // 2, 975), name, schrift(34, leicht=True),
-             mischen(AKZENT, WEISS, 0.85), anker="mm")
+    if eigen:
+        text_bei(d, (BREITE // 2, 870), eigen, schrift(72, fett=True),
+                 WEISS, anker="mm")
+        text_bei(d, (BREITE // 2, 975), name, schrift(34, leicht=True),
+                 mischen(AKZENT, WEISS, 0.85), anker="mm")
+    else:
+        # Ohne Domainzeile rueckt der Name auf deren Platz und wird zur
+        # Hauptsache — bei einem Namen ohne Erscheinungsbild ist er alles,
+        # was die Flaeche zu zeigen hat. Weite Sperrung, damit die vier
+        # Buchstaben als Wortmarke stehen und nicht als Wort gelesen werden.
+        text_bei(d, (BREITE // 2, 880), " ".join(name), schrift(96, fett=True),
+                 WEISS, anker="mm")
     blatt.save(ziel)
+
+
+# Auftritt des bewegten Abspanns, in Sekunden ab Segmentbeginn. Die Reihenfolge
+# ist die Leserichtung: erst wer, dann was, dann wohin.
+TAKT = {"marke": 0.10, "held": 0.55, "satz": 1.15, "domain": 1.75, "name": 2.15}
+HELD_GROESSE = 108
+HELD_Y = 730                          # Mitte des Erzeugnisnamens
+MARKE_Y = 450                         # Mitte von Logo und Avatar
+FUNKEN = 16
+
+
+def abspannbilder(sprache, clip, ordner):
+    """Der Abspann als Bildfolge — die Worte tauchen nacheinander auf.
+
+    Nur fuer Clips mit `held` im CLIPS-Eintrag; alle uebrigen behalten das
+    Standbild aus `abspannbild()`. Eine Marke, die bei jedem Post anders
+    auftritt, ist keine Marke mehr — die Bewegung ist die Ausnahme fuer den
+    einen Clip, der ein Erzeugnis beim Namen nennt.
+
+    **Hier kommt kein Modell ran.** Videomodelle schreiben bei Text Kauderwelsch
+    (die Baustein-Regel ganz oben in `prompts.md`), und beim KI-Lotse-Intro hat
+    dieselbe Einsicht schon einmal zum lokalen Rendern gefuehrt. Schrift ist
+    Handwerk, kein Generat.
+
+    Rueckgabe: Liste der Frame-Pfade in Reihenfolge.
+    """
+    held = clip["held"][sprache]
+    satz, name = clip.get("abspann", ABSPANN)[sprache]
+    f_satz, f_dom, f_name = schrift(40), schrift(68, fett=True), schrift(32,
+                                                                        leicht=True)
+    # Umbruch einmal vorweg messen, nicht in jedem der neunzig Frames.
+    mess = ImageDraw.Draw(Image.new("RGB", (10, 10)))
+    zeilen = umbrechen(mess, satz, f_satz, BREITE - 140)
+
+    pfade = []
+    for k in range(int(ABSPANN_S * FPS)):
+        t = k / FPS
+        blatt = Image.new("RGB", (BREITE, HOEHE), AKZENT)
+
+        a_marke = auftritt(t, TAKT["marke"], 0.50)
+        if a_marke > 0.01:
+            bild_einsetzen(blatt, os.path.join(ASSETS_DIR, "logo-icon-weiss.png"),
+                           (390, MARKE_Y), 210, a_marke)
+            bild_einsetzen(blatt,
+                           os.path.join(ASSETS_DIR, "avatar-franz-rund-512.png"),
+                           (700, MARKE_Y), 250, a_marke)
+
+        # Der Held blitzt auf, als haette ihn der Zauberstab geschrieben: ein
+        # weisser Schein, der mit dem Wort kommt und sofort wieder abfaellt,
+        # dazu ein letztes Aufziehen von 88 auf 100 Prozent.
+        a_held = auftritt(t, TAKT["held"], 0.40)
+        if a_held > 0.01:
+            skala = 0.88 + 0.12 * a_held
+            f_held = schrift(int(HELD_GROESSE * skala), fett=True)
+            schein = max(0.0, 1.0 - (t - TAKT["held"]) / 0.75) * a_held
+            if schein > 0.02:
+                maske = Image.new("L", (BREITE, HOEHE), 0)
+                ImageDraw.Draw(maske).text((BREITE // 2, HELD_Y), held,
+                                           font=f_held, fill=255, anchor="mm")
+                maske = maske.filter(ImageFilter.GaussianBlur(22))
+                blatt.paste(Image.new("RGB", (BREITE, HOEHE), WEISS), (0, 0),
+                            maske.point(lambda p: int(p * schein)))
+            d = ImageDraw.Draw(blatt)
+            funken(d, t, schein)
+            d.text((BREITE // 2, HELD_Y), held, font=f_held,
+                   fill=mischen(AKZENT, WEISS, a_held), anchor="mm")
+
+        d = ImageDraw.Draw(blatt)
+        a_satz = auftritt(t, TAKT["satz"], 0.45)
+        if a_satz > 0.01:
+            for i, zeile in enumerate(zeilen):
+                d.text((BREITE // 2, 860 + i * 52), zeile, font=f_satz,
+                       fill=mischen(AKZENT, WEISS, a_satz), anchor="mm")
+        # `domain: None` laesst die Zeile weg und rueckt den Namen hoch. Fuer
+        # Clips, die NICHT zu KI-Lotse gehoeren: eine Domain, die den falschen
+        # Absender nennt, ist schlimmer als gar keine.
+        domain = clip.get("domain", "ki-lotse.tech")
+        a_dom = auftritt(t, TAKT["domain"], 0.40)
+        if domain and a_dom > 0.01:
+            d.text((BREITE // 2, 1030), domain, font=f_dom,
+                   fill=mischen(AKZENT, WEISS, a_dom), anchor="mm")
+        a_name = auftritt(t, TAKT["name"], 0.40)
+        if a_name > 0.01:
+            d.text((BREITE // 2, 1115 if domain else 1020), name, font=f_name,
+                   fill=mischen(AKZENT, WEISS, 0.85 * a_name), anchor="mm")
+
+        pfad = os.path.join(ordner, f"ab{k:04d}.png")
+        blatt.save(pfad)
+        pfade.append(pfad)
+    return pfade
+
+
+def funken(d, t, schein):
+    """Der Funkenkranz um den Held — fliegt auseinander und verlischt.
+
+    Die Bahnen stehen fest gerechnet statt gewuerfelt: ein zweiter Lauf muss
+    denselben Abspann liefern, sonst laesst sich nichts vergleichen.
+    """
+    if schein <= 0.02:
+        return
+    alter = max(0.0, t - TAKT["held"])
+    for k in range(FUNKEN):
+        w = k * (2 * math.pi / FUNKEN) + 0.35
+        weite = (170 + 55 * ((k * 7) % 5)) * weich(alter / 0.9)
+        x = BREITE // 2 + math.cos(w) * weite * 1.7      # breit wie das Wort
+        y = HELD_Y + math.sin(w) * weite * 0.6
+        r = 2 + 3 * schein
+        d.ellipse([x - r, y - r, x + r, y + r],
+                  fill=mischen(AKZENT, WEISS, min(1.0, schein * 1.4)))
 
 
 # ── Bildspur ────────────────────────────────────────────────────────────────
@@ -302,6 +546,16 @@ def abspannsegment(bild, ziel):
            "-r", str(FPS), ziel)
 
 
+def abspannsegment_bewegt(muster, ziel):
+    """Dasselbe aus einer Bildfolge. Laenge und Anfangsblende bleiben gleich,
+    damit der Schnitt vom letzten Shot her unveraendert sitzt."""
+    kette = "[0:v]setsar=1,fade=t=in:st=0:d=0.5[aus]"
+    ffmpeg("-framerate", str(FPS), "-i", muster,
+           "-filter_complex", kette, "-map", "[aus]",
+           "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "19",
+           "-r", str(FPS), ziel)
+
+
 # ── Tonspur ─────────────────────────────────────────────────────────────────
 async def _sprich(text, ziel):
     await edge_tts.Communicate(text, STIMME, rate=TEMPO).save(ziel)
@@ -314,7 +568,12 @@ def stimmen(sprache, clip, neu=False):
     for shot in clip["shots"]:
         ziel = os.path.join(ordner, f"{shot['datei']}.mp3")
         if neu or not os.path.isfile(ziel):
-            asyncio.run(_sprich(shot[sprache], ziel))
+            # Die Karte muss in fuenf Sekunden lesbar sein, die Stimme darf in
+            # derselben Zeit mehr sagen. Wo `sprech_<sprache>` fehlt, spricht
+            # sie wie bisher den eingebrannten Text — die aelteren Clips
+            # merken von diesem Feld nichts.
+            asyncio.run(_sprich(shot.get(f"sprech_{sprache}", shot[sprache]),
+                                ziel))
         dateien.append(ziel)
     return dateien
 
@@ -432,10 +691,14 @@ def bauen(sprache, clip_id, clip, mit_stimme=True):
             uhr += laenge
             print(f"   {shot['datei']}  {laenge:.1f} s")
 
-        bild = os.path.join(arbeit, "abspann.png")
-        abspannbild(sprache, bild)
         ziel = os.path.join(arbeit, "seg_abspann.mp4")
-        abspannsegment(bild, ziel)
+        if "held" in clip:
+            abspannbilder(sprache, clip, arbeit)
+            abspannsegment_bewegt(os.path.join(arbeit, "ab%04d.png"), ziel)
+        else:
+            bild = os.path.join(arbeit, "abspann.png")
+            abspannbild(sprache, bild, clip)
+            abspannsegment(bild, ziel)
         teile.append(ziel)
         gesamt = uhr + ABSPANN_S
 

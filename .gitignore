@@ -17,3 +17,15 @@ werbung/higgsfield/sprecher/
 
 # Python-Zwischenstufen (montage.py importiert ../video.py)
 __pycache__/
+
+# Die Higgsfield-Sicherung (Todo #457, gezogen 19.08.2026): dieselbe Grenze wie
+# oben, nur andersherum begruendet. Die 391 MB Bilder, Videos und Tonspuren sind
+# NICHT neu erzeugbar — sie sind der Grund, warum die Ablage existiert — aber sie
+# gehoeren trotzdem nicht in die Historie: ein Klon truege sie fuer immer mit,
+# und ihre Sicherung ist die Ablage selbst, nicht Git. Was hier hineingehoert,
+# ist der Text daneben: die Prompts sagen, WIE die Dateien entstanden sind, und
+# ohne Repo haengen sie an derselben einen Platte wie vorher.
+higgsfield/bilder/*
+higgsfield/videos/*
+higgsfield/audio/*
+!higgsfield/*/PROMPTS.md

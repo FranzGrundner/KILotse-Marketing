@@ -95,6 +95,162 @@ deshalb glaubt man es).
 
 ---
 
+## Kampagne „Musst du nicht" (Basisidee, 14.08.2026)
+
+Ein Format, kein Clip: **ein Ort, eine Einstellung, zwei Leute.** Einer fragt,
+einer antwortet. Über die Serie wechseln Besetzung und Ort, das Gerüst bleibt
+Wort für Wort gleich.
+
+### Das Gerüst
+
+1. **Frage** — in der Sprache der Beziehung („Musst du nicht arbeiten?" /
+   „Dienstag, elf Uhr — müssten Sie nicht arbeiten?")
+2. **Antwort** — „Ich hab mir ▢ mit MyPro gebaut."
+3. **Pointe** — „Muss ich nicht."
+4. **Tafel** — *Musst du nicht.*
+
+**Der Name gehört auf die Tafel, nicht in den Dialog.** Im Gespräch heißt es
+„Muss ich nicht"; erst die Tafel dreht den Satz um und richtet ihn an den
+Zuschauer. Damit prahlt niemand im Bild — die Zusage macht die Schrift.
+
+### Die Variationsachse ist die Beziehung, nicht der Ort
+
+Dieselben drei Zeilen bekommen einen anderen Unterton, je nachdem wer fragt:
+die Frau aus **Sorge**, der Interviewer aus **Neugier**, der Kollege aus
+**Neid**, der Vater aus **Urteil**, der Nachbar aus **Misstrauen**. Der Ort
+ergibt sich daraus von selbst. Deshalb wird die Serie nicht langweilig, obwohl
+sie sich wörtlich wiederholt.
+
+**Wer fragt, darf nicht dumm dastehen.** Der Fragende ist der Zuschauer. Wird er
+belehrt, verliert die Kampagne genau die Leute, die sie gewinnen soll. Die
+Bewegung ist Neugier, nicht Bekehrung.
+
+### Der Rahmen trägt jede Szene — vier kurze Sätze
+
+Franz am 14.08.2026, nach drei gebauten Clips: *„ich finde es gut, dass der
+Rahmen trägt — beliebige Szene, vier kurze Sätze, und man kann als Rahmen alles
+eintragen, ob Fitnesscenter oder Bergsteiger beim Klettern."*
+
+**Das ist der eigentliche Ertrag der Kampagne.** Nicht der einzelne Clip, sondern
+die Vorlage: drei Zeilen bleiben wörtlich gleich, eine trägt das Ding, der Ort
+ist frei.
+
+```
+A: Musst du nicht (noch) arbeiten?
+B: Die/Den ▢ hab ich mir gebaut, mit MyPro. <ein Satz Zustand>
+A: Also nicht?
+B: Muss ich nicht.
+   (eine Geste statt eines Schlusssatzes)
+```
+
+**Fünf Prüfungen, die ein neuer Ort bestehen muss.** Alle fünf sind an je einem
+gebauten Clip gelernt worden:
+
+1. **Der Ort erklärt die Uhrzeit.** Küche am Vormittag, Bar am Abend, leere
+   Eishalle am Dienstag. Ohne das ist „Musst du nicht arbeiten?" sinnlos.
+2. **Niemand im Bild darf bei der Arbeit sein.** Profis am Bully sind es,
+   Hobbyspieler nicht. Bergsteiger und Fitnesscenter sind unverdächtig.
+3. **Es muss leise genug für Gesprächslautstärke sein.** Volle Halle, tobendes
+   Publikum, Maschinenlärm → entweder ein anderer Moment (vor dem Konzert) oder
+   ein anderer Text.
+4. **Die Kameranähe entscheidet über die Sprache.** Weite Einstellung oder etwas
+   vor dem Mund → deutsche Vertonung möglich. Sonst: englisch drehen, deutsch
+   untertiteln (siehe `prompts.md`).
+5. **▢ ist jedes Mal ein anderes anfassbares Ding.** Bisher vergeben:
+   Dienstpläne · Abrechnung · Bestellungen · Kassenabschluss.
+
+**Und der Schlussbeat ist nie ein Satz, sondern eine Geste** — Gläser, Zuspiel,
+drei Akkorde. Der Zuschauer zieht die Verbindung selbst; gesagt wäre sie Werbung.
+
+### Szenenvorrat
+
+| Beziehung | Ort | Unterton | Stand |
+|---|---|---|---|
+| Frau → Mann | Küche, halb zehn | Sorge | **Clip 07**, Startframe gebaut 14.08. |
+| Interviewerin → Passant | Fußgängerzone, Dienstag Mittag | Neugier | **Clip 08**, zurückgestellt |
+| Paar im Bett | Schlafzimmer, früher Morgen | Vertrautheit | Idee 14.08., nicht ausgearbeitet |
+| Mitspieler → Mitspieler | Eishalle, Bully, Dienstagvormittag | Beiläufigkeit | **Clip 10**, gebaut 14.08. |
+| Sänger → Gitarrist | Rockbühne, Konzertbeginn, wartende Menge | Ungläubigkeit | **Clip 11**, Startframe 14.08. |
+| ? | Fitnesscenter, Vormittag | — | Idee 14.08. |
+| ? | Kletterwand / Berg, Wochentag | — | Idee 14.08. |
+| Frau → Mann | Hotelbar, Abend | Erstaunen | **Clip 09**, gebaut 14.08. |
+
+**Zum Bett (Idee vom 14.08.):** Das ist vermutlich die schärfste Fassung der
+Frage — wer morgens noch liegt, während der andere schon wach ist, bekommt
+„Musst du nicht arbeiten?" mit der größten Selbstverständlichkeit gestellt. Der
+Ort erklärt die Uhrzeit ohne ein einziges Requisit; die Küche braucht dafür
+Kaffee und Tageslicht.
+
+**Aber:** Beim Eyecatcher hat schon die ausdrückliche Nennung von Badebekleidung
+Läufe am Inhaltsfilter scheitern lassen — und abgelehnte Läufe kosten trotzdem.
+Für das Bett heißt das: **Schlafanzug ausdrücklich benennen, beide aufrecht
+sitzend über der Decke, `no bare shoulders` in der Negativliste.** Wer „couple
+in bed" ohne Kleidungsangabe prompt, zahlt für die Ablehnung.
+
+### Der leere Platz ▢ entscheidet alles
+
+Was in ▢ steht, kippt das Genre. „Was mit KI" ist Lifestyle-Werbung und tot,
+„meine Dienstpläne" ist Handwerk und lebt. Je banaler und konkreter, desto
+glaubwürdiger — und je Clip ein anderes Ding, damit die Serie Breite zeigt.
+
+Dazu die Textregel von Clip 06: **kein „selbst".** „Ich hab mir was gebaut"
+heißt „ich durfte"; „ich hab mir was **selbst** gebaut" heißt „mir hat keiner
+geholfen" — und verkauft Alleinsein statt Ermächtigung.
+
+### Die Kollision mit „Keine erfundenen Kunden"
+
+Ein generiertes Gesicht, das sagt „ich hab mir was gebaut und das macht mich
+frei", ist der Form nach eine **Kundenstimme** — und die Regel weiter unten
+verbietet genau das. Beim Straßeninterview ist es am schärfsten: Umfrage-Optik
+ist Doku-Optik, und dann ist der Kunde erfunden.
+
+**Verschärft seit 14.08.2026:** Der Produktname steht ausdrücklich im Satz
+(„… mit MyPro gebaut"), Entscheidung von Franz. Damit ist die Figur nicht mehr
+nur allgemein zufrieden, sondern lobt ein benanntes Produkt — die Form einer
+Kundenstimme ist vollständig. Die drei Griffe unten sind damit keine Vorsicht
+mehr, sondern die Bedingung, unter der die Kampagne überhaupt gebaut wird.
+
+Drei Griffe halten die Kampagne sauber, ohne sie zu beschädigen:
+
+1. **Keine Zahl, kein Ergebnis.** Gesagt wird ein Zustand („ich hab mir X
+   gebaut"), nie ein Erfolg („spart mir zehn Stunden"). Wo nichts behauptet
+   wird, kann nichts falsch behauptet sein.
+2. **Kein Betrieb, kein Name, kein Ort.** Niemand im Bild ist als Kunde
+   ausgewiesen.
+3. **Sichtbar Szene.** Kennzeichnung im Abspann, keine Doku-Anmutung. Ein Sketch
+   mit Schauspielern ist Werbung; eine nachgestellte Umfrage ist eine gefälschte
+   Referenz.
+
+Hält man diese drei nicht durch, ist das Straßeninterview zu lassen und nur das
+Private zu drehen — Küche und Wohnzimmer liest ohnehin niemand als Beleg.
+
+### Stand
+
+Basisidee. Wartet auf Andis **Ja oder Gegenvorschlag**. Das Erscheinungsbild
+macht er — der Abspann aus Clip 06 (Franz' Stil) gilt hier ausdrücklich **nicht**,
+und die MARKE-Bausteine aus `prompts.md` auch nicht: tropisches Spätnachmittags-
+licht ist KI-Lotse, diese Kampagne spielt in Mitteleuropa.
+
+Modell offen; Seedance ist zu prüfen — unbrauchbar war es nur für Startframes,
+über die Clips selbst sagt das nichts. Ausgearbeitet in `prompts.md` als
+**Clip 07 (Küche)** und **Clip 08 (Straße)**, für den Test **nur Deutsch**.
+
+---
+
+## Regeln für den Text (aus Clip 06, 14.08.2026)
+
+- **„du" ist eine Aufforderung, „selbst" ist eine Einschränkung.** Derselbe
+  Sachverhalt, zwei Haltungen: *du* heißt „du darfst", *selbst* heißt „dir hilft
+  keiner". Wer Ermächtigung verkauft, darf am Schluss nicht aus Versehen
+  Alleinsein verkaufen.
+- **Der Text sagt, was das Bild nicht kann.** Man sieht eine Fee — dann muss der
+  Text nicht „Fee" sagen. Nacherzählen verschenkt die Fläche.
+- **Im Englischen die Nebenbedeutung prüfen, nicht nur die Übersetzung.**
+  „Now you're the fairy" war korrekt übersetzt und trotzdem unbrauchbar.
+- **Betonung gehört ins Ohr, nicht ins Auge.** Ein großgeschriebenes Wort im
+  eingebrannten Text sieht nach Anschreien aus; im Sprechtext ist es die
+  Regieanweisung. Dafür gibt es `sprech_de` / `sprech_en`.
+
 ## Regeln, die für alle gelten
 
 - **Ohne Ton verständlich**, Text eingebrannt — Facebook spielt stumm an.

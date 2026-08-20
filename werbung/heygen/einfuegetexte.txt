@@ -1,0 +1,49 @@
+HeyGen — die drei Sprechtexte zum Einfuegen
+Reihenfolge: erst SKRIPT 1, dann SKRIPT 2. SKRIPT 3 bleibt in Reserve.
+Nur den Text zwischen den Linien kopieren, die Ueberschriften nicht.
+
+
+================ SKRIPT 1 — Vorstellung DE (ca. 29 s) ================
+
+Ich bin Franz, der KI-Lotse in Pattaya.
+
+Ein Lotse fährt dein Schiff nicht für dich. Ein Lotse kennt die Untiefen und bringt dich sicher in den Hafen.
+
+So arbeite ich auch. Du erzählst mir, wo in deinem Betrieb Zeit verloren geht — ich baue dir das Stück Software, das sie zurückholt.
+
+Keine Agentur, kein Verkaufsdruck. Das erste Gespräch kostet nichts.
+
+Ansehen kannst du es sofort: ki-lotse punkt tech.
+
+======================================================================
+
+
+================ SKRIPT 2 — Vorstellung EN (ca. 28 s) ================
+
+I'm Franz, the AI guide in Pattaya.
+
+A harbour pilot doesn't sail your ship for you. A harbour pilot knows the shallows and brings you safely into port.
+
+That's how I work. You tell me where your business is losing time — I build the piece of software that gives it back.
+
+No agency, no sales pressure. The first call is free.
+
+Have a look: ki-lotse dot tech.
+
+======================================================================
+
+
+======= SKRIPT 3 — Direktansprache Poolservice EN (ca. 33 s) =========
+======= REServe — erst ausgeben, wenn 1 und 2 bestanden haben ========
+
+Quick word about me: I'm Franz, an AI guide here in Pattaya.
+
+I built and handed over exactly this for a pool service company in Austria. Contracts that run on a fixed rhythm. Jobs that come out of them by themselves. And on every finished job, the photo and the signature.
+
+So when a customer says you weren't there — the proof is already sitting there.
+
+You can look at the open demo yourself. If it fits your business, we talk for thirty minutes. Free.
+
+ki-lotse dot tech.
+
+======================================================================

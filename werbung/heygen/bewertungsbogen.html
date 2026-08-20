@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>HeyGen-Gratistest — Bewertungsbogen</title>
+<style>
+  @page { size: A4 portrait; margin: 13mm 14mm; }
+
+  :root {
+    --akzent: #0f6e56;
+    --linie: #b9c2bf;
+    --grau: #5b6663;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 10.2pt;
+    line-height: 1.35;
+    color: #14201d;
+    margin: 0 auto;
+    padding: 13mm 14mm;
+    max-width: 210mm;
+    background: #fff;
+  }
+  /* Am Bildschirm als Blatt zeigen — beim Drucken zaehlt nur @page. */
+  @media screen {
+    html { background: #eef1f0; }
+    body { margin: 6mm auto; box-shadow: 0 0 0 0.6pt var(--linie); }
+  }
+  @media print { body { padding: 0; margin: 0; box-shadow: none; } }
+
+  header {
+    border-bottom: 2.5pt solid var(--akzent);
+    padding-bottom: 2.5mm;
+    margin-bottom: 3.5mm;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 6mm;
+  }
+  h1 { font-size: 15pt; margin: 0; letter-spacing: -0.2pt; }
+  h1 small { font-weight: 400; color: var(--grau); font-size: 10pt; letter-spacing: 0; }
+  .marke { font-size: 8.5pt; color: var(--grau); white-space: nowrap; }
+
+  .frage {
+    border-left: 2.5pt solid var(--akzent);
+    padding: 1.5mm 0 1.5mm 3.5mm;
+    margin: 0 0 3.5mm;
+    font-size: 10.5pt;
+  }
+  .frage b { color: var(--akzent); }
+
+  .anleitung {
+    font-size: 8.8pt;
+    color: var(--grau);
+    margin: 0 0 3mm;
+  }
+  .anleitung b { color: #14201d; }
+
+  table { width: 100%; border-collapse: collapse; margin-bottom: 4mm; }
+  caption {
+    caption-side: top;
+    text-align: left;
+    font-weight: 600;
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 0.5pt;
+    color: var(--akzent);
+    padding-bottom: 1.2mm;
+  }
+  th, td { border-bottom: 0.6pt solid var(--linie); padding: 2.1mm 1.5mm; text-align: left; }
+  thead th {
+    border-bottom: 1.2pt solid #14201d;
+    font-size: 8.6pt;
+    line-height: 1.2;
+    vertical-align: bottom;
+  }
+  thead th span { display: block; font-weight: 400; color: var(--grau); }
+  th.krit { width: auto; font-weight: 400; }
+  .vid { width: 21mm; text-align: center; }
+  tbody td.vid { padding-top: 1.8mm; }
+
+  .kasten {
+    display: inline-block;
+    width: 4.6mm;
+    height: 4.6mm;
+    border: 0.9pt solid #14201d;
+    border-radius: 0.6mm;
+    vertical-align: -0.8mm;
+  }
+
+  .notiz td { padding-top: 2.6mm; padding-bottom: 1mm; border-bottom: none; }
+  .notiz .lab { font-size: 8.6pt; color: var(--grau); }
+  .linien td { border-bottom: 0.6pt dotted var(--linie); height: 7.5mm; padding: 0; }
+
+  .regel {
+    border: 1pt solid var(--linie);
+    border-top: 2.5pt solid var(--akzent);
+    padding: 3mm 4mm 3.2mm;
+  }
+  .regel h2 {
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 0.5pt;
+    color: var(--akzent);
+    margin: 0 0 1.5mm;
+  }
+  .regel p.vorab { font-size: 8.8pt; color: var(--grau); margin: 0 0 2.5mm; }
+  .regel dl { margin: 0; display: grid; grid-template-columns: 62mm 1fr; gap: 1.6mm 4mm; font-size: 9.4pt; }
+  .regel dt { font-weight: 600; }
+  .regel dd { margin: 0; }
+  .regel dt .kasten { margin-right: 1.5mm; }
+
+  footer {
+    margin-top: 4mm;
+    padding-top: 2mm;
+    border-top: 0.6pt solid var(--linie);
+    font-size: 8.2pt;
+    color: var(--grau);
+    display: flex;
+    justify-content: space-between;
+    gap: 6mm;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>HeyGen-Gratistest — Bewertungsbogen<br><small>Drei Videos mit Wasserzeichen · Todo #450</small></h1>
+  <div class="marke">Franz · KI-Lotse<br>Datum: ________________</div>
+</header>
+
+<p class="frage">
+  Beantwortet wird <b>eine</b> Frage: Taugt ein sprechender Kopf mit Franz’ Gesicht
+  und fertigem Skript — und trägt dasselbe Gesicht auch auf&nbsp;Englisch?
+</p>
+
+<p class="anleitung">
+  Jedes Video <b>einmal stumm</b> ansehen (Gesicht, Blick, Lippen) und <b>einmal mit Ton</b>
+  (Betonung, Verständlichkeit). Erst dann ankreuzen. Kein Kästchen offen lassen —
+  ein leeres Kästchen zählt beim Entscheiden wie ein nicht bestandenes.
+</p>
+
+<table>
+  <caption>Die sechs Kriterien</caption>
+  <thead>
+    <tr>
+      <th class="krit">Kriterium</th>
+      <th class="vid">Video 1<span>Vorstellung DE</span></th>
+      <th class="vid">Video 2<span>Vorstellung EN</span></th>
+      <th class="vid">Video 3<span>Poolservice EN</span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Erkennt ein Bekannter Franz auf Anhieb?</td>
+      <td class="vid"><span class="kasten"></span></td>
+      <td class="vid"><span class="kasten"></span></td>
+      <td class="vid"><span class="kasten"></span></td>
+    </tr>
+    <tr>
+      <td>Lippen passen zum Wort — kein Nachziehen</td>
+      <td class="vid"><span class="kasten"></span></td>
+      <td class="vid"><span class="kasten"></span></td>
+      <td class="vid"><span class="kasten"></span></td>
+    </tr>
+    <tr>
+      <td>Betonung an den Satzenden natürlich</td>
+      <td class="vid"><span class="kasten"></span></td>
+      <td class="vid"><span class="kasten"></span></td>
+      <td class="vid"><span class="kasten"></span></td>
+    </tr>
+    <tr>
+      <td>Blick und Kopfhaltung wirken nicht tot</td>
+      <td class="vid"><span class="kasten"></span></td>
+      <td class="vid"><span class="kasten"></span></td>
+      <td class="vid"><span class="kasten"></span></td>
+    </tr>
+    <tr>
+      <td>„ki-lotse punkt / dot tech“ ist verständlich</td>
+      <td class="vid"><span class="kasten"></span></td>
+      <td class="vid"><span class="kasten"></span></td>
+      <td class="vid"><span class="kasten"></span></td>
+    </tr>
+    <tr>
+      <td>Würde Franz das an einen Betrieb schicken?</td>
+      <td class="vid"><span class="kasten"></span></td>
+      <td class="vid"><span class="kasten"></span></td>
+      <td class="vid"><span class="kasten"></span></td>
+    </tr>
+
+    <tr class="notiz"><td colspan="4"><span class="lab">Was gestört hat (Video, Sekunde, was genau):</span></td></tr>
+    <tr class="linien"><td colspan="4"></td></tr>
+    <tr class="linien"><td colspan="4"></td></tr>
+    <tr class="linien"><td colspan="4"></td></tr>
+    <tr class="linien"><td colspan="4"></td></tr>
+
+    <tr class="notiz"><td colspan="4"><span class="lab">Stimme getrennt beurteilen — Marke spricht bisher <i>de-DE-Florian</i>. Welche Stimme lief hier, und passt sie?</span></td></tr>
+    <tr class="linien"><td colspan="4"></td></tr>
+    <tr class="linien"><td colspan="4"></td></tr>
+  </tbody>
+</table>
+
+<section class="regel">
+  <h2>Entscheidung</h2>
+  <p class="vorab">Vorab festgelegt am 03.08.2026 — nicht nachträglich ändern. Genau eine Zeile ankreuzen.</p>
+  <dl>
+    <dt><span class="kasten"></span>Alle drei bestehen</dt>
+    <dd><b>Kaufen.</b> Der EN-Hebel ist bewiesen.</dd>
+
+    <dt><span class="kasten"></span>DE besteht, EN nicht</dt>
+    <dd><b>Nicht kaufen.</b> Ohne Englisch fällt der eigentliche Grund weg; für DE allein sind Screenshot-Clips billiger und ehrlicher.</dd>
+
+    <dt><span class="kasten"></span>1 + 2 bestehen, 3 nicht</dt>
+    <dd>Kopf taugt für kurze Vorstellungen, nicht für Produkttext. <b>Kein Vollabo</b> — Avatar nur als Anmoderation 10–15 s, Rest bleibt bei den bestehenden Clips.</dd>
+
+    <dt><span class="kasten"></span>Weniger als das</dt>
+    <dd><b>Nicht kaufen.</b> Frage ist beantwortet, Thema zu.</dd>
+  </dl>
+</section>
+
+<footer>
+  <span>Ergebnis gehört in die Abo-Entscheidung #457 — zusammen mit dem Soul-ID-Gratistest.</span>
+  <span>Skripte: werbung\heygen\skripte.md</span>
+</footer>
+
+</body>
+</html>
