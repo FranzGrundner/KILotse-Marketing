@@ -3,6 +3,8 @@
 **Stand 24.08.2026.** Vier Spots, abgeleitet aus Andis elf Prompts
 (`andi-prompts-2026-08-24.txt`). Format durchgehend **9:16**.
 
+**Die drei Startbilder sind erzeugt.** Was noch fehlt, sind die Videos daraus.
+
 ## Die Regel, die über allem steht
 
 Andis Prompts enthalten je eine Zeile `On-screen text:` und eine Zeile
@@ -27,17 +29,44 @@ knappes „No lettering." am Ende reicht.
 
 ## Der Ablauf je Spot
 
-1. **Startbild** erzeugen — 9:16, mit **denselben vier Referenzbildern**.
+1. **Startbild** erzeugen — Bildwerkzeug, Modell *Nano Banana Pro*,
+   Seitenverhältnis **9:16**, mit **denselben vier Referenzbildern**.
+   Kostet **2 Credits**.
 2. **Video** daraus erzeugen (image-to-video), 7 Sekunden. Die Verwandlung
-   steckt im Videoprompt, nicht in einem zweiten Bild.
+   steckt im Videoprompt, nicht in einem zweiten Bild. Rund **55 Credits**.
 
-Die vier Referenzen liegen in `Franz\_fotos\referenz-kampagne\`:
-`00_studio.png` (Smoking) sowie je eine Aufnahme aus `IMG_…1358xx`
-(Nahaufnahme), `IMG_…1500xx` (frontal) und `IMG_…14592x` (Ganzkörper).
+**Das Seitenverhältnis wird am Startbild eingestellt** und vererbt sich ans
+Video. Es steht standardmäßig auf 3:4 — daher kam das Format vom 24.08.
+
+## Die vier Referenzen
+
+Sie liegen in `Franz/_fotos/referenz-kampagne/`:
+
+| Datei | Rolle |
+|---|---|
+| `00_studio.png` | formell, Smoking |
+| `IMG_20260801_135806.jpg` | Nahaufnahme, dunkler Hintergrund |
+| `IMG_20260801_150003.jpg` | frontal |
+| `IMG_20260801_145919.jpg` | Ganzkörper |
 
 **Für alle Spots dieselben vier verwenden.** Sie decken zusammen Gesicht nah,
 Halbfigur, Ganzkörper und formell ab — das ist der Grund, warum die Ähnlichkeit
 sitzt, und die Klammer, die aus vier Clips eine Kampagne macht.
+
+### Die Smoking-Falle
+
+**Die Referenzen färben auf die Kleidung ab.** Beim ersten Baustellen-Bild
+stand Franz im **Smoking** mitten im Bauschutt — `00_studio.png` hatte die
+Garderobe mitgeliefert. Deshalb steht in jedem Startbild-Prompt jetzt:
+
+```
+(use the attached character references for his face only, not for his clothing).
+He wears a plain light blue business shirt with the sleeves rolled up,
+no jacket and no tie.
+```
+
+Das hellblaue Hemd ist zugleich das, was er im fertigen Spot 3 trägt — die
+Kleidung ist damit über alle vier Spots dieselbe, so wie das Gesicht.
 
 ---
 
@@ -45,21 +74,23 @@ sitzt, und die Klammer, die aus vier Clips eine Kampagne macht.
 
 *Der stärkste im Stapel: das Bild ist wörtlich ein Lotse.*
 
-**Startbild**
+**Startbild — fertig:** `hf_20260824_122745_6349f02e-ec0b-4caf-83a1-7f6c544ef45e.png`
 
 ```
 Photorealistic vertical photograph, 9:16. A man in his mid-sixties with grey
-hair and thin metal-rimmed glasses (use the attached character references)
-stands in the middle of an immense dark labyrinth. Its walls are built from
-towering stacks of paper documents, invoices, printed spreadsheets, flowcharts
-and fragments of code, rising far above his head. Narrow corridors branch off
-in several directions. Cold blue-grey overhead light, deep shadows, faint dust
-in the air. He stands still, shoulders tense, looking to one side, uncertain
-which way to go. Full body visible, camera slightly below eye level.
-Cinematic, shallow depth of field, muted desaturated colours.
+hair and thin metal-rimmed glasses (use the attached character references for
+his face only, not for his clothing). He wears a plain light blue business
+shirt with the sleeves rolled up, no jacket and no tie. He stands in the middle
+of an immense dark labyrinth. Its walls are built from towering stacks of paper
+documents, invoices, printed spreadsheets, flowcharts and fragments of code,
+rising far above his head. Narrow corridors branch off in several directions.
+Cold blue-grey overhead light, deep shadows, faint dust in the air. He stands
+still, shoulders tense, looking to one side, uncertain which way to go. Full
+body visible, camera slightly below eye level. Cinematic, shallow depth of
+field, muted desaturated colours.
 ```
 
-**Video (7 s)**
+**Video (7 s) — offen**
 
 ```
 The camera pushes slowly forward past him. Ahead, a bright opening tears open
@@ -77,19 +108,24 @@ forward camera movement, cold light turning warm. No lettering.
 
 *Trägt den Softwarebau, ohne ihn erklären zu müssen.*
 
-**Startbild**
+**Startbild — fertig:** `hf_20260824_122543_db94a81a-616b-419c-9695-37e375eb4165.png`
+
+*(Die erste Fassung `hf_20260824_121951_dd23e3d0-…` ist die mit dem Smoking —
+liegt zur Anschauung daneben, ist aber unbrauchbar.)*
 
 ```
 Photorealistic vertical photograph, 9:16. A man in his mid-sixties with grey
-hair and thin metal-rimmed glasses (use the attached character references)
-stands in the middle of a chaotic construction site. Building plans, tools,
-stacked materials, scaffolding and half-finished concrete walls are scattered
-all around him. Overcast grey daylight, dust. He holds a rolled-up plan at his
-side and looks at the mess with a frustrated, uncertain expression. Full body
-visible, camera at eye level. Cinematic, shallow depth of field, muted colours.
+hair and thin metal-rimmed glasses (use the attached character references for
+his face only, not for his clothing). He wears a plain light blue business
+shirt with the sleeves rolled up, no jacket and no tie. He stands in the middle
+of a chaotic construction site. Building plans, tools, stacked materials,
+scaffolding and half-finished concrete walls are scattered all around him.
+Overcast grey daylight, dust. He holds a rolled-up plan at his side and looks
+at the mess with a frustrated, uncertain expression. Full body visible, camera
+at eye level. Cinematic, shallow depth of field, muted colours.
 ```
 
-**Video (7 s)**
+**Video (7 s) — offen**
 
 ```
 The camera slowly rises and orbits around him. The scattered plans, tools and
@@ -105,30 +141,10 @@ camera movement, grey light turning bright. No lettering.
 ## Spot 3 — Büro → Wiese
 
 **Fertig, kein Renderlauf nötig.** Liegt als `spot-buero-wiese-9x16.mp4`
-(1080×1920) vor: aus dem 3:4-Lauf vom 24.08. beschnitten, Schrift repariert.
-Die Prompts stehen hier nur für den Fall, dass du ihn doch neu aufsetzen willst.
+(1080×1920, stumm) vor: aus dem 3:4-Lauf vom 24.08. beschnitten, Schrift
+repariert, Tonspur entfernt.
 
-**Startbild**
-
-```
-Photorealistic vertical photograph, 9:16. A man in his mid-sixties with grey
-hair and thin metal-rimmed glasses (use the attached character references)
-sits at a desk in a modern open-plan office. Two monitors in front of him show
-dense spreadsheets and an invoice. Stacks of paper, ring binders and a half
-empty coffee mug cover the desk. Cool daylight through a large window. He
-rests his fingers against the bridge of his glasses, eyes closed, exhausted.
-Camera at eye level from the side. Cinematic, shallow depth of field.
-```
-
-**Video (7 s)**
-
-```
-He leans backwards and tips out of the office. The camera follows him down as
-the room falls away. He lands gently on his back in a sunny green meadow, deep
-grass all around him, small white flowers, bright blue sky. He opens his eyes,
-relaxes and smiles up at the sky. One continuous take, single falling camera
-move, cool office light turning into warm sunlight. No lettering.
-```
+Kein neues Startbild nötig.
 
 ---
 
@@ -136,19 +152,21 @@ move, cool office light turning into warm sunlight. No lettering.
 
 *Spricht die IT-Seite an.*
 
-**Startbild**
+**Startbild — fertig:** `hf_20260824_122320_2113da48-1b27-489a-a4fc-b14909e24c77.png`
 
 ```
 Photorealistic vertical photograph, 9:16. A man in his mid-sixties with grey
-hair and thin metal-rimmed glasses (use the attached character references)
-sits in a dark control room surrounded by dozens of screens on the walls
-around and above him, showing alerts, dashboards, tickets, emails and project
-charts. Their blue glow is the only light on his face. He sits slightly hunched,
-overwhelmed by the amount of information. Camera behind and slightly above him,
-his silhouette against the wall of screens. Cinematic, deep shadows.
+hair and thin metal-rimmed glasses (use the attached character references for
+his face only, not for his clothing). He wears a plain light blue business
+shirt with the sleeves rolled up, no jacket and no tie. He sits in a dark
+control room surrounded by dozens of screens on the walls around and above him,
+showing alerts, dashboards, tickets, emails and project charts. Their blue glow
+is the only light on his face. He sits slightly hunched, overwhelmed by the
+amount of information. Camera behind and slightly above him, his silhouette
+against the wall of screens. Cinematic, deep shadows.
 ```
 
-**Video (7 s)**
+**Video (7 s) — offen**
 
 ```
 The dozens of screens slide inward and merge into one single large clean
@@ -160,14 +178,17 @@ cold blue light turning warm. No lettering.
 
 ---
 
-## Reihenfolge zum Abarbeiten
+## Was noch zu tun ist
 
-**1 · 2 · 4** — Spot 3 ist fertig. Falls das Guthaben knapp wird, ist Spot 1
-der, den du sicher haben willst.
+Drei Videos: **Spot 1 · 2 · 4**, je aus dem fertigen Startbild. Rund 55 Credits
+je Stück, also etwa 165 zusammen.
 
-**Guthaben am 24.08.: 645 Credits**, rund 55 je Clip. Das Abo verlängert sich
-am **01.09.**, Restcredits verfallen dann. Die Startbilder kosten zusätzlich,
-aber wenig.
+**Guthaben:** 645 Credits am 24.08. vor den Startbildern; fünf Bilder à 2
+Credits sind weggegangen (eines davon der verworfene Smoking-Versuch), es
+sollten also rund **635** übrig sein. Das Abo verlängert sich am **01.09.**,
+Restcredits verfallen dann.
+
+Falls es knapp wird: **Spot 1 ist der, den du sicher haben willst.**
 
 ## Was danach kommt
 
