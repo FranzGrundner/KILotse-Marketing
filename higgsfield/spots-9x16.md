@@ -14,6 +14,13 @@ dazu.
 Nebeneffekt, der hier zählt: **die Clips enthalten keinen Markennamen.** Sie
 altern also nicht, während der Name noch offen ist.
 
+Und der Ton wird ebenfalls weggeworfen. Higgsfield hat am 24.08. eine Stimme
+darübergelegt, die **nicht einmal die verlangte Sprache trifft** — Andis Prompt
+sagt ausdrücklich `Voice-over (German)` plus Aussprachehinweis, herausgekommen
+ist etwas, das nach Spanisch klingt. Das ist kein Feinschliff-Problem: die
+Zeile im Prompt wird nicht befolgt. Die fertigen Fassungen hier liegen deshalb
+**stumm** vor; die Stimme kommt aus ElevenLabs.
+
 Zweite Regel: **Negativlisten kurz halten.** Beim Wiesen-Clip am 20.08. hat
 sich gezeigt, dass lange Verbotslisten die Bewegung im Bild bremsen. Ein
 knappes „No lettering." am Ende reicht.
