@@ -3,18 +3,22 @@
 **Stand 24.08.2026.** Vier Spots, abgeleitet aus Andis elf Prompts
 (`andi-prompts-2026-08-24.txt`). Format durchgehend **9:16**.
 
-**Die drei Startbilder sind erzeugt.** Was noch fehlt, sind die Videos daraus.
+**Startbilder: alle drei fertig. Spot 1 ist als Video fertig.** Offen sind noch die
+Videos zu Spot 2 und 4.
 
 ## Die Regel, die über allem steht
 
 Andis Prompts enthalten je eine Zeile `On-screen text:` und eine Zeile
 `Voice-over:`. **Beide sind hier gestrichen.** Kein Videomodell setzt einen
-deutschen Satz richtig — der Lauf vom 24.08. hat daraus „PAKCTIA" plus zwei
-Zeilen Buchstabensalat gemacht. Schrift und Stimme kommen nach dem Rendern
-dazu.
+deutschen Satz richtig. Der Lauf vom 24.08. hat aus dem Namen **PAKTIA** ein
+**„PAKCTIA"** gemacht — ein Buchstabe zuviel — und aus den beiden Folgezeilen
+reinen Buchstabensalat. Schrift und Stimme kommen nach dem Rendern dazu.
 
-Nebeneffekt, der hier zählt: **die Clips enthalten keinen Markennamen.** Sie
-altern also nicht, während der Name noch offen ist.
+**Der Name ist PAKTIA.** Er stand im Prompt vom 24.08. Die reparierte Fassung
+von Spot 3 trug zwischenzeitlich faelschlich „GYDE" und ist berichtigt.
+
+Nebeneffekt, der hier zählt: **die Clips enthalten keinen Markennamen.** Er
+wird erst nachtraeglich gesetzt und ist damit jederzeit aenderbar.
 
 Und der Ton wird ebenfalls weggeworfen. Higgsfield hat am 24.08. eine Stimme
 darübergelegt, die **nicht einmal die verlangte Sprache trifft** — Andis Prompt
@@ -32,8 +36,23 @@ knappes „No lettering." am Ende reicht.
 1. **Startbild** erzeugen — Bildwerkzeug, Modell *Nano Banana Pro*,
    Seitenverhältnis **9:16**, mit **denselben vier Referenzbildern**.
    Kostet **2 Credits**.
-2. **Video** daraus erzeugen (image-to-video), 7 Sekunden. Die Verwandlung
-   steckt im Videoprompt, nicht in einem zweiten Bild. Rund **55 Credits**.
+2. **Video** daraus erzeugen (image-to-video). Die Verwandlung steckt im
+   Videoprompt, nicht in einem zweiten Bild.
+
+### Die Einstellungen, die den Preis machen
+
+Kling 3.0 bietet in dieser Maske nur **5 Sekunden** an; die 7 Sekunden vom
+24.08. kamen aus einem 4K-Lauf. Gerechnet wird so:
+
+| Einstellung | Credits |
+|---|---|
+| 720p, Ton an | 10 |
+| 1080p, Ton an | 12,5 |
+| **1080p, Ton aus** | **8,75** |
+
+**Ton abschalten spart 30 Prozent** — und weggeworfen wird er ohnehin. Das ist
+die Einstellung fuer alle Spots. Die urspruengliche Schaetzung von 55 Credits
+je Clip stammt aus einem 4K-Lauf und gilt hier nicht.
 
 **Das Seitenverhältnis wird am Startbild eingestellt** und vererbt sich ans
 Video. Es steht standardmäßig auf 3:4 — daher kam das Format vom 24.08.
@@ -90,7 +109,20 @@ body visible, camera slightly below eye level. Cinematic, shallow depth of
 field, muted desaturated colours.
 ```
 
-**Video (7 s) — offen**
+**Video — fertig:** `spot-labyrinth-strasse-9x16.mp4` (1080x1920, 5 s, stumm).
+Rohling `hf_20260824_130634_f3ab83ae-cade-4dab-bd75-8d9514da93b1.mp4`.
+Der tatsaechlich verwendete Prompt ist auf 5 Sekunden gekuerzt:
+
+```
+The camera pushes forward past him. Ahead a bright opening tears open in the
+wall of documents and warm sunlight floods in. He walks through it and the
+paper walls behind him dissolve and blow away. He steps out onto a wide clean
+modern road running straight to the horizon under an open sky, soft glowing
+guide lines along its surface. He straightens up and smiles. One continuous
+take, smooth forward camera movement, cold light turning warm. No lettering.
+```
+
+*Urspruengliche 7-Sekunden-Fassung, falls die Laenge je wieder zur Verfuegung steht:*
 
 ```
 The camera pushes slowly forward past him. Ahead, a bright opening tears open
@@ -180,8 +212,8 @@ cold blue light turning warm. No lettering.
 
 ## Was noch zu tun ist
 
-Drei Videos: **Spot 1 · 2 · 4**, je aus dem fertigen Startbild. Rund 55 Credits
-je Stück, also etwa 165 zusammen.
+Zwei Videos: **Spot 2 · 4**, je aus dem fertigen Startbild, 1080p ohne Ton —
+**8,75 Credits** das Stueck, zusammen also unter 20.
 
 **Guthaben:** 645 Credits am 24.08. vor den Startbildern; fünf Bilder à 2
 Credits sind weggegangen (eines davon der verworfene Smoking-Versuch), es
