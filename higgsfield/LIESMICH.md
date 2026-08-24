@@ -57,6 +57,84 @@ nie einen.
 Damit ist die Luecke geschlossen, die hier vorher stand: dass an den Dateien
 nicht mehr ablesbar sei, wie sie entstanden sind.
 
+## Nachgezogen am 24.08.2026
+
+Seit der Sicherung vom 19.08. sind **acht** Erzeugnisse dazugekommen; sie hingen
+bis heute allein in der Galerie und waren nirgends gesichert.
+
+| Datum | Videos | Bilder |
+|---|---|---|
+| 20.08.2026 | 2 | 3 |
+| 24.08.2026 | 2 | 1 |
+
+Neuer Bestand: `bilder/` **53** · `videos/` **35** · `audio/` **38**. Die
+Sollzahlen der Seitenleiste (Image 53 · Video 35) sind damit erreicht. Audio
+steht dort auf 73 statt 69 — die vier zusaetzlichen sind die Tonspuren der vier
+neuen Videos, eigene Audiodateien sind keine dazugekommen.
+
+**Der Weg war diesmal ein anderer** als der Sammel-Download: Higgsfield liefert
+die Dateien ueber `https://d8j0ntlcm91z4.cloudfront.net/user_<konto>/<kennung>.<mp4|png>`
+direkt aus. Die Kennung steht im Vorschaubild-Namen der Galerie, die Endung
+laesst sich per HEAD-Anfrage bestimmen (mp4 fuer Video, png fuer Bild). Das
+umgeht die Falle mit dem Nachladen beim Scrollen, weil nicht die Auswahl in der
+Galerie zaehlt, sondern die Liste der Kennungen.
+
+### Offen: die Prompts der acht Neuen
+
+`PROMPTS.md` hat zu diesen acht **keine** Eintraege — die Luecke, die oben als
+geschlossen vermerkt ist, steht fuer sie also wieder offen. Die Vorlage der
+vier Erzeugnisse vom 24.08. liegt als `andi-prompts-2026-08-24.txt` daneben
+(elf Werbespot-Prompts von Andi, Variante 1 ist die Buero/Wiese-Verwandlung).
+Welcher Prompt tatsaechlich abgeschickt wurde, ist daraus nicht ablesbar — der
+Name im Text wurde vor dem Lauf geaendert.
+
+### Repariert statt neu gerendert
+
+`gyde-buero-wiese-schrift-repariert.mp4` ist der Clip vom 24.08. (074200) mit
+richtiger Schrift. Higgsfield hatte an dieser Stelle **"PAKCTIA"** und zwei
+Zeilen Buchstabensalat gesetzt. Weil die Einblendung ab Sekunde 4,21 fest an
+einer Stelle ueber unscharfer Wiese steht, liess sich die Flaeche aus ihren
+Raendern zurueckrechnen (`delogo`) und echt neu beschriften (`drawtext`) —
+**ohne Renderlauf, ohne Credits**, und ohne die Verwandlung zu verlieren, die
+nur in einem Take gelingt. Die Tonspur ist unveraendert.
+
+**Die Lehre daraus:** `On-screen text:` und `Voice-over:` im Prompt sind
+verlorene Muehe. Kein Videomodell setzt einen deutschen Satz richtig. Der Clip
+liefert das Bild, Schrift und Stimme kommen danach.
+
+## Die Referenzbilder der Kampagne (24.08.2026)
+
+Die Personen-Aehnlichkeit in den Werbespots entsteht ueber **vier
+Referenzbilder**, die bei der Erzeugung des Startbildes mitgegeben werden. Sie
+sind das wertvollste Stueck am ganzen Vorhaben und waren bis heute nur auf dem
+Desktop (`pics2`) vorhanden — also nirgends gesichert. Der Ordner liegt jetzt
+vollstaendig unter `Franz/_fotos/referenz-kampagne/` (30 Dateien, 45 MB,
+bitgenau uebernommen).
+
+Die vier sind: `00_studio.png` (Smoking) sowie je eine Aufnahme aus
+`IMG_20260801_1358xx` (Nahaufnahme), `IMG_20260801_1500xx` (frontal) und
+`IMG_20260801_14592x` (Ganzkoerper).
+
+**Sie decken zusammen Gesicht nah, Halbfigur, Ganzkoerper und formell ab** —
+daher die gute Treffsicherheit. Fuer jeden weiteren Spot **dieselben vier**
+verwenden; das haelt dieselbe Person durch alle Clips und macht aus Einzelclips
+eine Kampagne.
+
+`00_studio.png` faellt aus der Reihe: es stammt nicht aus der Fotosession vom
+01.08., sondern ist ein fertiges Studiobild. Woher es kommt, ist nicht
+rekonstruierbar.
+
+## Die Spots (24.08.2026)
+
+`spots-9x16.md` enthaelt vier ausgearbeitete Spots im Format **9:16**, je mit
+Prompt fuer Startbild und Video: Labyrinth, Baustelle, Buero/Wiese,
+Kontrollraum. Aus Andis elf Vorlagen ausgewaehlt und umgeschrieben — ohne
+`On-screen text` und ohne `Voice-over`, also **ohne Markennamen im Bild**.
+
+`spot-buero-wiese-9x16.mp4` (1080x1920) ist der fertige dritte Spot: aus dem
+3:4-Lauf vom 24.08. auf 9:16 beschnitten, Schrift repariert. Der Beschnitt
+haelt beide Szenen — es brauchte dafuer keinen zweiten Renderlauf.
+
 ## Stand des Abos (19.08.2026)
 
 Plus Plan, **verlängert sich am 01.09.2026** — dann zum regulären Preis von

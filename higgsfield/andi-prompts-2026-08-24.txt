@@ -1,0 +1,283 @@
+Advertising Video Prompt (7 Seconds)
+
+Video Length: 7 seconds
+Style: Professional, modern, high-quality commercial clip
+Language: German voice-over, German on-screen text
+Main Character: The man from the reference image
+
+Scene 1 (0-4 seconds)
+
+The man is sitting at his desk in a modern office. Complex invoices, billing documents, spreadsheets, and administrative paperwork are visible on his computer screen. He looks stressed, frustrated, and annoyed. He briefly holds his head or shakes it slightly, clearly struggling with billing and administrative work.
+
+Mood: Busy office environment, stress, frustration.
+
+On-screen text: "Abrechnungen, Prozesse und Softwareprojekte kosten Zeit und Nerven."
+
+Transition (around 4 seconds)
+
+A creative transition. The man leans backward and appears to fall out of the office environment.
+
+Scene 2 (4-7 seconds)
+
+The same man lands gently on a sunny green meadow. He lies relaxed in the grass, smiling and enjoying life. The atmosphere is peaceful, optimistic, and carefree.
+
+Mood: Freedom, relaxation, success, simplicity.
+
+On-screen text: "Mit GYDE wird Softwareentwicklung einfacher."
+
+Then display:
+
+GYDE
+A KI-basiertes Framework, das dich durch den gesamten Software Development Life Cycle begleitet.
+
+Voice-over (spoken sentence)
+
+"Nutze auch du GYDE, die Plattform, die dir hilft, Software für deine Bedürfnisse zu bauen."
+
+Pronunciation note: Pronounce GYDE as "Geid" (same pronunciation as the English word "Guide").
+
+Tipp für HeyGen/DaVinci: Füge zusätzlich die Style-Anweisung hinzu: "Photorealistic, cinematic lighting, smooth camera movement, realistic facial expressions, seamless transition between office and meadow, premium software company advertisement." Das erhöht meist die Qualität deutlich.
+
+----------------------------------
+
+Create a 7-second photorealistic commercial.
+
+Scene 1: A man sits in a modern office surrounded by monitors showing project plans, spreadsheets, tickets, and emails. Notifications constantly appear. He looks stressed and overwhelmed.
+
+On-screen text: "Too many tools. Too many processes."
+
+Transition: The screens dissolve into light.
+
+Scene 2: The same man stands relaxed on a sunny green meadow. He smiles confidently while futuristic digital elements symbolize structured software development.
+
+On-screen text: "With GYDE, software development becomes easier."
+
+Voice-over in German: "Nutze auch du GYDE, die Plattform, die dir hilft Software für deine Bedürfnisse zu bauen."
+
+Pronounce GYDE as "Guide" ("Geid").
+
+----------------------------------
+
+A 7-second cinematic advertisement.
+
+Scene 1: A software developer works late at night. Computer monitors show software errors, warnings, and complex code. He looks tired and frustrated.
+
+On-screen text: "Complex software projects?"
+
+Transition: The monitor glow transforms into bright sunlight.
+
+Scene 2: The same man works calmly on a laptop while sitting on a picnic blanket in a beautiful green meadow.
+
+On-screen text: "GYDE supports the entire Software Development Life Cycle."
+
+Voice-over in German: "Nutze auch du GYDE, die Plattform, die dir hilft Software für deine Bedürfnisse zu bauen."
+
+GYDE is pronounced "Guide".
+
+----------------------------------
+
+Create a 7-second cinematic commercial.
+
+Scene 1: A man sits in an office while invoices, documents, and paperwork fly around him. He looks stressed and overwhelmed.
+
+On-screen text: "Too much administration?"
+
+Transition: All paperwork transforms into green leaves and disappears.
+
+Scene 2: The same man relaxes in a sunny green meadow, looking at the sky with a satisfied smile.
+
+On-screen text: "More time for what matters with GYDE."
+
+Voice-over in German: "Nutze auch du GYDE, die Plattform, die dir hilft Software für deine Bedürfnisse zu bauen."
+
+Pronounce GYDE as "Guide".
+
+----------------------------------
+
+Create a premium 7-second software company advertisement.
+
+Scene 1: Close-up of a stressed man in an office looking at complex software requirements, project diagrams, and planning documents.
+
+On-screen text: "From requirements to software?"
+
+Transition: Futuristic AI-generated digital effects surround him.
+
+Scene 2: The scene changes to a bright green meadow. The man walks confidently and relaxed through nature while elegant AI-inspired visuals accompany him.
+
+On-screen text: "GYDE – AI-powered guidance throughout the entire Software Development Life Cycle."
+
+End screen: GYDE logo "Build smarter. Faster."
+
+Voice-over in German: "Nutze auch du GYDE, die Plattform, die dir hilft Software für deine Bedürfnisse zu bauen."
+
+Pronounce GYDE as "Guide".
+
+----------------------------------
+
+Create a 7-second cinematic commercial for GYDE.
+
+Scene 1 (0–3.5 sec)
+
+A businessman walks through a massive dark labyrinth made of floating documents, software diagrams, process charts, and code fragments. He looks confused, stressed, and unable to find the right direction.
+
+On-screen text (German): "Verloren in Prozessen und Anforderungen?"
+
+Transition
+
+A bright opening appears in front of him. Warm sunlight floods the scene.
+
+Scene 2 (3.5–7 sec)
+
+The man exits the labyrinth and stands on a wide modern road stretching into the horizon. Elegant AI-inspired digital guide lines illuminate the path ahead. He smiles confidently.
+
+On-screen text (German): "GYDE bringt Struktur in den gesamten Software Development Life Cycle."
+
+Voice-over (German)
+
+"Nutze auch du GYDE, die Plattform, die dir hilft Software für deine Bedürfnisse zu bauen."
+
+Pronunciation note: GYDE is pronounced like "Guide" (Geid).
+
+Style: Photorealistic, cinematic lighting, premium software advertisement, smooth camera movement, inspiring atmosphere.
+
+----------------------------------
+
+Create a 7-second premium commercial for GYDE.
+
+Scene 1 (0–3.5 sec)
+
+A man struggles in a small boat in rough seas. Giant waves are formed from software requirements, invoices, project plans, and deadlines. He looks worried and overwhelmed.
+
+On-screen text (German): "Zu viele Herausforderungen gleichzeitig?"
+
+Transition
+
+The storm suddenly disappears. The sky becomes clear and sunny.
+
+Scene 2 (3.5–7 sec)
+
+The same man stands relaxed on a modern luxury yacht sailing smoothly across calm blue water. He smiles while enjoying the journey.
+
+On-screen text (German): "Mit GYDE steuerst du Projekte sicher ans Ziel."
+
+Voice-over (German)
+
+"Nutze auch du GYDE, die Plattform, die dir hilft Software für deine Bedürfnisse zu bauen."
+
+Pronunciation note: GYDE is pronounced like "Guide".
+
+Style: Cinematic, realistic water simulation, premium corporate branding, emotional transformation.
+
+----------------------------------
+
+Create a 7-second software company advertisement.
+
+Scene 1 (0–3.5 sec)
+
+A man stands in the middle of a chaotic construction site. Building plans, tools, materials, and unfinished structures are scattered everywhere. He looks frustrated and uncertain.
+
+On-screen text (German): "Softwareentwicklung ohne klare Struktur?"
+
+Transition
+
+The construction site transforms through futuristic AI-generated digital effects.
+
+Scene 2 (3.5–7 sec)
+
+A completed modern glass building stands in front of him. The man looks proud and satisfied. The building represents a successfully completed software project.
+
+On-screen text (German): "GYDE begleitet jeden Schritt bis zum fertigen Ergebnis."
+
+Voice-over (German)
+
+"Nutze auch du GYDE, die Plattform, die dir hilft Software für deine Bedürfnisse zu bauen."
+
+Pronunciation note: GYDE is pronounced like "Guide".
+
+Style: Professional, photorealistic architecture, cinematic transformation effect.
+
+----------------------------------
+
+Create a futuristic 7-second commercial for GYDE.
+
+Scene 1 (0–3.5 sec)
+
+A man sits inside a dark control room surrounded by dozens of screens showing alerts, reports, project dashboards, emails, requirements, and software diagrams. Information overload creates visible stress.
+
+On-screen text (German): "Zu viele Daten. Zu wenig Übersicht."
+
+Transition
+
+All screens merge into a single elegant AI-powered interface.
+
+Scene 2 (3.5–7 sec)
+
+The room transforms into a bright futuristic command center. The man works effortlessly from a clean and intelligent dashboard.
+
+On-screen text (German): "GYDE macht Komplexität beherrschbar."
+
+Voice-over (German)
+
+"Nutze auch du GYDE, die Plattform, die dir hilft Software für deine Bedürfnisse zu bauen."
+
+Pronunciation note: GYDE is pronounced like "Guide".
+
+Style: High-tech, futuristic, cinematic visuals, premium AI platform advertisement.
+
+----------------------------------
+
+Create a motivational 7-second commercial for GYDE.
+
+Scene 1 (0–3.5 sec)
+
+A man struggles to climb a steep mountain carrying a heavy backpack labeled with project plans, requirements, documentation, and deadlines. He looks exhausted.
+
+On-screen text (German): "Softwareprojekte fühlen sich wie ein Aufstieg an?"
+
+Transition
+
+A glowing AI-guided path appears toward the summit.
+
+Scene 2 (3.5–7 sec)
+
+The man stands relaxed on top of the mountain enjoying the breathtaking view. The atmosphere symbolizes achievement and success.
+
+On-screen text (German): "Mit GYDE erreichst du dein Ziel schneller."
+
+Voice-over (German)
+
+"Nutze auch du GYDE, die Plattform, die dir hilft Software für deine Bedürfnisse zu bauen."
+
+Pronunciation note: GYDE is pronounced like "Guide".
+
+Style: Inspirational, epic landscape, cinematic drone shot, emotional ending.
+
+----------------------------------
+
+Create a dynamic 7-second advertisement for GYDE.
+
+Scene 1 (0–3.5 sec)
+
+A man is trapped in an escape room filled with requirements, project documents, invoices, diagrams, and software challenges. He tries to solve the puzzle but looks stuck.
+
+On-screen text (German): "Festgefahren im Projekt?"
+
+Transition
+
+A bright door automatically opens.
+
+Scene 2 (3.5–7 sec)
+
+The man steps into a bright modern innovation space. Everything is organized, clean, and efficient. He smiles with relief.
+
+On-screen text (German): "GYDE zeigt den Weg zur Lösung."
+
+Voice-over (German)
+
+"Nutze auch du GYDE, die Plattform, die dir hilft Software für deine Bedürfnisse zu bauen."
+
+Pronunciation note: GYDE is pronounced like "Guide".
+
+Style: Fast-paced, high-end commercial, smooth transition, modern technology branding.
+
+----------------------------------
