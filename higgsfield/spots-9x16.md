@@ -3,8 +3,9 @@
 **Stand 24.08.2026.** Vier Spots, abgeleitet aus Andis elf Prompts
 (`andi-prompts-2026-08-24.txt`). Format durchgehend **9:16**.
 
-**Startbilder: alle drei fertig. Spot 1 ist als Video fertig.** Offen sind noch die
-Videos zu Spot 2 und 4.
+**ALLE VIER SPOTS SIND FERTIG.** Sie liegen als `spot-*-9x16.mp4` in `videos/`,
+je 1080x1920 und stumm. Was noch fehlt, ist Schrift und Stimme — beides ausserhalb
+von Higgsfield.
 
 ## Die Regel, die über allem steht
 
@@ -157,15 +158,16 @@ at the mess with a frustrated, uncertain expression. Full body visible, camera
 at eye level. Cinematic, shallow depth of field, muted colours.
 ```
 
-**Video (7 s) — offen**
+**Video — fertig:** `spot-baustelle-gebaeude-9x16.mp4` (1080x1920, 5 s, stumm).
+Rohling `hf_20260824_151754_37ca6078-7629-46ca-9da5-919501f0fa6d.mp4`.
 
 ```
-The camera slowly rises and orbits around him. The scattered plans, tools and
-materials lift off the ground, straighten and assemble themselves in the air
-around him. The scaffolding falls away to reveal a finished modern glass
-office building standing in bright clear daylight behind him. He lowers the
-plan, looks up at the building and smiles. One continuous take, smooth rising
-camera movement, grey light turning bright. No lettering.
+The camera rises and orbits slowly around him. The scattered plans, tools and
+materials lift off the ground and assemble themselves in the air around him.
+The scaffolding falls away to reveal a finished modern glass office building
+standing in bright daylight behind him. He lowers the plan, looks up at it and
+smiles. One continuous take, smooth rising camera movement, grey light turning
+bright. No lettering.
 ```
 
 ---
@@ -198,22 +200,35 @@ amount of information. Camera behind and slightly above him, his silhouette
 against the wall of screens. Cinematic, deep shadows.
 ```
 
-**Video (7 s) — offen**
+**Video — fertig:** `spot-kontrollraum-dashboard-9x16.mp4` (1080x1920, 5 s, stumm).
+Rohling `hf_20260824_152206_025b3196-4f82-44a8-bba6-03d2b254b988.mp4`.
 
 ```
 The dozens of screens slide inward and merge into one single large clean
 display in front of him. The clutter on it resolves into a calm, well ordered
 overview. The room brightens as warm light rises. He leans back in his chair,
-relaxed, and nods slightly. One continuous take, slow forward camera movement,
-cold blue light turning warm. No lettering.
+relaxed. One continuous take, slow forward camera movement, cold blue light
+turning warm. No lettering.
 ```
 
 ---
 
 ## Was noch zu tun ist
 
-Zwei Videos: **Spot 2 · 4**, je aus dem fertigen Startbild, 1080p ohne Ton —
-**8,75 Credits** das Stueck, zusammen also unter 20.
+**An den Clips nichts mehr.** Die vier Spots sind gerendert:
+
+| Spot | Datei |
+|---|---|
+| 1 Labyrinth | `spot-labyrinth-strasse-9x16.mp4` |
+| 2 Baustelle | `spot-baustelle-gebaeude-9x16.mp4` |
+| 3 Buero/Wiese | `spot-buero-wiese-9x16.mp4` |
+| 4 Kontrollraum | `spot-kontrollraum-dashboard-9x16.mp4` |
+
+Spot 1, 2 und 4 sind 5 Sekunden lang, Spot 3 sieben — der stammt aus dem
+4K-Lauf und wurde nur beschnitten.
+
+**Verbraucht:** fuenf Startbilder à 2 und drei Videos à 8,75 = **rund 36
+Credits** fuer die ganze Kampagne. Die urspruengliche Schaetzung lag bei 165.
 
 **Guthaben:** 645 Credits am 24.08. vor den Startbildern; fünf Bilder à 2
 Credits sind weggegangen (eines davon der verworfene Smoking-Versuch), es
@@ -222,9 +237,11 @@ Restcredits verfallen dann.
 
 Falls es knapp wird: **Spot 1 ist der, den du sicher haben willst.**
 
-## Was danach kommt
+## Was jetzt noch offen ist
 
-- **Schrift** — wird nachträglich gesetzt, so wie bei Spot 3 geschehen. Kostet
-  keine Credits und ist jederzeit änderbar, auch nachdem der Name feststeht.
+- **Schrift** — auf Spot 1, 2 und 4 steht noch keine. Das Verfahren ist erprobt
+  (Spot 3): lokal gesetzt, kostet keine Credits, jederzeit aenderbar. Es fehlt
+  nur die Entscheidung, **was** draufsteht — der Name PAKTIA ist nicht durch die
+  vier Tore gelaufen, und *Paktia* ist eine Provinz in Afghanistan.
 - **Stimme** — getrennt über ElevenLabs. Dort ist auch die Aussprache des
   Markennamens durchsetzbar, was im Videomodell nicht geht.
