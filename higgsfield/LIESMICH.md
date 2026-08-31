@@ -211,11 +211,16 @@ Spot 2A, Franz' Paragraphen-Slalom und die Abfahrtshocke. Stand nach allem:
 
 | | lokal | Seitenleiste |
 |---|---|---|
-| `bilder/` | **149** | Image 149 |
-| `videos/` | **75** | Video 75 |
-| `audio/` | 38 | (113 = 75 Tonspuren + 38 eigene) |
+| `bilder/` | **159** | Image 159 |
+| `videos/` | **83** | Video 83 |
+| `audio/` | 38 | (121 = 83 Tonspuren + 38 eigene) |
 
-Guthaben am Ende: **103 von 1000**.
+Guthaben am Ende: **13 von 1000** — das Abo ist ausgereizt.
+
+Zuletzt kam **Spot 7, die rote Ampel**: ein Pickup voller Pakete bremst vor einer
+roten Ampel, deren Licht ein Paragraphenzeichen ist; eine Hand wischt darueber,
+und er faehrt weiter. Damit steht das §-Zeichen dreimal in der Reihe — als
+Baumstamm, als Slalomstange und als Ampellicht.
 
 Dazu kam am Abend noch **Spot 6, der Schalter** — Franz' dritte Idee: ein Paket
 voller Paragraphen wird abgewiesen, eine dritte Hand sammelt die Paragraphen zu

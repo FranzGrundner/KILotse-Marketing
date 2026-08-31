@@ -460,23 +460,104 @@ Fertig: `videos/spot-schalter-9x16.mp4` (11,25 s), Auswahl `6-SCHALTER.mp4`.
 
 ---
 
-# Nicht gebaut: „Pickup" und „Ampel"
+# Spot 7 — „Die rote Ampel" (Franz, 31.08.2026)
+
+Aus „Pickup und Ampel" wurde **ein** Spot, nicht zwei. Franz' Fassung:
+
+> „1. wilde fahrt von einem pickup voll beladen mit paketen durch eine belebte
+> strasse, vollbremsung bei einer roten ampel und ein paar pakete fliegen auf die
+> strasse. 2. zoom auf die ampel und das rote licht ist ein paragraphen-zeichen.
+> die hand aus dem off wischt über die ampel und sie wird grün 3. der pickup
+> fährt mit quietschenden reifen weiter während die kamera nur stehen bleibt und
+> ihn wegfahren sieht"
+
+**Strukturell derselbe Dreiklang wie der Schalter** — blockiert, dritte Hand,
+freigegeben — nur draußen und laut statt drinnen und leise. Damit hat die
+Kampagne die Figur zweimal, in zwei Tonlagen.
+
+## Zwei Startbilder für drei Einstellungen
+
+Einstellung 1 und 3 sind **dieselbe Kameraposition**: der Pickup an der Ampel.
+Sie kommen deshalb aus einem Bild — für Einstellung 3 per `Edit Image` daraus
+abgeleitet:
+
+```
+Change the traffic light so that the red lamp is dark and the green lamp at the
+bottom is lit bright green. Remove the two parcels that are falling onto the road,
+so the asphalt in front of the truck is clear. Keep the pickup truck, its load, the
+street, the shops, the people and the lighting exactly as they are, unchanged.
+```
+
+Der Griff hat gleich **zwei** Dinge erledigt: die Ampel umgeschaltet *und* die
+Straße geräumt. Ohne das Räumen lägen die Pakete am Ende noch da — der Spot
+sagt dann „er fährt weiter und lässt seine Ware liegen", und das ist das
+Gegenteil der Aussage.
+
+Einstellung 2 hat ein eigenes Bild, weil es eine andere Brennweite ist:
+
+```
+Close-up of a city traffic light on its post, shot from slightly below against a
+dusk sky. The lit red lamp is not a round light: it is a glowing red paragraph
+section symbol, the legal paragraph sign, filling the lamp housing. The amber and
+green lamps below it are dark. Shallow depth of field, the busy street behind it
+blurred into bokeh. Photorealistic cinematic. Leave the lower third of the frame
+empty and uncluttered.
+```
+
+**Alle vier Bilder dieses Laufs hatten das § in der Lampe.** Das Zeichen ist
+inzwischen dreimal belegt: Baumstamm, Slalomstange, Ampellicht.
+
+## Die Farbangleichung — der dritte Fall von „Farbe ist rechenbar"
+
+Die Ampel-Einstellung ist **Blaue Stunde**, die Straße **Tageslicht**. Im Schnitt
+sah das nach zwei Orten aus. Statt neu zu rendern wurde gemessen und gerechnet:
+
+| | R | G | B |
+|---|---|---|---|
+| Straße (Sollwert) | 124,7 | 122,4 | 119,3 |
+| Ampel (roh) | 92,5 | 101,4 | 112,8 |
+| Faktor | **1,348** | **1,207** | **1,058** |
+
+```
+colorchannelmixer=rr=1.348:gg=1.207:bb=1.058,eq=saturation=0.95
+```
+
+Das Rot des § und das Grün der Lampe bleiben dabei kräftig, weil beide ohnehin
+gesättigt sind; der blaue Himmel wird hell und neutral. **Die Faktoren sind
+gemessen, nicht geschätzt** — dieselbe Arbeitsweise wie beim Sättigungswert 2,1
+in Spot 2.
+
+## Fassungen
+
+| Einstellung | genommen | verworfen — warum |
+|---|---|---|
+| 1 Vollbremsung | `…052323_fb9cad35` | `…052350_d15d31b1`: der Pickup fährt nach dem Bremsen weiter aus dem Bild, obwohl `comes to a dead stop` im Prompt steht |
+| 2 Ampel wird grün | `…053426_7dbf6236` | `…053513_fdb7dc7e`: die Hand ist zu groß und zu unscharf; die kleine, anonyme Hand trifft Andis Bildsprache besser |
+| 3 Wegfahren | `…053041_e2639f0f` | `…053115_de58745b`: gut, aber die Straße wird nicht ganz leer |
+
+Fertig: `videos/spot-7-rote-ampel-9x16.mp4` (12,41 s), Auswahl `7-ROTE-AMPEL.mp4`,
+Web-Fassung auf tarain.at.
+
+---
+
+# Der Ursprung: „Pickup" und „Ampel"
 
 Franz am 31.08.2026 beim Weggehen:
 
 > „erinnere mich wenn ich zurück bin an pickup und ampel"
 
-**Was die beiden Wörter bedeuten, steht nirgends** — sie sind hier wörtlich
-festgehalten, damit sie nicht verlorengehen, und ausdrücklich nicht gedeutet.
-Naheliegend wären zwei weitere Spot-Ideen in der Reihe von Wald, Slalom und
-Schalter; *Ampel* würde an den Farbbogen aus Spot 2 anschließen
-(grün → rot → grün), aber das ist eine Vermutung und keine Notiz.
+Die beiden Wörter standen hier eine Weile ungedeutet, weil Franz nicht gesagt
+hatte, was sie bedeuten — festgehalten, damit sie nicht verlorengehen. **Er hat
+sie noch am selben Abend erklärt, und daraus ist Spot 7 geworden** (oben).
 
-⚠ **Der Zeitrahmen ist weg.** Das Abo endet am 01.09.2026. Was hier nicht mehr
-gebaut wurde, braucht ein neues Abo — beim Aufgreifen also zuerst klären, ob es
-noch um Video geht oder nur noch um die Idee.
+Die Vermutung, es seien *zwei* Ideen, war falsch: es ist eine. Und die Vermutung,
+*Ampel* schließe an den Farbbogen aus Spot 2 an (grün → rot → grün), war zwar
+naheliegend, aber auch daneben — es ist rot → grün, und das Rot ist ein
+Paragraph.
 
-Als Todo **#890** erfasst (Franz / Marketing, hoch).
+**Die Lehre für das Erfassen:** Zwei Stichwörter ohne Erklärung sind kein
+Gedächtnis, sondern ein Zettel. Sie haben nur getragen, weil Franz binnen
+Stunden zurückkam. Todo **#890** ist damit erledigt.
 
 # Montageplan
 
