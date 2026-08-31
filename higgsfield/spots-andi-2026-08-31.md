@@ -458,6 +458,26 @@ noch da sind. Kostet nichts. Dritter Fall des Tages nach 3B und der Waage vom
 
 Fertig: `videos/spot-schalter-9x16.mp4` (11,25 s), Auswahl `6-SCHALTER.mp4`.
 
+---
+
+# Nicht gebaut: „Pickup" und „Ampel"
+
+Franz am 31.08.2026 beim Weggehen:
+
+> „erinnere mich wenn ich zurück bin an pickup und ampel"
+
+**Was die beiden Wörter bedeuten, steht nirgends** — sie sind hier wörtlich
+festgehalten, damit sie nicht verlorengehen, und ausdrücklich nicht gedeutet.
+Naheliegend wären zwei weitere Spot-Ideen in der Reihe von Wald, Slalom und
+Schalter; *Ampel* würde an den Farbbogen aus Spot 2 anschließen
+(grün → rot → grün), aber das ist eine Vermutung und keine Notiz.
+
+⚠ **Der Zeitrahmen ist weg.** Das Abo endet am 01.09.2026. Was hier nicht mehr
+gebaut wurde, braucht ein neues Abo — beim Aufgreifen also zuerst klären, ob es
+noch um Video geht oder nur noch um die Idee.
+
+Als Todo **#890** erfasst (Franz / Marketing, hoch).
+
 # Montageplan
 
 | Spot | Einstellung | Andis Szenen | Laenge |
