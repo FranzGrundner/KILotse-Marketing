@@ -29,3 +29,13 @@ higgsfield/bilder/*
 higgsfield/videos/*
 higgsfield/audio/*
 !higgsfield/*/PROMPTS.md
+
+# Abgeleitetes aus denselben Dateien, dazugekommen am 31.08.2026:
+# `kontakt/` sind Kontaktboegen (fuenf Standbilder je Clip) und Vergleiche,
+# `auswahl/` sind Kopien der ausgewaehlten Spots unter sprechenden Namen.
+# Beides entsteht in Minuten neu aus `videos/` und faellt damit unter dieselbe
+# Begruendung wie die Ordner darueber. Die WEB-Fassungen der Spots liegen
+# dagegen im Repo `Tarain-Seite` unter `filme/` — dort sind sie kein
+# Abfallprodukt, sondern das, was die Seite ausliefert.
+higgsfield/kontakt/
+higgsfield/auswahl/
